@@ -823,18 +823,13 @@ L6320:  ldy     #$A8                            ; 6320 A0 A8                    
         lda     #$BF                            ; 6325 A9 BF                    ..
 	.byte	$16
 	.byte	"Press Y to",$9B
-        jsr     L2020                           ; 6333 20 20 20                    
+	.byte	"   "
         .byte   $63                             ; 6336 63                       c
         .byte   $6F                             ; 6337 6F                       o
         bvs     L63B3                           ; 6338 70 79                    py
 L633A:  .byte   $2F                             ; 633A 2F                       /
         adc     ($70,x)                         ; 633B 61 70                    ap
-        bvs     L63A4                           ; 633D 70 65                    pe
-        ror     $2064                           ; 633F 6E 64 20                 nd 
-        ror     $69                             ; 6342 66 69                    fi
-        jmp     (L7365)                         ; 6344 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
+	.byte	"pend files"
         jsr     L6E6F                           ; 6347 20 6F 6E                  on
         jsr     L6173                           ; 634A 20 73 61                  sa
         adc     L2065                           ; 634D 6D 65 20                 me 
@@ -863,7 +858,7 @@ L636F:  jsr     L6966                           ; 636F 20 66 69                 
 L6373:  adc     $73                             ; 6373 65 73                    es
         jsr     L6E6F                           ; 6375 20 6F 6E                  on
         .byte   $9B                             ; 6378 9B                       .
-        jsr     L2020                           ; 6379 20 20 20                    
+	.byte	"   "
 L637C:  .byte   $64                             ; 637C 64                       d
         adc     #$66                            ; 637D 69 66                    if
         ror     $65                             ; 637F 66 65                    fe
@@ -882,21 +877,7 @@ L638B:  rol     $029B                           ; 638B 2E 9B 02                 
         cmp     ($F0,x)                         ; 6393 C1 F0                    ..
         beq     L637C                           ; 6395 F0 E5                    ..
         inc     $16E4                           ; 6397 EE E4 16                 ...
-        pha                                     ; 639A 48                       H
-        adc     $6C                             ; 639B 65 6C                    el
-        bvs     L63BF                           ; 639D 70 20                    p 
-        .byte   $53                             ; 639F 53                       S
-        .byte   $63                             ; 63A0 63                       c
-        .byte   $72                             ; 63A1 72                       r
-        adc     $65                             ; 63A2 65 65                    ee
-L63A4:  ror     L2020                           ; 63A4 6E 20 20                 n  
-        jsr     L2020                           ; 63A7 20 20 20                    
-        jsr     L3420                           ; 63AA 20 20 34                   4
-        .byte   $20                             ; 63AD 20                        
-        .byte   $6F                             ; 63AE 6F                       o
-L63AF:  ror     $20                             ; 63AF 66 20                    f 
-        .byte   $34                             ; 63B1 34                       4
-        .byte   $9B                             ; 63B2 9B                       .
+	.byte	"Help Screen       4 of 4",$9B
 L63B3:  .byte   $9B                             ; 63B3 9B                       .
 L63B4:  sec                                     ; 63B4 38                       8
         rol     $C302                           ; 63B5 2E 02 C3                 ...
@@ -909,7 +890,7 @@ L63BF:  sbc     $EE                             ; 63BF E5 EE                    
         cpx     $A0                             ; 63C1 E4 A0                    ..
         sbc     ($EC,x)                         ; 63C3 E1 EC                    ..
         cpx     $F3A0                           ; 63C5 EC A0 F3                 ...
-        beq     L63AF                           ; 63C8 F0 E5                    ..
+	.byte	$F0,$E5
         .byte   $E3                             ; 63CA E3                       .
         sbc     #$E6                            ; 63CB E9 E6                    ..
         sbc     #$E5                            ; 63CD E9 E5                    ..
