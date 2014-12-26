@@ -509,7 +509,7 @@ L622D:  sbc     #$EF                            ; 622D E9 EF                    
         .byte   $64                             ; 6260 64                       d
 L6261:  adc     #$6E                            ; 6261 69 6E                    in
         .byte   $67                             ; 6263 67                       g
-        bit     L7520                           ; 6264 2C 20 75                 , u
+	.byte	", u"
         .byte   $73                             ; 6267 73                       s
         adc     $9B                             ; 6268 65 9B                    e.
         jsr     L2020                           ; 626A 20 20 20                    
@@ -2684,54 +2684,9 @@ L74C5:  .byte   $72                             ; 74C5 72                       
         jsr     L2059                           ; 74C9 20 59 20                  Y 
         .byte   $74                             ; 74CC 74                       t
         .byte   $6F                             ; 74CD 6F                       o
-        .byte	" un"
-        bvs     L7545                           ; 74D1 70 72                    pr
-        .byte   $6F                             ; 74D3 6F                       o
-        .byte   $74                             ; 74D4 74                       t
-        adc     $63                             ; 74D5 65 63                    ec
-        .byte   $74                             ; 74D7 74                       t
-        jsr     L6C61                           ; 74D8 20 61 6C                  al
-        jmp     (L209B)                         ; 74DB 6C 9B 20                 l. 
-
-; ----------------------------------------------------------------------------
-	.byte	"  f"
-        adc     #$6C                            ; 74E1 69 6C                    il
-        adc     $73                             ; 74E3 65 73                    es
-        jsr     L616E                           ; 74E5 20 6E 61                  na
-        adc     L6465                           ; 74E8 6D 65 64                 med
-        jsr     L7962                           ; 74EB 20 62 79                  by
-        jsr     L6966                           ; 74EE 20 66 69                  fi
-        jmp     (L7365)                         ; 74F1 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-	.byte	"pe"
-        .byte   $63                             ; 74F6 63                       c
-        rol     L2020                           ; 74F7 2E 20 20                 .  
-	.byte	"Pr"
-        adc     $73                             ; 74FC 65 73                    es
-        .byte   $73                             ; 74FE 73                       s
-        jsr     L9B4E                           ; 74FF 20 4E 9B                  N.
-        jsr     L2020                           ; 7502 20 20 20                    
-        .byte   $6F                             ; 7505 6F                       o
-        .byte   $72                             ; 7506 72                       r
-        jsr     L4552                           ; 7507 20 52 45                  RE
-        .byte   $54                             ; 750A 54                       T
-        eor     $52,x                           ; 750B 55 52                    UR
-	.byte	"N t"
-        .byte   $6F                             ; 7510 6F                       o
-        .byte	" un"
-        bvs     L7588                           ; 7514 70 72                    pr
-        .byte   $6F                             ; 7516 6F                       o
-        .byte   $74                             ; 7517 74                       t
-        adc     $63                             ; 7518 65 63                    ec
-        .byte   $74                             ; 751A 74                       t
-        .byte	" on"
-        adc     $20                             ; 751E 65 20                    e 
-L7520:  .byte   $62                             ; 7520 62                       b
-        adc     L6F20,y                         ; 7521 79 20 6F                 y o
-        ror     L2E65                           ; 7524 6E 65 2E                 ne.
-        .byte   $9B                             ; 7527 9B                       .
-        .byte   $9B                             ; 7528 9B                       .
+        .byte	" unprotect all",$9B
+	.byte	"   files named by filespec.  Press N",$9B
+	.byte	"   or RETURN to unprotect one by one.",$9B,$9B
         .byte   $34                             ; 7529 34                       4
         rol     L4920                           ; 752A 2E 20 49                 . I
         ror     $20                             ; 752D 66 20                    f 
@@ -3620,7 +3575,7 @@ L7C8F:  jsr     L204D                           ; 7C8F 20 4D 20                 
         jsr     L666F                           ; 7CDE 20 6F 66                  of
         jsr     L656D                           ; 7CE1 20 6D 65                  me
         adc     L726F                           ; 7CE4 6D 6F 72                 mor
-        adc     L7520,y                         ; 7CE7 79 20 75                 y u
+	.byte	"y u"
         .byte   $73                             ; 7CEA 73                       s
         adc     $61,x                           ; 7CEB 75 61                    ua
         jmp     (L796C)                         ; 7CED 6C 6C 79                 lly
@@ -5467,9 +5422,7 @@ L8C9D:  .byte   $42                             ; 8C9D 42                       
         jsr     L7073                           ; 8CB5 20 73 70                  sp
         adc     $63                             ; 8CB8 65 63                    ec
         adc     #$61                            ; 8CBA 69 61                    ia
-        jmp     (L7520)                         ; 8CBC 6C 20 75                 l u
-
-; ----------------------------------------------------------------------------
+	.byte	"l u"
         .byte   $73                             ; 8CBF 73                       s
         adc     $73                             ; 8CC0 65 73                    es
         jsr     L6F66                           ; 8CC2 20 66 6F                  fo
