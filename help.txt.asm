@@ -821,14 +821,8 @@ L62FD:  sbc     $A0                             ; 62FD E5 A0                    
 L6320:  ldy     #$A8                            ; 6320 A0 A8                    ..
         cmp     $CEAF,y                         ; 6322 D9 AF CE                 ...
         lda     #$BF                            ; 6325 A9 BF                    ..
-        asl     $50,x                           ; 6327 16 50                    .P
-        .byte   $72                             ; 6329 72                       r
-        adc     $73                             ; 632A 65 73                    es
-        .byte   $73                             ; 632C 73                       s
-        jsr     L2059                           ; 632D 20 59 20                  Y 
-        .byte   $74                             ; 6330 74                       t
-        .byte   $6F                             ; 6331 6F                       o
-        .byte   $9B                             ; 6332 9B                       .
+	.byte	$16
+	.byte	"Press Y to",$9B
         jsr     L2020                           ; 6333 20 20 20                    
         .byte   $63                             ; 6336 63                       c
         .byte   $6F                             ; 6337 6F                       o
