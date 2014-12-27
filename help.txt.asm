@@ -5036,35 +5036,8 @@ L8A62:  jsr     L2020                           ; 8A62 20 20 20
         rol     $9B,x                           ; 8A73 36 9B                    6.
         .byte   $9B                             ; 8A75 9B                       .
 	.byte	"As noted in the previous screens,",$9B
-        .byte   $74                             ; 8A98 74                       t
-        pla                                     ; 8A99 68                       h
-        adc     $20                             ; 8A9A 65 20                    e 
-        .byte   $52                             ; 8A9C 52                       R
-        eor     $54                             ; 8A9D 45 54                    ET
-        eor     $52,x                           ; 8A9F 55 52                    UR
-        lsr     L6B20                           ; 8AA1 4E 20 6B                 N k
-        adc     $79                             ; 8AA4 65 79                    ey
-L8AA6:  jsr     L7369                           ; 8AA6 20 69 73                  is
-        jsr     L7375                           ; 8AA9 20 75 73                  us
-        adc     $64                             ; 8AAC 65 64                    ed
-        .byte   $3A                             ; 8AAE 3A                       :
-        .byte   $9B                             ; 8AAF 9B                       .
-        .byte   $9B                             ; 8AB0 9B                       .
-        jsr     L2020                           ; 8AB1 20 20 20                    
-        plp                                     ; 8AB4 28                       (
-        adc     ($29,x)                         ; 8AB5 61 29                    a)
-        jsr     L6F74                           ; 8AB7 20 74 6F                  to
-        jsr     L6973                           ; 8ABA 20 73 69                  si
-        .byte   $67                             ; 8ABD 67                       g
-        ror     L6C61                           ; 8ABE 6E 61 6C                 nal
-	.byte	" th"
-        adc     $20                             ; 8AC4 65 20                    e 
-        adc     $6E                             ; 8AC6 65 6E                    en
-        .byte   $64                             ; 8AC8 64                       d
-        jsr     L666F                           ; 8AC9 20 6F 66                  of
-        jsr     L6F79                           ; 8ACC 20 79 6F                  yo
-        adc     $72,x                           ; 8ACF 75 72                    ur
-        .byte   $9B                             ; 8AD1 9B                       .
+	.byte	"the RETURN key is used:",$9B,$9B
+	.byte	"   (a) to signal the end of your",$9B
 	.byte	"       response to a prompt, and",$9B
 	.byte	"   (b) to select the default value",$9B
 	.byte	"       in response to a prompt.",$9B,$9B
