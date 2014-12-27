@@ -4123,77 +4123,15 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
         eor     ($53,x)                         ; 87AA 41 53                    AS
         and     #$9B                            ; 87AC 29 9B                    ).
         .byte   $9B                             ; 87AE 9B                       .
-        .byte   $57                             ; 87AF 57                       W
-        adc     #$6C                            ; 87B0 69 6C                    il
-        .byte   $64                             ; 87B2 64                       d
-        .byte   $63                             ; 87B3 63                       c
-        adc     ($72,x)                         ; 87B4 61 72                    ar
-        .byte   $64                             ; 87B6 64                       d
-        .byte   $73                             ; 87B7 73                       s
-        jsr     L6163                           ; 87B8 20 63 61                  ca
-        ror     L6220                           ; 87BB 6E 20 62                 n b
-        adc     $20                             ; 87BE 65 20                    e 
-        adc     $73,x                           ; 87C0 75 73                    us
-        adc     $64                             ; 87C2 65 64                    ed
-        jsr     L6F66                           ; 87C4 20 66 6F                  fo
-        .byte   $72                             ; 87C7 72                       r
-        jsr     L2031                           ; 87C8 20 31 20                  1 
-        adc     ($6E,x)                         ; 87CB 61 6E                    an
-        .byte   $64                             ; 87CD 64                       d
-        jsr     L2E32                           ; 87CE 20 32 2E                  2.
-        .byte   $9B                             ; 87D1 9B                       .
-        jsr     L2020                           ; 87D2 20 20 20                    
-        rol     a                               ; 87D5 2A                       *
-        and     L6E41,x                         ; 87D6 3D 41 6E                 =An
-        adc     L6320,y                         ; 87D9 79 20 63                 y c
-        .byte   $6F                             ; 87DC 6F                       o
-        adc     L6962                           ; 87DD 6D 62 69                 mbi
-	.byte	"nat"
-        adc     #$6F                            ; 87E3 69 6F                    io
-        ror     L6F20                           ; 87E5 6E 20 6F                 n o
-        ror     $20                             ; 87E8 66 20                    f 
-        .byte   $63                             ; 87EA 63                       c
-        pla                                     ; 87EB 68                       h
-        adc     ($72,x)                         ; 87EC 61 72                    ar
-        adc     ($63,x)                         ; 87EE 61 63                    ac
-        .byte   $74                             ; 87F0 74                       t
-        adc     $72                             ; 87F1 65 72                    er
-        .byte   $73                             ; 87F3 73                       s
-        .byte   $2E                             ; 87F4 2E                       .
-        .byte   $9B                             ; 87F5 9B                       .
+	.byte	"Wildcards can be used for 1 and 2.",$9B
+	.byte	"   *=Any combination of characters.",$9B
 	.byte	"   ?=Any single character.",$9B,$9B
-        .byte   $33                             ; 8812 33                       3
-        rol     $C402                           ; 8813 2E 02 C4                 ...
-        sbc     $F6                             ; 8816 E5 F6                    ..
-        sbc     #$E3                            ; 8818 E9 E3                    ..
-        sbc     $BA                             ; 881A E5 BA                    ..
-        asl     $44,x                           ; 881C 16 44                    .D
-        ror     $3D3A                           ; 881E 6E 3A 3D                 n:=
-        .byte   $64                             ; 8821 64                       d
-        .byte   $72                             ; 8822 72                       r
-        adc     #$76                            ; 8823 69 76                    iv
-        adc     $20                             ; 8825 65 20                    e 
-        ror     $2E6F                           ; 8827 6E 6F 2E                 no.
-        .byte   $3B                             ; 882A 3B                       ;
-        jsr     L3A45                           ; 882B 20 45 3A                  E:
-	.byte	"=sc"
-        .byte   $72                             ; 8831 72                       r
-        adc     $65                             ; 8832 65 65                    ee
-        ror     $9B3B                           ; 8834 6E 3B 9B                 n;.
-	.byte	"   P:=pr"
-        adc     #$6E                            ; 883F 69 6E                    in
-        .byte   $74                             ; 8841 74                       t
-        adc     $72                             ; 8842 65 72                    er
-        .byte   $3B                             ; 8844 3B                       ;
-        jsr     L3A43                           ; 8845 20 43 3A                  C:
-        and     L6163,x                         ; 8848 3D 63 61                 =ca
-        .byte   $73                             ; 884B 73                       s
-        .byte   $73                             ; 884C 73                       s
-        adc     $74                             ; 884D 65 74                    et
-        .byte   $74                             ; 884F 74                       t
-        adc     $2E                             ; 8850 65 2E                    e.
-        .byte   $9B                             ; 8852 9B                       .
-        .byte   $9B                             ; 8853 9B                       .
+	.byte	"3."
+	.byte	$02
+	Inverse	"Device:"
+	.byte	$16
+	.byte	"Dn:=drive no.; E:=screen;",$9B
+	.byte	"   P:=printer; C:=cassette.",$9B,$9B
 	.byte	"4."
 	.byte	$02
 	Inverse	"Source--?"
