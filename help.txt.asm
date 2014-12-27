@@ -3998,17 +3998,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
         jsr     L666F                           ; 83AE 20 6F 66                  of
         jsr     L9B36                           ; 83B1 20 36 9B                  6.
         .byte   $9B                             ; 83B4 9B                       .
-        .byte   $54                             ; 83B5 54                       T
-        pla                                     ; 83B6 68                       h
-        adc     $20                             ; 83B7 65 20                    e 
-        .byte   $44                             ; 83B9 44                       D
-        .byte   $4F                             ; 83BA 4F                       O
-        .byte   $53                             ; 83BB 53                       S
-        jsr     L6F63                           ; 83BC 20 63 6F                  co
-        adc     L616D                           ; 83BF 6D 6D 61                 mma
-        ror     L7364                           ; 83C2 6E 64 73                 nds
-        jsr     L6C61                           ; 83C5 20 61 6C                  al
-	.byte	"low you to store,",$9B
+	.byte	"The DOS commands allow you to store,",$9B
 	.byte	"retrieve, and manage your disk files.",$9B,$9B
 	.byte	"1. To select a menu function, press",$9B
 	.byte	"   the first letter of the command",$9B
