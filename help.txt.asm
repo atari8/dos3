@@ -204,13 +204,7 @@ L5EA7:  ora     ($FF,x)                         ; 5EA7 01 FF                    
 	.byte	"onto other disks as needed.",$9B,$9B
 	.byte	"2."
 	.byte	$02
-	.byte	$C1
-	.byte	$F0,$F0
-        sbc     $EE                             ; 5FE0 E5 EE                    ..
-        cpx     $A0                             ; 5FE2 E4 A0                    ..
-        tay                                     ; 5FE4 A8                       .
-        cmp     $CEAF,y                         ; 5FE5 D9 AF CE                 ...
-        lda     #$BF                            ; 5FE8 A9 BF                    ..
+	Inverse	"Append (Y/N)?"
 	.byte	$16
 	.byte	"Press Y to append",$9B
 	.byte	"   (join) two or more files.  If you",$9B
