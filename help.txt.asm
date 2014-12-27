@@ -4052,31 +4052,22 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"computer when selected.",$9B,$9B
 	.byte	"Thus, keep DOS disk in drive 1 when",$9B
 	.byte	"selecting:",$9B,$9B
-        and     ($2E),y                         ; 863D 31 2E                    1.
-        .byte   $02                             ; 863F 02                       .
-        .byte   $C3                             ; 8640 C3                       .
-        .byte   $6F                             ; 8641 6F                       o
-        bvs     L86BD                           ; 8642 70 79                    py
-        .byte   $2F                             ; 8644 2F                       /
-        eor     ($70,x)                         ; 8645 41 70                    Ap
-	.byte	"pe"
-        ror     $9B64                           ; 8649 6E 64 9B                 nd.
-        .byte   $32                             ; 864C 32                       2
-        rol     $C402                           ; 864D 2E 02 C4                 ...
+	.byte	"1."
+	.byte	$02
+	Inverse	"C"
+	.byte	"opy/Append",$9B
+	.byte	"2."
+	.byte	$02
+	Inverse	"D"
 	.byte	"uplicate",$9B
 	.byte	"3."
 	.byte	$02
 	Inverse "I"
 	.byte	"nit disk",$9B
-        .byte   $34                             ; 8666 34                       4
-        rol     $C102                           ; 8667 2E 02 C1                 ...
-        .byte   $63                             ; 866A 63                       c
-        .byte   $63                             ; 866B 63                       c
-        adc     $73                             ; 866C 65 73                    es
-        .byte   $73                             ; 866E 73                       s
-        jsr     L4F44                           ; 866F 20 44 4F                  DO
-        .byte   $53                             ; 8672 53                       S
-        jsr     L9B32                           ; 8673 20 32 9B                  2.
+	.byte	"4."
+	.byte	$02
+	Inverse	"A"
+	.byte	"ccess DOS 2",$9B
         and     $2E,x                           ; 8676 35 2E                    5.
         .byte   $02                             ; 8678 02                       .
         cld                                     ; 8679 D8                       .
