@@ -4050,26 +4050,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"Some DOS commands are stored on the",$9B
 	.byte	"DOS disk and are loaded into the",$9B
 	.byte	"computer when selected.",$9B,$9B
-        .byte   $54                             ; 860D 54                       T
-        pla                                     ; 860E 68                       h
-        adc     $73,x                           ; 860F 75 73                    us
-        bit     L6B20                           ; 8611 2C 20 6B                 , k
-        adc     $65                             ; 8614 65 65                    ee
-        bvs     L8638                           ; 8616 70 20                    p 
-        .byte   $44                             ; 8618 44                       D
-        .byte   $4F                             ; 8619 4F                       O
-        .byte   $53                             ; 861A 53                       S
-        jsr     L6964                           ; 861B 20 64 69                  di
-        .byte   $73                             ; 861E 73                       s
-        .byte   $6B                             ; 861F 6B                       k
-	.byte	" in"
-        jsr     L7264                           ; 8623 20 64 72                  dr
-        adc     #$76                            ; 8626 69 76                    iv
-        adc     $20                             ; 8628 65 20                    e 
-        .byte   $31                             ; 862A 31                       1
-	.byte	" wh"
-        adc     $6E                             ; 862E 65 6E                    en
-        .byte   $9B                             ; 8630 9B                       .
+	.byte	"Thus, keep DOS disk in drive 1 when",$9B
         .byte   $73                             ; 8631 73                       s
         adc     $6C                             ; 8632 65 6C                    el
         adc     $63                             ; 8634 65 63                    ec
