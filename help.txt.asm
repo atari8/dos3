@@ -4051,14 +4051,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"DOS disk and are loaded into the",$9B
 	.byte	"computer when selected.",$9B,$9B
 	.byte	"Thus, keep DOS disk in drive 1 when",$9B
-        .byte   $73                             ; 8631 73                       s
-        adc     $6C                             ; 8632 65 6C                    el
-        adc     $63                             ; 8634 65 63                    ec
-        .byte   $74                             ; 8636 74                       t
-        .byte   $69                             ; 8637 69                       i
-L8638:  ror     $3A67                           ; 8638 6E 67 3A                 ng:
-        .byte   $9B                             ; 863B 9B                       .
-        .byte   $9B                             ; 863C 9B                       .
+	.byte	"selecting:",$9B,$9B
         and     ($2E),y                         ; 863D 31 2E                    1.
         .byte   $02                             ; 863F 02                       .
         .byte   $C3                             ; 8640 C3                       .
