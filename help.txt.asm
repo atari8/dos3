@@ -4041,61 +4041,9 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"DOS prompts you to supply the data",$9B
 	.byte	"needed to execute a command.  When",$9B
 	.byte	"response is complete, press RETURN.",$9B,$9B
-        .byte   $32                             ; 84D8 32                       2
-        rol     L5420                           ; 84D9 2E 20 54                 . T
-        .byte   $6F                             ; 84DC 6F                       o
-        jsr     L6567                           ; 84DD 20 67 65                  ge
-        .byte   $74                             ; 84E0 74                       t
-        jsr     L6548                           ; 84E1 20 48 65                  He
-        jmp     (L2070)                         ; 84E4 6C 70 20                 lp 
-
-; ----------------------------------------------------------------------------
-        .byte   $6F                             ; 84E7 6F                       o
-	.byte	"n a"
-        ror     L2079                           ; 84EB 6E 79 20                 ny 
-        .byte   $44                             ; 84EE 44                       D
-        .byte   $4F                             ; 84EF 4F                       O
-        .byte   $53                             ; 84F0 53                       S
-	.byte	" function,",$9B
-        jsr     L2020                           ; 84FC 20 20 20                    
-        bvs     L8573                           ; 84FF 70 72                    pr
-        adc     $73                             ; 8501 65 73                    es
-        .byte   $73                             ; 8503 73                       s
-        jsr     L5441                           ; 8504 20 41 54                  AT
-        eor     ($52,x)                         ; 8507 41 52                    AR
-        eor     #$20                            ; 8509 49 20                    I 
-        .byte   $6F                             ; 850B 6F                       o
-        .byte   $72                             ; 850C 72                       r
-        jsr     L4548                           ; 850D 20 48 45                  HE
-        jmp     L2050                           ; 8510 4C 50 20                 LP 
-
-; ----------------------------------------------------------------------------
-        .byte   $6B                             ; 8513 6B                       k
-        adc     $79                             ; 8514 65 79                    ey
-	.byte	" in"
-        .byte   $73                             ; 8519 73                       s
-        .byte   $74                             ; 851A 74                       t
-        adc     $61                             ; 851B 65 61                    ea
-        .byte   $64                             ; 851D 64                       d
-        .byte   $9B                             ; 851E 9B                       .
-        jsr     L2020                           ; 851F 20 20 20                    
-        .byte   $6F                             ; 8522 6F                       o
-        ror     $20                             ; 8523 66 20                    f 
-        .byte   $74                             ; 8525 74                       t
-        .byte   $79                             ; 8526 79                       y
-L8527:  bvs     L8592                           ; 8527 70 69                    pi
-        ror     $2067                           ; 8529 6E 67 20                 ng 
-        adc     #$6E                            ; 852C 69 6E                    in
-        jsr     L6572                           ; 852E 20 72 65                  re
-        adc     ($75),y                         ; 8531 71 75                    qu
-        adc     $73                             ; 8533 65 73                    es
-        .byte   $74                             ; 8535 74                       t
-        adc     $64                             ; 8536 65 64                    ed
-        jsr     L6164                           ; 8538 20 64 61                  da
-        .byte   $74                             ; 853B 74                       t
-        adc     ($2E,x)                         ; 853C 61 2E                    a.
-        .byte   $9B                             ; 853E 9B                       .
-        .byte   $9B                             ; 853F 9B                       .
+	.byte	"2. To get Help on any DOS function,",$9B
+	.byte	"   press ATARI or HELP key instead",$9B
+	.byte	"   of typing in requested data.",$9B,$9B
 	.byte	"3. To break out of any DOS function,",$9B
         jsr     L2020                           ; 8565 20 20 20                    
         bvs     L85DC                           ; 8568 70 72                    pr
