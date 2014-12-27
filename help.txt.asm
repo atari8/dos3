@@ -4995,46 +4995,12 @@ L897A:  adc     #$76                            ; 897A 69 76                    
         jsr     L6F79                           ; 89A1 20 79 6F                  yo
 L89A4:  adc     $9B,x                           ; 89A4 75 9B                    u.
 	.byte	"if you want to act on all files:",$9B
-        ldy     $F5E6,x                         ; 89C7 BC E6 F5                 ...
-        inc     $F4E3                           ; 89CA EE E3 F4                 ...
-        sbc     #$EF                            ; 89CD E9 EF                    ..
-        inc     $A0BE                           ; 89CF EE BE A0                 ...
-        sbc     ($EC,x)                         ; 89D2 E1 EC                    ..
-        cpx     $F3A0                           ; 89D4 EC A0 F3                 ...
-	.byte	$F0,$E5
-        .byte   $E3                             ; 89D9 E3                       .
-        sbc     #$E6                            ; 89DA E9 E6                    ..
-        sbc     #$E5                            ; 89DC E9 E5                    ..
-        cpx     $A0                             ; 89DE E4 A0                    ..
-        inc     $E9                             ; 89E0 E6 E9                    ..
-        cpx     $F3E5                           ; 89E2 EC E5 F3                 ...
-        ldy     #$A8                            ; 89E5 A0 A8                    ..
-        cmp     $CEAF,y                         ; 89E7 D9 AF CE                 ...
-        lda     #$BF                            ; 89EA A9 BF                    ..
-        .byte   $9B                             ; 89EC 9B                       .
-        .byte   $9B                             ; 89ED 9B                       .
+	Inverse	"<function> all specified files (Y/N)?"
+	.byte	$9B,$9B
 	.byte	"Press Y to process all files auto-",$9B
 	.byte	"matically.  Press N or RETURN to",$9B
 	.byte	"process files one at a time.",$9B
-        .byte   $47                             ; 8A4F 47                       G
-        adc     $6E                             ; 8A50 65 6E                    en
-        adc     $72                             ; 8A52 65 72                    er
-        adc     ($6C,x)                         ; 8A54 61 6C                    al
-        jsr     L6E49                           ; 8A56 20 49 6E                  In
-        ror     $6F                             ; 8A59 66 6F                    fo
-        .byte   $72                             ; 8A5B 72                       r
-        adc     L7461                           ; 8A5C 6D 61 74                 mat
-        adc     #$6F                            ; 8A5F 69 6F                    io
-        .byte   $6E                             ; 8A61 6E                       n
-L8A62:  jsr     L2020                           ; 8A62 20 20 20                    
-        jsr     L2020                           ; 8A65 20 20 20                    
-        jsr     L2020                           ; 8A68 20 20 20                    
-        jsr     L2020                           ; 8A6B 20 20 20                    
-        and     $20,x                           ; 8A6E 35 20                    5 
-        .byte   $6F                             ; 8A70 6F                       o
-        ror     $20                             ; 8A71 66 20                    f 
-        rol     $9B,x                           ; 8A73 36 9B                    6.
-        .byte   $9B                             ; 8A75 9B                       .
+	.byte	"General Information            5 of 6",$9B,$9B
 	.byte	"As noted in the previous screens,",$9B
 	.byte	"the RETURN key is used:",$9B,$9B
 	.byte	"   (a) to signal the end of your",$9B
