@@ -4275,25 +4275,7 @@ L8876:  sbc     #$EE                            ; 8876 E9 EE                    
         .byte   $4F                             ; 88F7 4F                       O
         .byte   $53                             ; 88F8 53                       S
         .byte   $9B                             ; 88F9 9B                       .
-	.byte	"picks"
-	.byte	" th"
-        adc     $73                             ; 8902 65 73                    es
-        adc     $20                             ; 8904 65 20                    e 
-	.byte	"pr"
-        adc     $73                             ; 8908 65 73                    es
-        adc     $74                             ; 890A 65 74                    et
-        jsr     L6176                           ; 890C 20 76 61                  va
-        jmp     (L6575)                         ; 890F 6C 75 65                 lue
-
-; ----------------------------------------------------------------------------
-        .byte   $73                             ; 8912 73                       s
-        jsr     L6428                           ; 8913 20 28 64                  (d
-        adc     $66                             ; 8916 65 66                    ef
-        adc     ($75,x)                         ; 8918 61 75                    au
-        jmp     (L7374)                         ; 891A 6C 74 73                 lts
-
-; ----------------------------------------------------------------------------
-        and     #$9B                            ; 891D 29 9B                    ).
+	.byte	"picks these preset values (defaults)",$9B
 	.byte	"for you when you press RETURN.",$9B,$9B
 	.byte	"The default filespec is D1:*.* (all",$9B
 	.byte	"files on the disk in drive 1).",$9B,$9B
