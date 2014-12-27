@@ -4246,13 +4246,7 @@ L8876:  sbc     #$EE                            ; 8876 E9 EE                    
         ror     $20                             ; 88AF 66 20                    f 
         rol     $9B,x                           ; 88B1 36 9B                    6.
         .byte   $9B                             ; 88B3 9B                       .
-        eor     ($6E,x)                         ; 88B4 41 6E                    An
-        .byte   $73                             ; 88B6 73                       s
-        .byte   $77                             ; 88B7 77                       w
-        adc     $72                             ; 88B8 65 72                    er
-        .byte   $73                             ; 88BA 73                       s
-        jsr     L6F74                           ; 88BB 20 74 6F                  to
-	.byte	" prompts sometimes appear",$9B
+	.byte	"Answers to prompts sometimes appear",$9B
 	.byte	"highlighted (Drive number?"
 	Inverse	"1"
 	.byte	"). DOS",$9B
