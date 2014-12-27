@@ -4068,20 +4068,14 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	$02
 	Inverse	"A"
 	.byte	"ccess DOS 2",$9B
-        and     $2E,x                           ; 8676 35 2E                    5.
-        .byte   $02                             ; 8678 02                       .
-        cld                                     ; 8679 D8                       .
-        and     L7375                           ; 867A 2D 75 73                 -us
-        adc     $72                             ; 867D 65 72                    er
-        and     L6564                           ; 867F 2D 64 65                 -de
-        ror     $69                             ; 8682 66 69                    fi
-        ror     L6465                           ; 8684 6E 65 64                 ned
-        .byte   $9B                             ; 8687 9B                       .
-        rol     $2E,x                           ; 8688 36 2E                    6.
-        .byte   $02                             ; 868A 02                       .
-        iny                                     ; 868B C8                       .
-        adc     $6C                             ; 868C 65 6C                    el
-	.byte	"p",$9B,$9B
+	.byte	"5."
+	.byte	$02
+	Inverse	"X"
+	.byte	"-user-defined",$9B
+	.byte	"6."
+	.byte	$02
+	Inverse	"H"
+	.byte	"elp",$9B,$9B
         .byte   $54                             ; 8691 54                       T
         pla                                     ; 8692 68                       h
         adc     $73                             ; 8693 65 73                    es
