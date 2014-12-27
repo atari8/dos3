@@ -209,18 +209,7 @@ L5EA7:  ora     ($FF,x)                         ; 5EA7 01 FF                    
 	.byte	"Press Y to append",$9B
 	.byte	"   (join) two or more files.  If you",$9B
 	.byte	"   press N or RETURN, DOS will copy",$9B
-        jsr     L2020                           ; 6046 20 20 20                    
-        .byte   $77                             ; 6049 77                       w
-        adc     #$74                            ; 604A 69 74                    it
-        pla                                     ; 604C 68                       h
-        .byte   $6F                             ; 604D 6F                       o
-        adc     $74,x                           ; 604E 75 74                    ut
-        jsr     L7061                           ; 6050 20 61 70                  ap
-        bvs     L60BA                           ; 6053 70 65                    pe
-        ror     L6964                           ; 6055 6E 64 69                 ndi
-        ror     $2E67                           ; 6058 6E 67 2E                 ng.
-        .byte   $9B                             ; 605B 9B                       .
-        .byte   $9B                             ; 605C 9B                       .
+	.byte	"   without appending.",$9B,$9B
 	.byte	"You can COPY or APPEND using one or",$9B
 	.byte	"two disks and one or two drives.",$9B
 	.byte	$02
