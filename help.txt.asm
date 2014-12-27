@@ -3726,35 +3726,8 @@ L8017:  dec     $CD                             ; 8017 C6 CD                    
 	.byte	"   lets you increase usable memory.",$9B
 	.byte	"   Press Y to modify; press N or",$9B
 	.byte	"   RETURN to bypass modification.",$9B,$9B
-        eor     #$66                            ; 812F 49 66                    If
-        jsr     L6F79                           ; 8131 20 79 6F                  yo
-        adc     $20,x                           ; 8134 75 20                    u 
-        bvs     L81AA                           ; 8136 70 72                    pr
-        adc     $73                             ; 8138 65 73                    es
-        .byte   $73                             ; 813A 73                       s
-        jsr     L2059                           ; 813B 20 59 20                  Y 
-        ror     $6F                             ; 813E 66 6F                    fo
-        .byte   $72                             ; 8140 72                       r
-        jsr     L7453                           ; 8141 20 53 74                  St
-        adc     $70                             ; 8144 65 70                    ep
-        jsr     L2C35                           ; 8146 20 35 2C                  5,
-	.byte	" answer:",$9B
-	.byte	"  a"
-        and     #$20                            ; 8155 29 20                    ) 
-        .byte   $53                             ; 8157 53                       S
-        .byte   $74                             ; 8158 74                       t
-        adc     ($72,x)                         ; 8159 61 72                    ar
-        .byte   $74                             ; 815B 74                       t
-        jsr     L6461                           ; 815C 20 61 64                  ad
-        .byte   $64                             ; 815F 64                       d
-        .byte   $72                             ; 8160 72                       r
-        .byte   $65                             ; 8161 65                       e
-L8162:  .byte   $73                             ; 8162 73                       s
-        .byte   $73                             ; 8163 73                       s
-        jsr     L666F                           ; 8164 20 6F 66                  of
-        jsr     L4D46                           ; 8167 20 46 4D                  FM
-        .byte   $53                             ; 816A 53                       S
-	.byte	" buffers?",$9B
+	.byte	"If you press Y for Step 5, answer:",$9B
+	.byte	"  a) Start address of FMS buffers?",$9B
 L8175:  jsr     L6220                           ; 8175 20 20 62                   b
         and     #$20                            ; 8178 29 20                    ) 
         lsr     L6D75                           ; 817A 4E 75 6D                 Num
