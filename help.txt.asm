@@ -206,23 +206,10 @@ L5EAF:  cmp     ($F0,x)                         ; 5EAF C1 F0                    
 	.byte	"   it to another file.  PRESS C WITH",$9B
 	.byte	"   DOS DISK IN DRIVE 1.",$9B,$9B
 	.byte	"Note: Use COPY to write DOS files",$9B
-        .byte   $6F                             ; 5FBD 6F                       o
-        ror     L6F74                           ; 5FBE 6E 74 6F                 nto
-        jsr     L746F                           ; 5FC1 20 6F 74                  ot
-        pla                                     ; 5FC4 68                       h
-        adc     $72                             ; 5FC5 65 72                    er
-        jsr     L6964                           ; 5FC7 20 64 69                  di
-        .byte   $73                             ; 5FCA 73                       s
-        .byte   $6B                             ; 5FCB 6B                       k
-        .byte   $73                             ; 5FCC 73                       s
-        jsr     L7361                           ; 5FCD 20 61 73                  as
-L5FD0:  jsr     L656E                           ; 5FD0 20 6E 65                  ne
-        adc     $64                             ; 5FD3 65 64                    ed
-        adc     $64                             ; 5FD5 65 64                    ed
-        rol     $9B9B                           ; 5FD7 2E 9B 9B                 ...
+	.byte	"onto other disks as needed.",$9B,$9B
         .byte   $32                             ; 5FDA 32                       2
         rol     $C102                           ; 5FDB 2E 02 C1                 ...
-        beq     L5FD0                           ; 5FDE F0 F0                    ..
+	.byte	$F0,$F0
         sbc     $EE                             ; 5FE0 E5 EE                    ..
         cpx     $A0                             ; 5FE2 E4 A0                    ..
         tay                                     ; 5FE4 A8                       .
@@ -5340,65 +5327,14 @@ L8BD5:  .byte   $44                             ; 8BD5 44                       
         .byte   $74                             ; 8D98 74                       t
         adc     $72                             ; 8D99 65 72                    er
         .byte   $9B                             ; 8D9B 9B                       .
-        jsr     L2020                           ; 8D9C 20 20 20                    
-        .byte	"pr"
-        adc     $63                             ; 8DA1 65 63                    ec
-        adc     $65                             ; 8DA3 65 65                    ee
-        .byte   $64                             ; 8DA5 64                       d
-        adc     #$6E                            ; 8DA6 69 6E                    in
-        .byte   $67                             ; 8DA8 67                       g
-	.byte	" th"
-        adc     $20                             ; 8DAC 65 20                    e 
-        .byte   $63                             ; 8DAE 63                       c
-        adc     $72,x                           ; 8DAF 75 72                    ur
-        .byte   $73                             ; 8DB1 73                       s
-        .byte   $6F                             ; 8DB2 6F                       o
-        .byte   $72                             ; 8DB3 72                       r
-        rol     $9B9B                           ; 8DB4 2E 9B 9B                 ...
-        .byte   $34                             ; 8DB7 34                       4
-        rol     $C302                           ; 8DB8 2E 02 C3                 ...
-        .byte   $D4                             ; 8DBB D4                       .
-        .byte   $D2                             ; 8DBC D2                       .
-        cpy     $ADAD                           ; 8DBD CC AD AD                 ...
-        ldx     $C3AF,y                         ; 8DC0 BE AF C3                 ...
-        .byte   $D4                             ; 8DC3 D4                       .
-L8DC4:  .byte   $D2                             ; 8DC4 D2                       .
-        cpy     $ADBC                           ; 8DC5 CC BC AD                 ...
-        lda     L6D16                           ; 8DC8 AD 16 6D                 ..m
-        .byte   $6F                             ; 8DCB 6F                       o
-        ror     $65,x                           ; 8DCC 76 65                    ve
-	.byte	" th"
-        adc     $20                             ; 8DD1 65 20                    e 
-        .byte   $63                             ; 8DD3 63                       c
-        adc     $72,x                           ; 8DD4 75 72                    ur
-        .byte   $73                             ; 8DD6 73                       s
-        .byte   $6F                             ; 8DD7 6F                       o
-        .byte   $72                             ; 8DD8 72                       r
-        .byte   $9B                             ; 8DD9 9B                       .
-        jsr     L2020                           ; 8DDA 20 20 20                    
-        .byte   $77                             ; 8DDD 77                       w
-        adc     #$74                            ; 8DDE 69 74                    it
-        pla                                     ; 8DE0 68                       h
-        .byte   $6F                             ; 8DE1 6F                       o
-        adc     $74,x                           ; 8DE2 75 74                    ut
-        jsr     L7265                           ; 8DE4 20 65 72                  er
-        adc     ($73,x)                         ; 8DE7 61 73                    as
-        adc     #$6E                            ; 8DE9 69 6E                    in
-        .byte   $67                             ; 8DEB 67                       g
-	.byte	" an"
-        adc     L6320,y                         ; 8DEF 79 20 63                 y c
-        pla                                     ; 8DF2 68                       h
-        adc     ($72,x)                         ; 8DF3 61 72                    ar
-        adc     ($63,x)                         ; 8DF5 61 63                    ac
-        .byte   $74                             ; 8DF7 74                       t
-        adc     $72                             ; 8DF8 65 72                    er
-        .byte   $73                             ; 8DFA 73                       s
-        rol     $389B                           ; 8DFB 2E 9B 38                 ..8
-        .byte   $33                             ; 8DFE 33                       3
-        .byte	"08"
-        .byte   $33                             ; 8E01 33                       3
-        and     ($56),y                         ; 8E02 31 56                    1V
-L8E04:  .byte   $33                             ; 8E04 33                       3
+	.byte	"   preceeding the cursor.",$9B,$9B
+	.byte	"4."
+	.byte	$02
+	Inverse	"CTRL-->/CTRL<--"
+	.byte	$16
+	.byte	"move the cursor",$9B
+	.byte	"   without erasing any characters.",$9B
+	.byte	"830831V3"
 
 ; ----------------------------------------------------------------------------
 
