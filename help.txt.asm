@@ -4253,28 +4253,9 @@ L8876:  sbc     #$EE                            ; 8876 E9 EE                    
         .byte   $73                             ; 88BA 73                       s
         jsr     L6F74                           ; 88BB 20 74 6F                  to
 	.byte	" prompts sometimes appear",$9B
-        pla                                     ; 88D8 68                       h
-        adc     #$67                            ; 88D9 69 67                    ig
-        pla                                     ; 88DB 68                       h
-        jmp     (L6769)                         ; 88DC 6C 69 67                 lig
-
-; ----------------------------------------------------------------------------
-        pla                                     ; 88DF 68                       h
-        .byte   $74                             ; 88E0 74                       t
-        adc     $64                             ; 88E1 65 64                    ed
-        jsr     L4428                           ; 88E3 20 28 44                  (D
-        .byte   $72                             ; 88E6 72                       r
-        adc     #$76                            ; 88E7 69 76                    iv
-        adc     $20                             ; 88E9 65 20                    e 
-        ror     L6D75                           ; 88EB 6E 75 6D                 num
-        .byte   $62                             ; 88EE 62                       b
-        adc     $72                             ; 88EF 65 72                    er
-        .byte   $3F                             ; 88F1 3F                       ?
-        lda     ($29),y                         ; 88F2 B1 29                    .)
-        rol     L4420                           ; 88F4 2E 20 44                 . D
-        .byte   $4F                             ; 88F7 4F                       O
-        .byte   $53                             ; 88F8 53                       S
-        .byte   $9B                             ; 88F9 9B                       .
+	.byte	"highlighted (Drive number?"
+	Inverse	"1"
+	.byte	"). DOS",$9B
 	.byte	"picks these preset values (defaults)",$9B
 	.byte	"for you when you press RETURN.",$9B,$9B
 	.byte	"The default filespec is D1:*.* (all",$9B
