@@ -3728,22 +3728,7 @@ L8017:  dec     $CD                             ; 8017 C6 CD                    
 	.byte	"   RETURN to bypass modification.",$9B,$9B
 	.byte	"If you press Y for Step 5, answer:",$9B
 	.byte	"  a) Start address of FMS buffers?",$9B
-L8175:  jsr     L6220                           ; 8175 20 20 62                   b
-        and     #$20                            ; 8178 29 20                    ) 
-        lsr     L6D75                           ; 817A 4E 75 6D                 Num
-        .byte   $62                             ; 817D 62                       b
-L817E:  adc     $72                             ; 817E 65 72                    er
-        jsr     L666F                           ; 8180 20 6F 66                  of
-        jsr     L4D46                           ; 8183 20 46 4D                  FM
-        .byte   $53                             ; 8186 53                       S
-	.byte	" bu"
-        ror     $66                             ; 818A 66 66                    ff
-        adc     $72                             ; 818C 65 72                    er
-        .byte   $73                             ; 818E 73                       s
-        jsr     L3228                           ; 818F 20 28 32                  (2
-        and     $3631                           ; 8192 2D 31 36                 -16
-        and     #$3F                            ; 8195 29 3F                    )?
-        .byte   $9B                             ; 8197 9B                       .
+	.byte	"  b) Number of FMS buffers (2-16)?",$9B
         jsr     L6320                           ; 8198 20 20 63                   c
         and     #$20                            ; 819B 29 20                    ) 
         lsr     $65,x                           ; 819D 56 65                    Ve
