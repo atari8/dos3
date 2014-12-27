@@ -3902,29 +3902,7 @@ L8213:  .byte   $6F                             ; 8213 6F                       
 	.byte	"   to inserted cartridge.",$9B,$9B
 	.byte	"   (a)If BASIC cart. is inserted, the",$9B
 	.byte	"      screen displays a READY prompt.",$9B,$9B
-        jsr     L2020                           ; 82B7 20 20 20                    
-        plp                                     ; 82BA 28                       (
-        .byte   $62                             ; 82BB 62                       b
-        and     #$49                            ; 82BC 29 49                    )I
-        ror     $20                             ; 82BE 66 20                    f 
-        eor     ($53,x)                         ; 82C0 41 53                    AS
-        .byte   $53                             ; 82C2 53                       S
-        eor     $4D                             ; 82C3 45 4D                    EM
-        .byte   $42                             ; 82C5 42                       B
-        jmp     L5245                           ; 82C6 4C 45 52                 LER
-
-; ----------------------------------------------------------------------------
-        jsr     L4445                           ; 82C9 20 45 44                  ED
-        eor     #$54                            ; 82CC 49 54                    IT
-        .byte   $4F                             ; 82CE 4F                       O
-        .byte   $52                             ; 82CF 52                       R
-        jsr     L7369                           ; 82D0 20 69 73                  is
-	.byte	" in"
-        .byte   $73                             ; 82D6 73                       s
-        adc     $72                             ; 82D7 65 72                    er
-        .byte   $74                             ; 82D9 74                       t
-        adc     $64                             ; 82DA 65 64                    ed
-        .byte   $9B                             ; 82DC 9B                       .
+	.byte	"   (b)If ASSEMBLER EDITOR is inserted",$9B
 	.byte	"      screen displays an EDIT prompt.",$9B,$9B
 	.byte	"   (c)If you have not inserted cart.,",$9B
 	.byte	"      screen displays NO CARTRIDGE.",$9B,$9B
