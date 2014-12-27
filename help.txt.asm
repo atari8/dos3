@@ -4312,29 +4312,7 @@ L8876:  sbc     #$EE                            ; 8876 E9 EE                    
 L893A:  .byte   $52                             ; 893A 52                       R
         lsr     $9B2E                           ; 893B 4E 2E 9B                 N..
         .byte   $9B                             ; 893E 9B                       .
-        .byte   $54                             ; 893F 54                       T
-        pla                                     ; 8940 68                       h
-        adc     $20                             ; 8941 65 20                    e 
-        .byte   $64                             ; 8943 64                       d
-        adc     $66                             ; 8944 65 66                    ef
-        adc     ($75,x)                         ; 8946 61 75                    au
-        jmp     (L2074)                         ; 8948 6C 74 20                 lt 
-
-; ----------------------------------------------------------------------------
-        ror     $69                             ; 894B 66 69                    fi
-        jmp     (L7365)                         ; 894D 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-	.byte	"pe"
-        .byte   $63                             ; 8952 63                       c
-        jsr     L7369                           ; 8953 20 69 73                  is
-        jsr     L3144                           ; 8956 20 44 31                  D1
-        .byte   $3A                             ; 8959 3A                       :
-        rol     a                               ; 895A 2A                       *
-        rol     $202A                           ; 895B 2E 2A 20                 .* 
-        plp                                     ; 895E 28                       (
-        adc     ($6C,x)                         ; 895F 61 6C                    al
-	.byte	"l",$9B
+	.byte	"The default filespec is D1:*.* (all",$9B
 	.byte	"files on the disk in drive 1).",$9B,$9B
 	.byte	"When using wildcards, DOS asks you",$9B
 	.byte	"if you want to act on all files:",$9B
