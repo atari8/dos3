@@ -6,6 +6,15 @@
 
         .setcpu "6502"
 
+	.macro  Inverse       Arg
+		.repeat .strlen(Arg), I
+			.scope
+				Ch = .strat(Arg, I)
+				.byte Ch | $80
+			.endscope
+		.endrep
+	.endmacro
+
 ; ----------------------------------------------------------------------------
 L0220           := $0220
 L0228           := $0228
@@ -5339,55 +5348,12 @@ L8BD5:  .byte   $44                             ; 8BD5 44                       
 	.byte	"ESC, and RETURN keys.  But there are",$9B
 	.byte	"four other special uses for the",$9B
 	.byte	"following keys:",$9B,$9B
-        and     ($2E),y                         ; 8CDC 31 2E                    1.
-        .byte   $02                             ; 8CDE 02                       .
-        .byte   $D3                             ; 8CDF D3                       .
-        iny                                     ; 8CE0 C8                       .
-        cmp     #$C6                            ; 8CE1 C9 C6                    ..
-        .byte   $D4                             ; 8CE3 D4                       .
-        lda     $CCC3                           ; 8CE4 AD C3 CC                 ...
-        cmp     $C1                             ; 8CE7 C5 C1                    ..
-        .byte   $D2                             ; 8CE9 D2                       .
-        asl     $63,x                           ; 8CEA 16 63                    .c
-        adc     ($75,x)                         ; 8CEC 61 75                    au
-        .byte   $73                             ; 8CEE 73                       s
-        adc     $73                             ; 8CEF 65 73                    es
-        jsr     L2061                           ; 8CF1 20 61 20                  a 
-        .byte   $44                             ; 8CF4 44                       D
-        .byte   $4F                             ; 8CF5 4F                       O
-        .byte   $53                             ; 8CF6 53                       S
-	.byte	" fu"
-        ror     L7463                           ; 8CFA 6E 63 74                 nct
-        adc     #$6F                            ; 8CFD 69 6F                    io
-        ror     L209B                           ; 8CFF 6E 9B 20                 n. 
-	.byte	"  t"
-        .byte   $6F                             ; 8D05 6F                       o
-        jsr     L6572                           ; 8D06 20 72 65                  re
-        .byte   $73                             ; 8D09 73                       s
-        .byte   $74                             ; 8D0A 74                       t
-        adc     ($72,x)                         ; 8D0B 61 72                    ar
-        .byte   $74                             ; 8D0D 74                       t
-        jsr     L7266                           ; 8D0E 20 66 72                  fr
-        .byte   $6F                             ; 8D11 6F                       o
-	.byte	"m t"
-        pla                                     ; 8D15 68                       h
-        adc     $20                             ; 8D16 65 20                    e 
-        ror     $69                             ; 8D18 66 69                    fi
-        .byte   $72                             ; 8D1A 72                       r
-        .byte   $73                             ; 8D1B 73                       s
-        .byte   $74                             ; 8D1C 74                       t
-	.byte	" pr"
-        .byte   $6F                             ; 8D20 6F                       o
-        adc     L7470                           ; 8D21 6D 70 74                 mpt
-        .byte   $9B                             ; 8D24 9B                       .
-        jsr     L2020                           ; 8D25 20 20 20                    
-        ror     $6F                             ; 8D28 66 6F                    fo
-        .byte   $72                             ; 8D2A 72                       r
-        jsr     L6164                           ; 8D2B 20 64 61                  da
-        .byte   $74                             ; 8D2E 74                       t
-        adc     ($2E,x)                         ; 8D2F 61 2E                    a.
-        .byte   $9B                             ; 8D31 9B                       .
-        .byte   $9B                             ; 8D32 9B                       .
+	.byte	"1.",$02
+	Inverse	"SHIFT-CLEAR"
+	.byte	$16
+	.byte	"causes a DOS function",$9B
+	.byte	"   to restart from the first prompt",$9B
+	.byte	"   for data.",$9B,$9B
         .byte   $32                             ; 8D33 32                       2
         rol     $D302                           ; 8D34 2E 02 D3                 ...
         iny                                     ; 8D37 C8                       .
