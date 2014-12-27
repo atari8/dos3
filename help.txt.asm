@@ -4046,24 +4046,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"   of typing in requested data.",$9B,$9B
 	.byte	"3. To break out of any DOS function,",$9B
 	.byte	"   press ESC key for the DOS menu.",$9B
-        .byte   $47                             ; 8588 47                       G
-        adc     $6E                             ; 8589 65 6E                    en
-        adc     $72                             ; 858B 65 72                    er
-        adc     ($6C,x)                         ; 858D 61 6C                    al
-        jsr     L6E49                           ; 858F 20 49 6E                  In
-L8592:  ror     $6F                             ; 8592 66 6F                    fo
-        .byte   $72                             ; 8594 72                       r
-	.byte	"mat"
-        adc     #$6F                            ; 8598 69 6F                    io
-        ror     L2020                           ; 859A 6E 20 20                 n  
-        jsr     L2020                           ; 859D 20 20 20                    
-        jsr     L2020                           ; 85A0 20 20 20                    
-        jsr     L2020                           ; 85A3 20 20 20                    
-        jsr     L2032                           ; 85A6 20 32 20                  2 
-        .byte   $6F                             ; 85A9 6F                       o
-        ror     $20                             ; 85AA 66 20                    f 
-        rol     $9B,x                           ; 85AC 36 9B                    6.
-        .byte   $9B                             ; 85AE 9B                       .
+	.byte	"General Information            2 of 6",$9B,$9B
 	.byte	"Some DOS commands are stored on the",$9B
         .byte   $44                             ; 85D3 44                       D
         .byte   $4F                             ; 85D4 4F                       O
