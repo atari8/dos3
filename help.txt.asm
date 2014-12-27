@@ -4081,12 +4081,9 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"memory in your computer.",$9B
 	.byte	"General Information            3 of 6",$9B,$9B
 	.byte	"DOS asks you for data such as:",$9B,$9B
-        and     ($2E),y                         ; 8734 31 2E                    1.
-        .byte   $02                             ; 8736 02                       .
-        dec     $E9                             ; 8737 C6 E9                    ..
-        cpx     $EEE5                           ; 8739 EC E5 EE                 ...
-        sbc     ($ED,x)                         ; 873C E1 ED                    ..
-        sbc     $BF                             ; 873E E5 BF                    ..
+	.byte	"1."
+	.byte	$02
+	Inverse	"Filename?"
 	.byte	$16
 	.byte	"The full name of your",$9B
 	.byte	"   file. (MYFILE.BAS)",$9B,$9B
