@@ -5065,69 +5065,11 @@ L8AA6:  jsr     L7369                           ; 8AA6 20 69 73                 
         jsr     L6F79                           ; 8ACC 20 79 6F                  yo
         adc     $72,x                           ; 8ACF 75 72                    ur
         .byte   $9B                             ; 8AD1 9B                       .
-        jsr     L2020                           ; 8AD2 20 20 20                    
-        jsr     L2020                           ; 8AD5 20 20 20                    
-        jsr     L6572                           ; 8AD8 20 72 65                  re
-        .byte   $73                             ; 8ADB 73                       s
-        bvs     L8B4D                           ; 8ADC 70 6F                    po
-        ror     L6573                           ; 8ADE 6E 73 65                 nse
-        jsr     L6F74                           ; 8AE1 20 74 6F                  to
-        jsr     L2061                           ; 8AE4 20 61 20                  a 
-        bvs     L8B5B                           ; 8AE7 70 72                    pr
-        .byte   $6F                             ; 8AE9 6F                       o
-        adc     L7470                           ; 8AEA 6D 70 74                 mpt
-	.byte	", and",$9B
+	.byte	"       response to a prompt, and",$9B
 	.byte	"   (b) to select the default value",$9B
-        jsr     L2020                           ; 8B16 20 20 20                    
-        jsr     L2020                           ; 8B19 20 20 20                    
-	.byte	" in"
-        jsr     L6572                           ; 8B1F 20 72 65                  re
-        .byte   $73                             ; 8B22 73                       s
-	.byte	"po"
-        ror     L6573                           ; 8B25 6E 73 65                 nse
-        jsr     L6F74                           ; 8B28 20 74 6F                  to
-        jsr     L2061                           ; 8B2B 20 61 20                  a 
-	.byte	"pr"
-        .byte   $6F                             ; 8B30 6F                       o
-        adc     L7470                           ; 8B31 6D 70 74                 mpt
-        rol     $9B9B                           ; 8B34 2E 9B 9B                 ...
-        .byte   $54                             ; 8B37 54                       T
-        pla                                     ; 8B38 68                       h
-        adc     $72                             ; 8B39 65 72                    er
-        adc     $20                             ; 8B3B 65 20                    e 
-        adc     ($72,x)                         ; 8B3D 61 72                    ar
-        adc     $20                             ; 8B3F 65 20                    e 
-        .byte   $74                             ; 8B41 74                       t
-        .byte   $77                             ; 8B42 77                       w
-        .byte   $6F                             ; 8B43 6F                       o
-        jsr     L6F6D                           ; 8B44 20 6D 6F                  mo
-        .byte   $72                             ; 8B47 72                       r
-        adc     $20                             ; 8B48 65 20                    e 
-	.byte	"po"
-        .byte   $69                             ; 8B4C 69                       i
-L8B4D:  ror     L7374                           ; 8B4D 6E 74 73                 nts
-        jsr     L6F74                           ; 8B50 20 74 6F                  to
-        jsr     L6F6E                           ; 8B53 20 6E 6F                  no
-        .byte   $74                             ; 8B56 74                       t
-        adc     $3A                             ; 8B57 65 3A                    e:
-        .byte   $9B                             ; 8B59 9B                       .
-        .byte   $9B                             ; 8B5A 9B                       .
-L8B5B:  and     ($2E),y                         ; 8B5B 31 2E                    1.
-        jsr     L6857                           ; 8B5D 20 57 68                  Wh
-        adc     $6E                             ; 8B60 65 6E                    en
-	.byte	" in"
-        jsr     L6F64                           ; 8B65 20 64 6F                  do
-        adc     $62,x                           ; 8B68 75 62                    ub
-        .byte   $74                             ; 8B6A 74                       t
-        bit     L5220                           ; 8B6B 2C 20 52                 , R
-        eor     $54                             ; 8B6E 45 54                    ET
-        eor     $52,x                           ; 8B70 55 52                    UR
-        lsr     L6920                           ; 8B72 4E 20 69                 N i
-        .byte   $73                             ; 8B75 73                       s
-        jsr     L6173                           ; 8B76 20 73 61                  sa
-        ror     $65                             ; 8B79 66 65                    fe
-        rol     L4920                           ; 8B7B 2E 20 49                 . I
-        ror     $9B                             ; 8B7E 66 9B                    f.
+	.byte	"       in response to a prompt.",$9B,$9B
+	.byte	"There are two more points to note:",$9B,$9B
+	.byte	"1. When in doubt, RETURN is safe. If",$9B
 	.byte	"   you answer RETURN to a prompt, DOS",$9B
 	.byte	"   never does anything to your files.",$9B,$9B
 	.byte	"2. When DOS asks"
