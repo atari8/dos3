@@ -4011,27 +4011,8 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"low you to store,",$9B
 	.byte	"retrieve, and manage your disk files.",$9B,$9B
 	.byte	"1. To select a menu function, press",$9B
-        jsr     L2020                           ; 8425 20 20 20                    
-        .byte   $74                             ; 8428 74                       t
-        pla                                     ; 8429 68                       h
-        adc     $20                             ; 842A 65 20                    e 
-        ror     $69                             ; 842C 66 69                    fi
-        .byte   $72                             ; 842E 72                       r
-        .byte   $73                             ; 842F 73                       s
-        .byte   $74                             ; 8430 74                       t
-        jsr     L656C                           ; 8431 20 6C 65                  le
-        .byte   $74                             ; 8434 74                       t
-        .byte   $74                             ; 8435 74                       t
-        adc     $72                             ; 8436 65 72                    er
-        jsr     L666F                           ; 8438 20 6F 66                  of
-	.byte	" th"
-        adc     $20                             ; 843E 65 20                    e 
-        .byte   $63                             ; 8440 63                       c
-        .byte   $6F                             ; 8441 6F                       o
-        adc     L616D                           ; 8442 6D 6D 61                 mma
-        ror     $9B64                           ; 8445 6E 64 9B                 nd.
-        jsr     L2020                           ; 8448 20 20 20                    
-	.byte	"name. ("
+	.byte	"   the first letter of the command",$9B
+	.byte	"   name. ("
 	.byte	$02
 	Inverse	"E"
 	.byte	"rase ... press"
