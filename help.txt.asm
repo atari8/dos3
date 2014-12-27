@@ -3899,23 +3899,7 @@ L8213:  .byte   $6F                             ; 8213 6F                       
         jsr     L6573                           ; 8214 20 73 65                  se
         .byte	"lect function.  TO",$9B
 	.byte	"   CARTRIDGE passes control from DOS",$9B
-        jsr     L2020                           ; 824F 20 20 20                    
-        .byte   $74                             ; 8252 74                       t
-        .byte   $6F                             ; 8253 6F                       o
-	.byte	" in"
-        .byte   $73                             ; 8257 73                       s
-        adc     $72                             ; 8258 65 72                    er
-        .byte   $74                             ; 825A 74                       t
-        adc     $64                             ; 825B 65 64                    ed
-        jsr     L6163                           ; 825D 20 63 61                  ca
-        .byte   $72                             ; 8260 72                       r
-        .byte   $74                             ; 8261 74                       t
-        .byte   $72                             ; 8262 72                       r
-        adc     #$64                            ; 8263 69 64                    id
-        .byte   $67                             ; 8265 67                       g
-        adc     $2E                             ; 8266 65 2E                    e.
-        .byte   $9B                             ; 8268 9B                       .
-        .byte   $9B                             ; 8269 9B                       .
+	.byte	"   to inserted cartridge.",$9B,$9B
         jsr     L2020                           ; 826A 20 20 20                    
         plp                                     ; 826D 28                       (
         adc     ($29,x)                         ; 826E 61 29                    a)
