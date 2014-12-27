@@ -4275,14 +4275,11 @@ L8876:  sbc     #$EE                            ; 8876 E9 EE                    
         .byte   $4F                             ; 88F7 4F                       O
         .byte   $53                             ; 88F8 53                       S
         .byte   $9B                             ; 88F9 9B                       .
-        bvs     L8965                           ; 88FA 70 69                    pi
-        .byte   $63                             ; 88FC 63                       c
-        .byte   $6B                             ; 88FD 6B                       k
-        .byte   $73                             ; 88FE 73                       s
+	.byte	"picks"
 	.byte	" th"
         adc     $73                             ; 8902 65 73                    es
         adc     $20                             ; 8904 65 20                    e 
-        bvs     L897A                           ; 8906 70 72                    pr
+	.byte	"pr"
         adc     $73                             ; 8908 65 73                    es
         adc     $74                             ; 890A 65 74                    et
         jsr     L6176                           ; 890C 20 76 61                  va
@@ -4337,24 +4334,8 @@ L893A:  .byte   $52                             ; 893A 52                       
         rol     $202A                           ; 895B 2E 2A 20                 .* 
         plp                                     ; 895E 28                       (
         adc     ($6C,x)                         ; 895F 61 6C                    al
-        jmp     (L669B)                         ; 8961 6C 9B 66                 l.f
-
-; ----------------------------------------------------------------------------
-        .byte   $69                             ; 8964 69                       i
-L8965:  jmp     (L7365)                         ; 8965 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-	.byte	" on th"
-        adc     $20                             ; 896E 65 20                    e 
-        .byte   $64                             ; 8970 64                       d
-        adc     #$73                            ; 8971 69 73                    is
-        .byte   $6B                             ; 8973 6B                       k
-	.byte	" in"
-        jsr     L7264                           ; 8977 20 64 72                  dr
-L897A:  adc     #$76                            ; 897A 69 76                    iv
-        adc     $20                             ; 897C 65 20                    e 
-        and     ($29),y                         ; 897E 31 29                    1)
-        rol     $9B9B                           ; 8980 2E 9B 9B                 ...
+	.byte	"l",$9B
+	.byte	"files on the disk in drive 1).",$9B,$9B
 	.byte	"When using wildcards, DOS asks you",$9B
 	.byte	"if you want to act on all files:",$9B
 	Inverse	"<function> all specified files (Y/N)?"
