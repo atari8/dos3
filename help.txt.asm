@@ -3948,24 +3948,7 @@ L830E:  .byte   $6F                             ; 830E 6F                       
         .byte   $74                             ; 8326 74                       t
         rol     $9B2C                           ; 8327 2E 2C 9B                 .,.
 	.byte	"      screen displays NO CARTRIDGE.",$9B,$9B
-        .byte   $32                             ; 834F 32                       2
-        rol     L4920                           ; 8350 2E 20 49                 . I
-        ror     $20                             ; 8353 66 20                    f 
-	.byte	"you"
-        jsr     L6567                           ; 8358 20 67 65                  ge
-L835B:  .byte   $74                             ; 835B 74                       t
-        jsr     L656D                           ; 835C 20 6D 65                  me
-        .byte   $73                             ; 835F 73                       s
-        .byte   $73                             ; 8360 73                       s
-        adc     ($67,x)                         ; 8361 61 67                    ag
-        adc     $20                             ; 8363 65 20                    e 
-        plp                                     ; 8365 28                       (
-        .byte   $63                             ; 8366 63                       c
-        and     #$2C                            ; 8367 29 2C                    ),
-	.byte	" pr"
-        adc     $73                             ; 836C 65 73                    es
-        .byte   $73                             ; 836E 73                       s
-        .byte   $9B                             ; 836F 9B                       .
+	.byte	"2. If you get message (c), press",$9B
 	.byte	"   ESC to return to DOS menu.",$9B
 	.byte	"General Information            1 of 6",$9B,$9B
 	.byte	"The DOS commands allow you to store,",$9B
