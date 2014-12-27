@@ -1702,7 +1702,7 @@ L6E01:  .byte   $6F                             ; 6E01 6F                       
 L6E20:  jsr     L7265                           ; 6E20 20 65 72                  er
         adc     ($73,x)                         ; 6E23 61 73                    as
         adc     $20                             ; 6E25 65 20                    e 
-        bvc     L6E9B                           ; 6E27 50 72                    Pr
+	.byte	"Pr"
 L6E29:  .byte   $6F                             ; 6E29 6F                       o
         .byte   $74                             ; 6E2A 74                       t
         adc     $63                             ; 6E2B 65 63                    ec
@@ -1744,26 +1744,7 @@ L6E55:  .byte   $74                             ; 6E55 74                       
         cmp     #$CF                            ; 6E7F C9 CF                    ..
         dec     $16BA                           ; 6E81 CE BA 16                 ...
         .byte   $9B                             ; 6E84 9B                       .
-        jsr     L2020                           ; 6E85 20 20 20                    
-        eor     $52                             ; 6E88 45 52                    ER
-        eor     ($53,x)                         ; 6E8A 41 53                    AS
-        eor     $44                             ; 6E8C 45 44                    ED
-        jsr     L4946                           ; 6E8E 20 46 49                  FI
-        jmp     L5345                           ; 6E91 4C 45 53                 LES
-
-; ----------------------------------------------------------------------------
-        jsr     L4143                           ; 6E94 20 43 41                  CA
-        lsr     L4F4E                           ; 6E97 4E 4E 4F                 NNO
-        .byte   $54                             ; 6E9A 54                       T
-L6E9B:  jsr     L4542                           ; 6E9B 20 42 45                  BE
-        .byte   $20                             ; 6E9E 20                        
-        .byte   $52                             ; 6E9F 52                       R
-L6EA0:  eor     $43                             ; 6EA0 45 43                    EC
-        .byte   $4F                             ; 6EA2 4F                       O
-        lsr     $45,x                           ; 6EA3 56 45                    VE
-        .byte   $52                             ; 6EA5 52                       R
-        eor     $44                             ; 6EA6 45 44                    ED
-        rol     $9B9B                           ; 6EA8 2E 9B 9B                 ...
+	.byte	"   ERASED FILES CANNOT BE RECOVERED.",$9B,$9B
         .byte   $33                             ; 6EAB 33                       3
         rol     $C502                           ; 6EAC 2E 02 C5                 ...
         .byte   $F2                             ; 6EAF F2                       .
@@ -1771,7 +1752,7 @@ L6EA0:  eor     $43                             ; 6EA0 45 43                    
         sbc     $A0                             ; 6EB2 E5 A0                    ..
         sbc     ($EC,x)                         ; 6EB4 E1 EC                    ..
         cpx     $F3A0                           ; 6EB6 EC A0 F3                 ...
-        beq     L6EA0                           ; 6EB9 F0 E5                    ..
+	.byte	$F0,$E5
         .byte   $E3                             ; 6EBB E3                       .
         sbc     #$E6                            ; 6EBC E9 E6                    ..
         sbc     #$E5                            ; 6EBE E9 E5                    ..
@@ -3875,29 +3856,8 @@ L81AA:  .byte   $63                             ; 81AA 63                       
         sbc     #$E4                            ; 81E9 E9 E4                    ..
         .byte   $E7                             ; 81EB E7                       .
         sbc     $16                             ; 81EC E5 16                    ..
-        pha                                     ; 81EE 48                       H
-        adc     $6C                             ; 81EF 65 6C                    el
-        bvs     L8213                           ; 81F1 70 20                    p 
-        .byte   $53                             ; 81F3 53                       S
-        .byte   $63                             ; 81F4 63                       c
-        .byte   $72                             ; 81F5 72                       r
-        adc     $65                             ; 81F6 65 65                    ee
-        ror     L2020                           ; 81F8 6E 20 20                 n  
-        jsr     L2020                           ; 81FB 20 20 20                    
-        jsr     L2031                           ; 81FE 20 31 20                  1 
-        .byte   $6F                             ; 8201 6F                       o
-        ror     $20                             ; 8202 66 20                    f 
-        and     ($9B),y                         ; 8204 31 9B                    1.
-        .byte   $9B                             ; 8206 9B                       .
-        and     ($2E),y                         ; 8207 31 2E                    1.
-        jsr     L7250                           ; 8209 20 50 72                  Pr
-        adc     $73                             ; 820C 65 73                    es
-        .byte   $73                             ; 820E 73                       s
-        jsr     L2054                           ; 820F 20 54 20                  T 
-        .byte   $74                             ; 8212 74                       t
-L8213:  .byte   $6F                             ; 8213 6F                       o
-        jsr     L6573                           ; 8214 20 73 65                  se
-        .byte	"lect function.  TO",$9B
+	.byte	"Help Screen      1 of 1",$9B,$9B
+        .byte	"1. Press T to select function.  TO",$9B
 	.byte	"   CARTRIDGE passes control from DOS",$9B
 	.byte	"   to inserted cartridge.",$9B,$9B
 	.byte	"   (a)If BASIC cart. is inserted, the",$9B
