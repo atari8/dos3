@@ -4045,25 +4045,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"   press ATARI or HELP key instead",$9B
 	.byte	"   of typing in requested data.",$9B,$9B
 	.byte	"3. To break out of any DOS function,",$9B
-        jsr     L2020                           ; 8565 20 20 20                    
-        bvs     L85DC                           ; 8568 70 72                    pr
-        adc     $73                             ; 856A 65 73                    es
-        .byte   $73                             ; 856C 73                       s
-        jsr     L5345                           ; 856D 20 45 53                  ES
-        .byte   $43                             ; 8570 43                       C
-        .byte   $20                             ; 8571 20                        
-        .byte   $6B                             ; 8572 6B                       k
-L8573:  adc     $79                             ; 8573 65 79                    ey
-        jsr     L6F66                           ; 8575 20 66 6F                  fo
-        .byte   $72                             ; 8578 72                       r
-	.byte	" th"
-        adc     $20                             ; 857C 65 20                    e 
-        .byte   $44                             ; 857E 44                       D
-        .byte   $4F                             ; 857F 4F                       O
-        .byte   $53                             ; 8580 53                       S
-        jsr     L656D                           ; 8581 20 6D 65                  me
-        ror     $2E75                           ; 8584 6E 75 2E                 nu.
-        .byte   $9B                             ; 8587 9B                       .
+	.byte	"   press ESC key for the DOS menu.",$9B
         .byte   $47                             ; 8588 47                       G
         adc     $6E                             ; 8589 65 6E                    en
         adc     $72                             ; 858B 65 72                    er
