@@ -5331,115 +5331,14 @@ L8BD5:  .byte   $44                             ; 8BD5 44                       
         ldy     #$A8                            ; 8C01 A0 A8                    ..
         cmp     $CEAF,y                         ; 8C03 D9 AF CE                 ...
         lda     #$BF                            ; 8C06 A9 BF                    ..
-        asl     $50,x                           ; 8C08 16 50                    .P
-        .byte   $72                             ; 8C0A 72                       r
-        adc     $73                             ; 8C0B 65 73                    es
-        .byte   $73                             ; 8C0D 73                       s
-L8C0E:  jsr     L4552                           ; 8C0E 20 52 45                  RE
-        .byte   $54                             ; 8C11 54                       T
-        eor     $52,x                           ; 8C12 55 52                    UR
-        lsr     L209B                           ; 8C14 4E 9B 20                 N. 
-	.byte	"  t"
-        .byte   $6F                             ; 8C1A 6F                       o
-        jsr     L6573                           ; 8C1B 20 73 65                  se
-        adc     $20                             ; 8C1E 65 20                    e 
-        adc     $61                             ; 8C20 65 61                    ea
-        .byte   $63                             ; 8C22 63                       c
-        pla                                     ; 8C23 68                       h
-        jsr     L6966                           ; 8C24 20 66 69                  fi
-        .byte	"len"
-
-; ----------------------------------------------------------------------------
-        adc     ($6D,x)                         ; 8C2A 61 6D                    am
-        adc     $20                             ; 8C2C 65 20                    e 
-        adc     #$6E                            ; 8C2E 69 6E                    in
-        jsr     L6966                           ; 8C30 20 66 69                  fi
-        jmp     (L7365)                         ; 8C33 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        bvs     L8C9D                           ; 8C36 70 65                    pe
-        .byte   $63                             ; 8C38 63                       c
-        rol     $479B                           ; 8C39 2E 9B 47                 ..G
-        adc     $6E                             ; 8C3C 65 6E                    en
-        adc     $72                             ; 8C3E 65 72                    er
-        adc     ($6C,x)                         ; 8C40 61 6C                    al
-        jsr     L6E49                           ; 8C42 20 49 6E                  In
-        ror     $6F                             ; 8C45 66 6F                    fo
-        .byte   $72                             ; 8C47 72                       r
-        adc     L7461                           ; 8C48 6D 61 74                 mat
-        adc     #$6F                            ; 8C4B 69 6F                    io
-        ror     L2020                           ; 8C4D 6E 20 20                 n  
-        jsr     L2020                           ; 8C50 20 20 20                    
-        jsr     L2020                           ; 8C53 20 20 20                    
-        jsr     L2020                           ; 8C56 20 20 20                    
-        jsr     L2036                           ; 8C59 20 36 20                  6 
-        .byte   $6F                             ; 8C5C 6F                       o
-        ror     $20                             ; 8C5D 66 20                    f 
-        rol     $9B,x                           ; 8C5F 36 9B                    6.
-        .byte   $9B                             ; 8C61 9B                       .
-	.byte	"You kn"
-        .byte   $6F                             ; 8C68 6F                       o
-        .byte   $77                             ; 8C69 77                       w
-        jsr     L6261                           ; 8C6A 20 61 62                  ab
-        .byte   $6F                             ; 8C6D 6F                       o
-        adc     $74,x                           ; 8C6E 75 74                    ut
-        jsr     L7375                           ; 8C70 20 75 73                  us
-        adc     #$6E                            ; 8C73 69 6E                    in
-        .byte   $67                             ; 8C75 67                       g
-        jsr     L4548                           ; 8C76 20 48 45                  HE
-        jmp     L2050                           ; 8C79 4C 50 20                 LP 
-
-; ----------------------------------------------------------------------------
-        .byte   $6F                             ; 8C7C 6F                       o
-        .byte   $72                             ; 8C7D 72                       r
-        jsr     L5441                           ; 8C7E 20 41 54                  AT
-        eor     ($52,x)                         ; 8C81 41 52                    AR
-        eor     #$2C                            ; 8C83 49 2C                    I,
-        .byte   $9B                             ; 8C85 9B                       .
-        eor     $53                             ; 8C86 45 53                    ES
-        .byte   $43                             ; 8C88 43                       C
-        bit     L6120                           ; 8C89 2C 20 61                 , a
-        ror     $2064                           ; 8C8C 6E 64 20                 nd 
-        .byte   $52                             ; 8C8F 52                       R
-        eor     $54                             ; 8C90 45 54                    ET
-        eor     $52,x                           ; 8C92 55 52                    UR
-        lsr     L6B20                           ; 8C94 4E 20 6B                 N k
-        adc     $79                             ; 8C97 65 79                    ey
-        .byte   $73                             ; 8C99 73                       s
-        rol     L2020                           ; 8C9A 2E 20 20                 .  
-L8C9D:  .byte   $42                             ; 8C9D 42                       B
-        adc     $74,x                           ; 8C9E 75 74                    ut
-	.byte	" th"
-        adc     $72                             ; 8CA3 65 72                    er
-        adc     $20                             ; 8CA5 65 20                    e 
-        adc     ($72,x)                         ; 8CA7 61 72                    ar
-        adc     $9B                             ; 8CA9 65 9B                    e.
-        ror     $6F                             ; 8CAB 66 6F                    fo
-        adc     $72,x                           ; 8CAD 75 72                    ur
-        jsr     L746F                           ; 8CAF 20 6F 74                  ot
-        pla                                     ; 8CB2 68                       h
-        adc     $72                             ; 8CB3 65 72                    er
-        jsr     L7073                           ; 8CB5 20 73 70                  sp
-        adc     $63                             ; 8CB8 65 63                    ec
-        adc     #$61                            ; 8CBA 69 61                    ia
-	.byte	"l u"
-        .byte   $73                             ; 8CBF 73                       s
-        adc     $73                             ; 8CC0 65 73                    es
-        jsr     L6F66                           ; 8CC2 20 66 6F                  fo
-        .byte   $72                             ; 8CC5 72                       r
-	.byte	" th"
-        adc     $9B                             ; 8CC9 65 9B                    e.
-        ror     $6F                             ; 8CCB 66 6F                    fo
-        jmp     (L6F6C)                         ; 8CCD 6C 6C 6F                 llo
-
-; ----------------------------------------------------------------------------
-        .byte   $77                             ; 8CD0 77                       w
-        adc     #$6E                            ; 8CD1 69 6E                    in
-        .byte   $67                             ; 8CD3 67                       g
-        jsr     L656B                           ; 8CD4 20 6B 65                  ke
-        adc     $3A73,y                         ; 8CD7 79 73 3A                 ys:
-        .byte   $9B                             ; 8CDA 9B                       .
-        .byte   $9B                             ; 8CDB 9B                       .
+	.byte	$16
+	.byte	"Press RETURN",$9B
+	.byte	"   to see each filename in filespec.",$9B
+	.byte	"General Information            6 of 6",$9B,$9B
+	.byte	"You know about using HELP or ATARI,",$9B
+	.byte	"ESC, and RETURN keys.  But there are",$9B
+	.byte	"four other special uses for the",$9B
+	.byte	"following keys:",$9B,$9B
         and     ($2E),y                         ; 8CDC 31 2E                    1.
         .byte   $02                             ; 8CDE 02                       .
         .byte   $D3                             ; 8CDF D3                       .
