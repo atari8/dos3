@@ -1592,11 +1592,7 @@ L6D16:  jsr     L6966                           ; 6D16 20 66 69                 
         adc     $73                             ; 6D3A 65 73                    es
 	.byte	" in",$9B
 	.byte	"   blocks and number of free blocks",$9B
-        .byte   $20                             ; 6D64 20                        
-L6D65:  jsr     $6C20                           ; 6D65 20 20 6C                   l
-        adc     $66                             ; 6D68 65 66                    ef
-        .byte   $74                             ; 6D6A 74                       t
-        rol     $9B9B                           ; 6D6B 2E 9B 9B                 ...
+	.byte	"   left.",$9B,$9B
         .byte   $34                             ; 6D6E 34                       4
         rol     L4920                           ; 6D6F 2E 20 49                 . I
         ror     $20                             ; 6D72 66 20                    f 
@@ -2866,7 +2862,7 @@ L7920:  .byte   $6F                             ; 7920 6F                       
         adc     $64                             ; 7932 65 64                    ed
         .byte   $9B                             ; 7934 9B                       .
         jsr     L2020                           ; 7935 20 20 20                    
-        adc     L6D65                           ; 7938 6D 65 6D                 mem
+	.byte	"mem"
         .byte   $6F                             ; 793B 6F                       o
         .byte   $72                             ; 793C 72                       r
 	.byte	"y a"
@@ -3727,61 +3723,9 @@ L8017:  dec     $CD                             ; 8017 C6 CD                    
         pla                                     ; 80C3 68                       h
         adc     #$73                            ; 80C4 69 73                    is
         .byte   $9B                             ; 80C6 9B                       .
-        jsr     L2020                           ; 80C7 20 20 20                    
-	.byte	"lets"
-        jsr     L6F79                           ; 80CE 20 79 6F                  yo
-        adc     $20,x                           ; 80D1 75 20                    u 
-        adc     #$6E                            ; 80D3 69 6E                    in
-        .byte   $63                             ; 80D5 63                       c
-        .byte   $72                             ; 80D6 72                       r
-        adc     $61                             ; 80D7 65 61                    ea
-L80D9:  .byte   $73                             ; 80D9 73                       s
-        adc     $20                             ; 80DA 65 20                    e 
-        adc     $73,x                           ; 80DC 75 73                    us
-        adc     ($62,x)                         ; 80DE 61 62                    ab
-        jmp     (L2065)                         ; 80E0 6C 65 20                 le 
-
-; ----------------------------------------------------------------------------
-        adc     L6D65                           ; 80E3 6D 65 6D                 mem
-        .byte   $6F                             ; 80E6 6F                       o
-        .byte   $72                             ; 80E7 72                       r
-        adc     $9B2E,y                         ; 80E8 79 2E 9B                 y..
-        jsr     L2020                           ; 80EB 20 20 20                    
-        bvc     L8162                           ; 80EE 50 72                    Pr
-        adc     $73                             ; 80F0 65 73                    es
-        .byte   $73                             ; 80F2 73                       s
-L80F3:  jsr     L2059                           ; 80F3 20 59 20                  Y 
-        .byte   $74                             ; 80F6 74                       t
-        .byte   $6F                             ; 80F7 6F                       o
-        jsr     L6F6D                           ; 80F8 20 6D 6F                  mo
-        .byte   $64                             ; 80FB 64                       d
-        adc     #$66                            ; 80FC 69 66                    if
-        adc     $203B,y                         ; 80FE 79 3B 20                 y; 
-        bvs     L8175                           ; 8101 70 72                    pr
-        adc     $73                             ; 8103 65 73                    es
-        .byte   $73                             ; 8105 73                       s
-        jsr     L204E                           ; 8106 20 4E 20                  N 
-        .byte   $6F                             ; 8109 6F                       o
-        .byte   $72                             ; 810A 72                       r
-        .byte   $9B                             ; 810B 9B                       .
-        jsr     L2020                           ; 810C 20 20 20                    
-        .byte   $52                             ; 810F 52                       R
-        eor     $54                             ; 8110 45 54                    ET
-        eor     $52,x                           ; 8112 55 52                    UR
-	.byte	"N t"
-        .byte   $6F                             ; 8117 6F                       o
-        jsr     L7962                           ; 8118 20 62 79                  by
-        bvs     L817E                           ; 811B 70 61                    pa
-        .byte   $73                             ; 811D 73                       s
-        .byte   $73                             ; 811E 73                       s
-        jsr     L6F6D                           ; 811F 20 6D 6F                  mo
-        .byte   $64                             ; 8122 64                       d
-        adc     #$66                            ; 8123 69 66                    if
-        adc     #$63                            ; 8125 69 63                    ic
-        adc     ($74,x)                         ; 8127 61 74                    at
-        adc     #$6F                            ; 8129 69 6F                    io
-        ror     $9B2E                           ; 812B 6E 2E 9B                 n..
-        .byte   $9B                             ; 812E 9B                       .
+	.byte	"   lets you increase usable memory.",$9B
+	.byte	"   Press Y to modify; press N or",$9B
+	.byte	"   RETURN to bypass modification.",$9B,$9B
         eor     #$66                            ; 812F 49 66                    If
         jsr     L6F79                           ; 8131 20 79 6F                  yo
         adc     $20,x                           ; 8134 75 20                    u 
