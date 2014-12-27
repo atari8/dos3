@@ -182,14 +182,9 @@ L5E98:  .byte   $FF                             ; 5E98 FF                       
         ora     ($EC,x)                         ; 5EA3 01 EC                    ..
         ora     ($C2,x)                         ; 5EA5 01 C2                    ..
 L5EA7:  ora     ($FF,x)                         ; 5EA7 01 FF                    ..
-        .byte   $02                             ; 5EA9 02                       .
-        .byte   $C3                             ; 5EAA C3                       .
-        .byte   $EF                             ; 5EAB EF                       .
-        beq     L5EA7                           ; 5EAC F0 F9                    ..
-        .byte   $AF                             ; 5EAE AF                       .
-L5EAF:  cmp     ($F0,x)                         ; 5EAF C1 F0                    ..
-        beq     L5E98                           ; 5EB1 F0 E5                    ..
-        inc     $16E4                           ; 5EB3 EE E4 16                 ...
+        .byte   $02
+	Inverse "Copy/Append"
+	.byte	$16
 	.byte	"Help Screen       1 of 4",$9B,$9B
 	.byte	"1. Press C to"
 	.byte	$02
@@ -207,8 +202,9 @@ L5EAF:  cmp     ($F0,x)                         ; 5EAF C1 F0                    
 	.byte	"   DOS DISK IN DRIVE 1.",$9B,$9B
 	.byte	"Note: Use COPY to write DOS files",$9B
 	.byte	"onto other disks as needed.",$9B,$9B
-        .byte   $32                             ; 5FDA 32                       2
-        rol     $C102                           ; 5FDB 2E 02 C1                 ...
+	.byte	"2."
+	.byte	$02
+	.byte	$C1
 	.byte	$F0,$F0
         sbc     $EE                             ; 5FE0 E5 EE                    ..
         cpx     $A0                             ; 5FE2 E4 A0                    ..
