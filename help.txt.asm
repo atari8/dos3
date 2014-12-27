@@ -3966,20 +3966,7 @@ L835B:  .byte   $74                             ; 835B 74                       
         adc     $73                             ; 836C 65 73                    es
         .byte   $73                             ; 836E 73                       s
         .byte   $9B                             ; 836F 9B                       .
-        jsr     L2020                           ; 8370 20 20 20                    
-        eor     $53                             ; 8373 45 53                    ES
-        .byte   $43                             ; 8375 43                       C
-        jsr     L6F74                           ; 8376 20 74 6F                  to
-        jsr     L6572                           ; 8379 20 72 65                  re
-        .byte   $74                             ; 837C 74                       t
-        adc     $72,x                           ; 837D 75 72                    ur
-	.byte	"n t"
-        .byte   $6F                             ; 8382 6F                       o
-        jsr     L4F44                           ; 8383 20 44 4F                  DO
-        .byte   $53                             ; 8386 53                       S
-        jsr     L656D                           ; 8387 20 6D 65                  me
-        ror     $2E75                           ; 838A 6E 75 2E                 nu.
-        .byte   $9B                             ; 838D 9B                       .
+	.byte	"   ESC to return to DOS menu.",$9B
 	.byte	"General Information            1 of 6",$9B,$9B
 	.byte	"The DOS commands allow you to store,",$9B
 	.byte	"retrieve, and manage your disk files.",$9B,$9B
