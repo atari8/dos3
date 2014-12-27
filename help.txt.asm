@@ -208,27 +208,7 @@ L5EA7:  ora     ($FF,x)                         ; 5EA7 01 FF                    
 	.byte	$16
 	.byte	"Press Y to append",$9B
 	.byte	"   (join) two or more files.  If you",$9B
-	.byte	"   pr"
-        adc     $73                             ; 6027 65 73                    es
-        .byte   $73                             ; 6029 73                       s
-        jsr     L204E                           ; 602A 20 4E 20                  N 
-        .byte   $6F                             ; 602D 6F                       o
-        .byte   $72                             ; 602E 72                       r
-        jsr     L4552                           ; 602F 20 52 45                  RE
-        .byte   $54                             ; 6032 54                       T
-        eor     $52,x                           ; 6033 55 52                    UR
-        lsr     $202C                           ; 6035 4E 2C 20                 N, 
-        .byte   $44                             ; 6038 44                       D
-        .byte   $4F                             ; 6039 4F                       O
-        .byte   $53                             ; 603A 53                       S
-        jsr     L6977                           ; 603B 20 77 69                  wi
-        jmp     (L206C)                         ; 603E 6C 6C 20                 ll 
-
-; ----------------------------------------------------------------------------
-        .byte   $63                             ; 6041 63                       c
-        .byte   $6F                             ; 6042 6F                       o
-        bvs     L60BE                           ; 6043 70 79                    py
-        .byte   $9B                             ; 6045 9B                       .
+	.byte	"   press N or RETURN, DOS will copy",$9B
         jsr     L2020                           ; 6046 20 20 20                    
         .byte   $77                             ; 6049 77                       w
         adc     #$74                            ; 604A 69 74                    it
