@@ -4080,26 +4080,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"disk to leave you more available",$9B
 	.byte	"memory in your computer.",$9B
 	.byte	"General Information            3 of 6",$9B,$9B
-        .byte   $44                             ; 8714 44                       D
-        .byte   $4F                             ; 8715 4F                       O
-        .byte   $53                             ; 8716 53                       S
-        jsr     L7361                           ; 8717 20 61 73                  as
-        .byte   $6B                             ; 871A 6B                       k
-        .byte   $73                             ; 871B 73                       s
-        jsr     L6F79                           ; 871C 20 79 6F                  yo
-        adc     $20,x                           ; 871F 75 20                    u 
-        ror     $6F                             ; 8721 66 6F                    fo
-        .byte   $72                             ; 8723 72                       r
-        jsr     L6164                           ; 8724 20 64 61                  da
-        .byte   $74                             ; 8727 74                       t
-        adc     ($20,x)                         ; 8728 61 20                    a 
-        .byte   $73                             ; 872A 73                       s
-        adc     $63,x                           ; 872B 75 63                    uc
-        pla                                     ; 872D 68                       h
-        jsr     L7361                           ; 872E 20 61 73                  as
-        .byte   $3A                             ; 8731 3A                       :
-        .byte   $9B                             ; 8732 9B                       .
-        .byte   $9B                             ; 8733 9B                       .
+	.byte	"DOS asks you for data such as:",$9B,$9B
         and     ($2E),y                         ; 8734 31 2E                    1.
         .byte   $02                             ; 8736 02                       .
         dec     $E9                             ; 8737 C6 E9                    ..
