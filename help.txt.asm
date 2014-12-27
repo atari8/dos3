@@ -3729,24 +3729,7 @@ L8017:  dec     $CD                             ; 8017 C6 CD                    
 	.byte	"If you press Y for Step 5, answer:",$9B
 	.byte	"  a) Start address of FMS buffers?",$9B
 	.byte	"  b) Number of FMS buffers (2-16)?",$9B
-        jsr     L6320                           ; 8198 20 20 63                   c
-        and     #$20                            ; 819B 29 20                    ) 
-        lsr     $65,x                           ; 819D 56 65                    Ve
-        .byte   $72                             ; 819F 72                       r
-        adc     #$66                            ; 81A0 69 66                    if
-        adc     L7720,y                         ; 81A2 79 20 77                 y w
-        .byte   $72                             ; 81A5 72                       r
-        adc     #$74                            ; 81A6 69 74                    it
-        adc     $2D                             ; 81A8 65 2D                    e-
-L81AA:  .byte   $63                             ; 81AA 63                       c
-        .byte   $6F                             ; 81AB 6F                       o
-        adc     L616D                           ; 81AC 6D 6D 61                 mma
-        ror     L7364                           ; 81AF 6E 64 73                 nds
-        jsr     L5928                           ; 81B2 20 28 59                  (Y
-        .byte   $2F                             ; 81B5 2F                       /
-        lsr     $3F29                           ; 81B6 4E 29 3F                 N)?
-        .byte   $9B                             ; 81B9 9B                       .
-        .byte   $9B                             ; 81BA 9B                       .
+	.byte	"  c) Verify write-commands (Y/N)?",$9B,$9B
 	.byte	"DOS asks you to confirm init values.",$9B
 	.byte	$02
         .byte   $D4                             ; 81E1 D4                       .
