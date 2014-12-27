@@ -4087,26 +4087,11 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	$16
 	.byte	"The full name of your",$9B
 	.byte	"   file. (MYFILE.BAS)",$9B,$9B
-        .byte   $32                             ; 876E 32                       2
-        rol     $C602                           ; 876F 2E 02 C6                 ...
-        sbc     #$EC                            ; 8772 E9 EC                    ..
-        sbc     $F3                             ; 8774 E5 F3                    ..
-	.byte	$F0,$E5
-        .byte   $E3                             ; 8778 E3                       .
-        .byte   $BF                             ; 8779 BF                       .
-        asl     $54,x                           ; 877A 16 54                    .T
-        pla                                     ; 877C 68                       h
-        adc     $20                             ; 877D 65 20                    e 
-        ror     $69                             ; 877F 66 69                    fi
-        .byte	"len"
-
-; ----------------------------------------------------------------------------
-        adc     ($6D,x)                         ; 8784 61 6D                    am
-        adc     $20                             ; 8786 65 20                    e 
-	.byte	"pl"
-        adc     $73,x                           ; 878A 75 73                    us
-	.byte	" th"
-        adc     $9B                             ; 878F 65 9B                    e.
+	.byte	"2."
+	.byte	$02
+	Inverse	"Filespec?"
+	.byte	$16
+	.byte	"The filename plus the",$9B
 	.byte	"   drive ID. (D1:MYFILE.BAS)",$9B,$9B
 	.byte	"Wildcards can be used for 1 and 2.",$9B
 	.byte	"   *=Any combination of characters.",$9B
