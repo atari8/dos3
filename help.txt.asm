@@ -3926,27 +3926,7 @@ L8213:  .byte   $6F                             ; 8213 6F                       
         adc     $64                             ; 82DA 65 64                    ed
         .byte   $9B                             ; 82DC 9B                       .
 	.byte	"      screen displays an EDIT prompt.",$9B,$9B
-        jsr     L2020                           ; 8304 20 20 20                    
-        plp                                     ; 8307 28                       (
-        .byte   $63                             ; 8308 63                       c
-        and     #$49                            ; 8309 29 49                    )I
-        ror     $20                             ; 830B 66 20                    f 
-        .byte   $79                             ; 830D 79                       y
-L830E:  .byte   $6F                             ; 830E 6F                       o
-        adc     $20,x                           ; 830F 75 20                    u 
-        pla                                     ; 8311 68                       h
-        adc     ($76,x)                         ; 8312 61 76                    av
-        adc     $20                             ; 8314 65 20                    e 
-	.byte	"not"
-	.byte	" in"
-        .byte   $73                             ; 831C 73                       s
-        adc     $72                             ; 831D 65 72                    er
-        .byte   $74                             ; 831F 74                       t
-        adc     $64                             ; 8320 65 64                    ed
-        jsr     L6163                           ; 8322 20 63 61                  ca
-        .byte   $72                             ; 8325 72                       r
-        .byte   $74                             ; 8326 74                       t
-        rol     $9B2C                           ; 8327 2E 2C 9B                 .,.
+	.byte	"   (c)If you have not inserted cart.,",$9B
 	.byte	"      screen displays NO CARTRIDGE.",$9B,$9B
 	.byte	"2. If you get message (c), press",$9B
 	.byte	"   ESC to return to DOS menu.",$9B
