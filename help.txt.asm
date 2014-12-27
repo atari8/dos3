@@ -4048,41 +4048,8 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	"   press ESC key for the DOS menu.",$9B
 	.byte	"General Information            2 of 6",$9B,$9B
 	.byte	"Some DOS commands are stored on the",$9B
-        .byte   $44                             ; 85D3 44                       D
-        .byte   $4F                             ; 85D4 4F                       O
-        .byte   $53                             ; 85D5 53                       S
-        jsr     L6964                           ; 85D6 20 64 69                  di
-        .byte   $73                             ; 85D9 73                       s
-        .byte   $6B                             ; 85DA 6B                       k
-        .byte   $20                             ; 85DB 20                        
-L85DC:  adc     ($6E,x)                         ; 85DC 61 6E                    an
-        .byte   $64                             ; 85DE 64                       d
-        jsr     L7261                           ; 85DF 20 61 72                  ar
-        adc     $20                             ; 85E2 65 20                    e 
-        jmp     (L616F)                         ; 85E4 6C 6F 61                 loa
-
-; ----------------------------------------------------------------------------
-        .byte   $64                             ; 85E7 64                       d
-        adc     $64                             ; 85E8 65 64                    ed
-	.byte	" in"
-        .byte   $74                             ; 85ED 74                       t
-        .byte   $6F                             ; 85EE 6F                       o
-	.byte	" th"
-        adc     $9B                             ; 85F2 65 9B                    e.
-        .byte   $63                             ; 85F4 63                       c
-        .byte   $6F                             ; 85F5 6F                       o
-        adc     L7570                           ; 85F6 6D 70 75                 mpu
-        .byte   $74                             ; 85F9 74                       t
-        adc     $72                             ; 85FA 65 72                    er
-	.byte	" wh"
-        adc     $6E                             ; 85FF 65 6E                    en
-        jsr     L6573                           ; 8601 20 73 65                  se
-        .byte	"lec"
-
-; ----------------------------------------------------------------------------
-        .byte   $74                             ; 8607 74                       t
-        adc     $64                             ; 8608 65 64                    ed
-        rol     $9B9B                           ; 860A 2E 9B 9B                 ...
+	.byte	"DOS disk and are loaded into the",$9B
+	.byte	"computer when selected.",$9B,$9B
         .byte   $54                             ; 860D 54                       T
         pla                                     ; 860E 68                       h
         adc     $73,x                           ; 860F 75 73                    us
