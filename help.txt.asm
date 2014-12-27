@@ -3898,28 +3898,7 @@ L81AA:  .byte   $63                             ; 81AA 63                       
 L8213:  .byte   $6F                             ; 8213 6F                       o
         jsr     L6573                           ; 8214 20 73 65                  se
         .byte	"lect function.  TO",$9B
-        jsr     L2020                           ; 822A 20 20 20                    
-        .byte   $43                             ; 822D 43                       C
-        eor     ($52,x)                         ; 822E 41 52                    AR
-        .byte   $54                             ; 8230 54                       T
-        .byte   $52                             ; 8231 52                       R
-        eor     #$44                            ; 8232 49 44                    ID
-        .byte   $47                             ; 8234 47                       G
-        eor     $20                             ; 8235 45 20                    E 
-        bvs     L829A                           ; 8237 70 61                    pa
-        .byte   $73                             ; 8239 73                       s
-        .byte   $73                             ; 823A 73                       s
-        adc     $73                             ; 823B 65 73                    es
-        jsr     L6F63                           ; 823D 20 63 6F                  co
-        ror     L7274                           ; 8240 6E 74 72                 ntr
-        .byte   $6F                             ; 8243 6F                       o
-	.byte	"l f"
-        .byte   $72                             ; 8247 72                       r
-        .byte   $6F                             ; 8248 6F                       o
-        adc     L4420                           ; 8249 6D 20 44                 m D
-        .byte   $4F                             ; 824C 4F                       O
-        .byte   $53                             ; 824D 53                       S
-        .byte   $9B                             ; 824E 9B                       .
+	.byte	"   CARTRIDGE passes control from DOS",$9B
         jsr     L2020                           ; 824F 20 20 20                    
         .byte   $74                             ; 8252 74                       t
         .byte   $6F                             ; 8253 6F                       o
