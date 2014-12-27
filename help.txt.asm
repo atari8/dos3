@@ -4031,17 +4031,11 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
         adc     L616D                           ; 8442 6D 6D 61                 mma
         ror     $9B64                           ; 8445 6E 64 9B                 nd.
         jsr     L2020                           ; 8448 20 20 20                    
-	.byte	"nam"
-        adc     $2E                             ; 844E 65 2E                    e.
-        jsr     L0228                           ; 8450 20 28 02                  (.
-        cmp     $72                             ; 8453 C5 72                    .r
-        adc     ($73,x)                         ; 8455 61 73                    as
-        adc     $20                             ; 8457 65 20                    e 
-        rol     $2E2E                           ; 8459 2E 2E 2E                 ...
-	.byte	" pr"
-        adc     $73                             ; 845F 65 73                    es
-        .byte   $73                             ; 8461 73                       s
-        .byte   $02                             ; 8462 02                       .
+	.byte	"name. ("
+	.byte	$02
+	Inverse	"E"
+	.byte	"rase ... press"
+	.byte	$02
         cmp     $2C                             ; 8463 C5 2C                    .,
 	.byte	" et"
         .byte   $63                             ; 8468 63                       c
