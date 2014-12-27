@@ -213,30 +213,12 @@ L5EA7:  ora     ($FF,x)                         ; 5EA7 01 FF                    
 	.byte	"You can COPY or APPEND using one or",$9B
 	.byte	"two disks and one or two drives.",$9B
 	.byte	$02
-        .byte   $C3                             ; 60A3 C3                       .
-        .byte   $EF                             ; 60A4 EF                       .
-	.byte	$F0,$F9
-        .byte   $AF                             ; 60A7 AF                       .
-        cmp     ($F0,x)                         ; 60A8 C1 F0                    ..
-	.byte	$F0,$E5
-        inc     $16E4                           ; 60AC EE E4 16                 ...
-        pha                                     ; 60AF 48                       H
-        adc     $6C                             ; 60B0 65 6C                    el
-        bvs     L60D4                           ; 60B2 70 20                    p 
-        .byte   $53                             ; 60B4 53                       S
-        .byte   $63                             ; 60B5 63                       c
-L60B6:  .byte   $72                             ; 60B6 72                       r
-        adc     $65                             ; 60B7 65 65                    ee
-        .byte   $6E                             ; 60B9 6E                       n
-L60BA:  jsr     L2020                           ; 60BA 20 20 20                    
-        .byte   $20                             ; 60BD 20                        
-L60BE:  jsr     L2020                           ; 60BE 20 20 20                    
-        .byte   $32                             ; 60C1 32                       2
-L60C2:  jsr     L666F                           ; 60C2 20 6F 66                  of
-        jsr     L9B34                           ; 60C5 20 34 9B                  4.
-        .byte   $9B                             ; 60C8 9B                       .
-        .byte   $33                             ; 60C9 33                       3
-        rol     $D302                           ; 60CA 2E 02 D3                 ...
+	Inverse	"Copy/Append"
+	.byte	$16
+	.byte	"Help Screen       2 of 4",$9B,$9B
+	.byte	"3."
+	.byte	$02
+	.byte	$D3
         .byte   $EF                             ; 60CD EF                       .
         sbc     $F2,x                           ; 60CE F5 F2                    ..
         .byte   $E3                             ; 60D0 E3                       .
