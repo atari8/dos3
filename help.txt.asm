@@ -5215,7 +5215,7 @@ L8AFA:  .byte   $74                             ; 8AFA 74                       
         jsr     L6F6D                           ; 8B44 20 6D 6F                  mo
         .byte   $72                             ; 8B47 72                       r
         adc     $20                             ; 8B48 65 20                    e 
-        bvs     L8BBB                           ; 8B4A 70 6F                    po
+	.byte	"po"
         .byte   $69                             ; 8B4C 69                       i
 L8B4D:  ror     L7374                           ; 8B4D 6E 74 73                 nts
         jsr     L6F74                           ; 8B50 20 74 6F                  to
@@ -5241,53 +5241,14 @@ L8B5B:  and     ($2E),y                         ; 8B5B 31 2E                    
         rol     L4920                           ; 8B7B 2E 20 49                 . I
         ror     $9B                             ; 8B7E 66 9B                    f.
 	.byte	"   you answer RETURN to a prompt, DOS",$9B
-        jsr     L2020                           ; 8BA6 20 20 20                    
-        ror     L7665                           ; 8BA9 6E 65 76                 nev
-        adc     $72                             ; 8BAC 65 72                    er
-        jsr     L6F64                           ; 8BAE 20 64 6F                  do
-        adc     $73                             ; 8BB1 65 73                    es
-	.byte	" an"
-	.byte	"yth"
-        adc     #$6E                            ; 8BB9 69 6E                    in
-L8BBB:  .byte   $67                             ; 8BBB 67                       g
-        jsr     L6F74                           ; 8BBC 20 74 6F                  to
-        jsr     L6F79                           ; 8BBF 20 79 6F                  yo
-        adc     $72,x                           ; 8BC2 75 72                    ur
-        jsr     L6966                           ; 8BC4 20 66 69                  fi
-        jmp     (L7365)                         ; 8BC7 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        rol     $9B9B                           ; 8BCA 2E 9B 9B                 ...
-        .byte   $32                             ; 8BCD 32                       2
-        rol     L5720                           ; 8BCE 2E 20 57                 . W
-        pla                                     ; 8BD1 68                       h
-        adc     $6E                             ; 8BD2 65 6E                    en
-        .byte   $20                             ; 8BD4 20                        
-L8BD5:  .byte   $44                             ; 8BD5 44                       D
-        .byte   $4F                             ; 8BD6 4F                       O
-        .byte   $53                             ; 8BD7 53                       S
-        jsr     L7361                           ; 8BD8 20 61 73                  as
-        .byte   $6B                             ; 8BDB 6B                       k
-        .byte   $73                             ; 8BDC 73                       s
-        .byte   $02                             ; 8BDD 02                       .
-        ldy     $F5E6,x                         ; 8BDE BC E6 F5                 ...
-        inc     $F4E3                           ; 8BE1 EE E3 F4                 ...
-        sbc     #$EF                            ; 8BE4 E9 EF                    ..
-        inc     $A0BE                           ; 8BE6 EE BE A0                 ...
-        sbc     ($EC,x)                         ; 8BE9 E1 EC                    ..
-        cpx     $F3A0                           ; 8BEB EC A0 F3                 ...
-        beq     L8BD5                           ; 8BEE F0 E5                    ..
-        .byte   $E3                             ; 8BF0 E3                       .
-        lda     L209B                           ; 8BF1 AD 9B 20                 .. 
-        jsr     LE902                           ; 8BF4 20 02 E9                  ..
-        inc     $E9                             ; 8BF7 E6 E9                    ..
-        sbc     $E4                             ; 8BF9 E5 E4                    ..
-        ldy     #$E6                            ; 8BFB A0 E6                    ..
-        sbc     #$EC                            ; 8BFD E9 EC                    ..
-        sbc     $F3                             ; 8BFF E5 F3                    ..
-        ldy     #$A8                            ; 8C01 A0 A8                    ..
-        cmp     $CEAF,y                         ; 8C03 D9 AF CE                 ...
-        lda     #$BF                            ; 8C06 A9 BF                    ..
+	.byte	"   never does anything to your files.",$9B,$9B
+	.byte	"2. When DOS asks"
+	.byte	$02
+	Inverse	"<function> all spec-"
+	.byte	$9B
+	.byte	"  "
+	.byte	$02
+	Inverse	"ified files (Y/N)?"
 	.byte	$16
 	.byte	"Press RETURN",$9B
 	.byte	"   to see each filename in filespec.",$9B
