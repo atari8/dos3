@@ -5307,14 +5307,10 @@ L8BD5:  .byte   $44                             ; 8BD5 44                       
 	.byte	$16
 	.byte	"deletes your response",$9B
 	.byte	"   to the current prompt only.",$9B,$9B
-        .byte   $33                             ; 8D79 33                       3
-        rol     $C202                           ; 8D7A 2E 02 C2                 ...
-        cmp     ($C3,x)                         ; 8D7D C1 C3                    ..
-        .byte   $CB                             ; 8D7F CB                       .
-        ldy     #$D3                            ; 8D80 A0 D3                    ..
-	.byte	$D0,$C1
-        .byte   $C3                             ; 8D84 C3                       .
-        cmp     $16                             ; 8D85 C5 16                    ..
+	.byte	"3."
+	.byte	$02
+	Inverse	"BACK SPACE"
+	.byte	$16
 	.byte	"erases the character",$9B
 	.byte	"   preceeding the cursor.",$9B,$9B
 	.byte	"4."
