@@ -3980,24 +3980,7 @@ L835B:  .byte   $74                             ; 835B 74                       
         jsr     L656D                           ; 8387 20 6D 65                  me
         ror     $2E75                           ; 838A 6E 75 2E                 nu.
         .byte   $9B                             ; 838D 9B                       .
-        .byte   $47                             ; 838E 47                       G
-        adc     $6E                             ; 838F 65 6E                    en
-        adc     $72                             ; 8391 65 72                    er
-        adc     ($6C,x)                         ; 8393 61 6C                    al
-        jsr     L6E49                           ; 8395 20 49 6E                  In
-        ror     $6F                             ; 8398 66 6F                    fo
-        .byte   $72                             ; 839A 72                       r
-	.byte	"mat"
-        adc     #$6F                            ; 839E 69 6F                    io
-        ror     L2020                           ; 83A0 6E 20 20                 n  
-        jsr     L2020                           ; 83A3 20 20 20                    
-        .byte   $20                             ; 83A6 20                        
-        .byte   $20                             ; 83A7 20                        
-L83A8:  jsr     L2020                           ; 83A8 20 20 20                    
-        jsr     L3120                           ; 83AB 20 20 31                   1
-        jsr     L666F                           ; 83AE 20 6F 66                  of
-        jsr     L9B36                           ; 83B1 20 36 9B                  6.
-        .byte   $9B                             ; 83B4 9B                       .
+	.byte	"General Information            1 of 6",$9B,$9B
 	.byte	"The DOS commands allow you to store,",$9B
 	.byte	"retrieve, and manage your disk files.",$9B,$9B
 	.byte	"1. To select a menu function, press",$9B
