@@ -4181,8 +4181,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
         adc     $65                             ; 8832 65 65                    ee
         ror     $9B3B                           ; 8834 6E 3B 9B                 n;.
         jsr     L2020                           ; 8837 20 20 20                    
-        bvc     L8876                           ; 883A 50 3A                    P:
-	.byte	"=pr"
+	.byte	"P:=pr"
         adc     #$6E                            ; 883F 69 6E                    in
         .byte   $74                             ; 8841 74                       t
         adc     $72                             ; 8842 65 72                    er
@@ -4213,39 +4212,10 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
         .byte   $9B                             ; 886E 9B                       .
 	.byte	"  "
 	.byte	$02
-        cpy     $E5                             ; 8872 C4 E5                    ..
-        .byte   $F3                             ; 8874 F3                       .
-        .byte   $F4                             ; 8875 F4                       .
-L8876:  sbc     #$EE                            ; 8876 E9 EE                    ..
-        sbc     ($F4,x)                         ; 8878 E1 F4                    ..
-        sbc     #$EF                            ; 887A E9 EF                    ..
-        inc     $ADAD                           ; 887C EE AD AD                 ...
-        .byte   $BF                             ; 887F BF                       .
-        asl     $54,x                           ; 8880 16 54                    .T
-        .byte   $6F                             ; 8882 6F                       o
-	.byte	" wh"
-        adc     #$63                            ; 8886 69 63                    ic
-        pla                                     ; 8888 68                       h
-        and     $3F2D                           ; 8889 2D 2D 3F                 --?
-        .byte   $9B                             ; 888C 9B                       .
-        .byte   $47                             ; 888D 47                       G
-        adc     $6E                             ; 888E 65 6E                    en
-        adc     $72                             ; 8890 65 72                    er
-        adc     ($6C,x)                         ; 8892 61 6C                    al
-        jsr     L6E49                           ; 8894 20 49 6E                  In
-        ror     $6F                             ; 8897 66 6F                    fo
-        .byte   $72                             ; 8899 72                       r
-	.byte	"mat"
-        adc     #$6F                            ; 889D 69 6F                    io
-        ror     L2020                           ; 889F 6E 20 20                 n  
-        jsr     L2020                           ; 88A2 20 20 20                    
-        jsr     L2020                           ; 88A5 20 20 20                    
-        jsr     L2020                           ; 88A8 20 20 20                    
-        jsr     L2034                           ; 88AB 20 34 20                  4 
-        .byte   $6F                             ; 88AE 6F                       o
-        ror     $20                             ; 88AF 66 20                    f 
-        rol     $9B,x                           ; 88B1 36 9B                    6.
-        .byte   $9B                             ; 88B3 9B                       .
+	Inverse	"Destination--?"
+	.byte	$16
+	.byte	"To which--?",$9B
+	.byte	"General Information            4 of 6",$9B,$9B
 	.byte	"Answers to prompts sometimes appear",$9B
 	.byte	"highlighted (Drive number?"
 	Inverse	"1"
