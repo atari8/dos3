@@ -4076,58 +4076,10 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	.byte	$02
 	Inverse	"H"
 	.byte	"elp",$9B,$9B
-        .byte   $54                             ; 8691 54                       T
-        pla                                     ; 8692 68                       h
-        adc     $73                             ; 8693 65 73                    es
-        adc     $20                             ; 8695 65 20                    e 
-        ror     $69                             ; 8697 66 69                    fi
-        jmp     (L7365)                         ; 8699 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-	.byte	" are stored on the DOS",$9B
-        .byte   $64                             ; 86B3 64                       d
-        adc     #$73                            ; 86B4 69 73                    is
-        .byte   $6B                             ; 86B6 6B                       k
-        jsr     L6F74                           ; 86B7 20 74 6F                  to
-        jsr     L656C                           ; 86BA 20 6C 65                  le
-L86BD:  adc     ($76,x)                         ; 86BD 61 76                    av
-        adc     $20                             ; 86BF 65 20                    e 
-        .byte	"you"
-        jsr     L6F6D                           ; 86C4 20 6D 6F                  mo
-        .byte   $72                             ; 86C7 72                       r
-        adc     $20                             ; 86C8 65 20                    e 
-        adc     ($76,x)                         ; 86CA 61 76                    av
-        adc     ($69,x)                         ; 86CC 61 69                    ai
-	.byte	"lable",$9B
-        adc     L6D65                           ; 86D4 6D 65 6D                 mem
-        .byte   $6F                             ; 86D7 6F                       o
-        .byte   $72                             ; 86D8 72                       r
-        adc     L6920,y                         ; 86D9 79 20 69                 y i
-        ror     L7920                           ; 86DC 6E 20 79                 n y
-        .byte   $6F                             ; 86DF 6F                       o
-        adc     $72,x                           ; 86E0 75 72                    ur
-        jsr     L6F63                           ; 86E2 20 63 6F                  co
-        adc     L7570                           ; 86E5 6D 70 75                 mpu
-        .byte   $74                             ; 86E8 74                       t
-        adc     $72                             ; 86E9 65 72                    er
-        rol     $479B                           ; 86EB 2E 9B 47                 ..G
-        adc     $6E                             ; 86EE 65 6E                    en
-        adc     $72                             ; 86F0 65 72                    er
-        adc     ($6C,x)                         ; 86F2 61 6C                    al
-        jsr     L6E49                           ; 86F4 20 49 6E                  In
-        ror     $6F                             ; 86F7 66 6F                    fo
-        .byte   $72                             ; 86F9 72                       r
-	.byte	"mat"
-        adc     #$6F                            ; 86FD 69 6F                    io
-        ror     L2020                           ; 86FF 6E 20 20                 n  
-        jsr     L2020                           ; 8702 20 20 20                    
-        jsr     L2020                           ; 8705 20 20 20                    
-        jsr     L2020                           ; 8708 20 20 20                    
-        jsr     L2033                           ; 870B 20 33 20                  3 
-        .byte   $6F                             ; 870E 6F                       o
-        ror     $20                             ; 870F 66 20                    f 
-        rol     $9B,x                           ; 8711 36 9B                    6.
-        .byte   $9B                             ; 8713 9B                       .
+	.byte	"These files are stored on the DOS",$9B
+	.byte	"disk to leave you more available",$9B
+	.byte	"memory in your computer.",$9B
+	.byte	"General Information            3 of 6",$9B,$9B
         .byte   $44                             ; 8714 44                       D
         .byte   $4F                             ; 8715 4F                       O
         .byte   $53                             ; 8716 53                       S
