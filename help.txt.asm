@@ -218,40 +218,11 @@ L5EA7:  ora     ($FF,x)                         ; 5EA7 01 FF                    
 	.byte	"Help Screen       2 of 4",$9B,$9B
 	.byte	"3."
 	.byte	$02
-	.byte	$D3
-        .byte   $EF                             ; 60CD EF                       .
-        sbc     $F2,x                           ; 60CE F5 F2                    ..
-        .byte   $E3                             ; 60D0 E3                       .
-        sbc     $A0                             ; 60D1 E5 A0                    ..
-        .byte   $E4                             ; 60D3 E4                       .
-L60D4:  sbc     $F6                             ; 60D4 E5 F6                    ..
-        sbc     #$E3                            ; 60D6 E9 E3                    ..
-        sbc     $BF                             ; 60D8 E5 BF                    ..
+	Inverse	"Source device?"
 	.byte	$16
 	.byte	"Specify",$9B
 	.byte	"   device with source file(s).  Dn:=",$9B
-        jsr     L2020                           ; 6108 20 20 20                    
-        .byte   $64                             ; 610B 64                       d
-        .byte   $72                             ; 610C 72                       r
-        adc     #$76                            ; 610D 69 76                    iv
-        adc     $20                             ; 610F 65 20                    e 
-        ror     $2E6F                           ; 6111 6E 6F 2E                 no.
-        bit     $4520                           ; 6114 2C 20 45                 , E
-        .byte   $3A                             ; 6117 3A                       :
-	.byte	"=sc"
-        .byte   $72                             ; 611B 72                       r
-        adc     $65                             ; 611C 65 65                    ee
-        .byte   $6E                             ; 611E 6E                       n
-        .byte   $2C                             ; 611F 2C                       ,
-L6120:  jsr     L3A43                           ; 6120 20 43 3A                  C:
-        and     L6163,x                         ; 6123 3D 63 61                 =ca
-        .byte   $73                             ; 6126 73                       s
-        .byte   $73                             ; 6127 73                       s
-L6128:  adc     $74                             ; 6128 65 74                    et
-        .byte   $74                             ; 612A 74                       t
-        adc     $2E                             ; 612B 65 2E                    e.
-        .byte   $9B                             ; 612D 9B                       .
-        .byte   $9B                             ; 612E 9B                       .
+	.byte	"   drive no., E:=screen, C:=cassette.",$9B,$9B
         .byte   $34                             ; 612F 34                       4
         rol     $D302                           ; 6130 2E 02 D3                 ...
         .byte   $EF                             ; 6133 EF                       .
@@ -2713,7 +2684,7 @@ L761C:  adc     $6C                             ; 761C 65 6C                    
         jsr     L656D                           ; 7623 20 6D 65                  me
         adc     L726F                           ; 7626 6D 6F 72                 mor
         adc     L209B,y                         ; 7629 79 9B 20                 y. 
-        jsr     L6120                           ; 762C 20 20 61                   a
+	.byte	"  a"
         .byte   $72                             ; 762F 72                       r
         adc     $61                             ; 7630 65 61                    ea
         .byte	" on"
@@ -2897,7 +2868,7 @@ L7728:  eor     $6E                             ; 7728 45 6E                    
         .byte   $74                             ; 77D8 74                       t
         adc     $72                             ; 77D9 65 72                    er
         jsr     L5552                           ; 77DB 20 52 55                  RU
-        lsr     L6120                           ; 77DE 4E 20 61                 N a
+	.byte	"N a"
         .byte   $64                             ; 77E1 64                       d
         .byte   $64                             ; 77E2 64                       d
         .byte   $72                             ; 77E3 72                       r
@@ -2926,7 +2897,7 @@ L7872:  pla                                     ; 7872 68                       
         adc     $78                             ; 7873 65 78                    ex
         jsr     L5552                           ; 7875 20 52 55                  RU
         lsr     L209B                           ; 7878 4E 9B 20                 N. 
-        jsr     L6120                           ; 787B 20 20 61                   a
+	.byte	"  a"
         .byte   $64                             ; 787E 64                       d
         .byte   $64                             ; 787F 64                       d
         .byte   $72                             ; 7880 72                       r
@@ -3035,7 +3006,7 @@ L7920:  .byte   $6F                             ; 7920 6F                       
         adc     L6D65                           ; 7938 6D 65 6D                 mem
         .byte   $6F                             ; 793B 6F                       o
         .byte   $72                             ; 793C 72                       r
-        adc     L6120,y                         ; 793D 79 20 61                 y a
+	.byte	"y a"
         .byte   $72                             ; 7940 72                       r
         adc     $61                             ; 7941 65 61                    ea
         jsr     L2061                           ; 7943 20 61 20                  a 
@@ -3319,7 +3290,7 @@ L7AE1:  .byte   $6F                             ; 7AE1 6F                       
         adc     $20,x                           ; 7B4E 75 20                    u 
         .byte   $63                             ; 7B50 63                       c
         adc     ($6E,x)                         ; 7B51 61 6E                    an
-        jsr     L6128                           ; 7B53 20 28 61                  (a
+	.byte	" (a"
         and     #$20                            ; 7B56 29 20                    ) 
         .byte   $74                             ; 7B58 74                       t
         adc     L6570,y                         ; 7B59 79 70 65                 ype
@@ -3335,7 +3306,7 @@ L7AE1:  .byte   $6F                             ; 7AE1 6F                       
         jsr     L4552                           ; 7B8C 20 52 45                  RE
         .byte   $54                             ; 7B8F 54                       T
         eor     $52,x                           ; 7B90 55 52                    UR
-        lsr     L6120                           ; 7B92 4E 20 61                 N a
+	.byte	"N a"
         ror     $2064                           ; 7B95 6E 64 20                 nd 
         jmp     (L7465)                         ; 7B98 6C 65 74                 let
 
@@ -3502,7 +3473,7 @@ L7C8F:  jsr     L204D                           ; 7C8F 20 4D 20                 
         .byte   $6D                             ; 7D3B 6D                       m
         .byte   $6F                             ; 7D3C 6F                       o
 L7D3D:  .byte   $72                             ; 7D3D 72                       r
-        adc     L6120,y                         ; 7D3E 79 20 61                 y a
+	.byte	"y a"
         .byte   $72                             ; 7D41 72                       r
         adc     $20                             ; 7D42 65 20                    e 
         .byte   $73                             ; 7D44 73                       s
@@ -4023,7 +3994,7 @@ L80F3:  jsr     L2059                           ; 80F3 20 59 20                 
         adc     $70                             ; 8144 65 70                    ep
         jsr     L2C35                           ; 8146 20 35 2C                  5,
 	.byte	" answer:",$9B
-        jsr     L6120                           ; 8152 20 20 61                   a
+	.byte	"  a"
         and     #$20                            ; 8155 29 20                    ) 
         .byte   $53                             ; 8157 53                       S
         .byte   $74                             ; 8158 74                       t
@@ -4448,7 +4419,7 @@ L8493:  .byte   $64                             ; 8493 64                       
 
 ; ----------------------------------------------------------------------------
         .byte   $6F                             ; 84E7 6F                       o
-        ror     L6120                           ; 84E8 6E 20 61                 n a
+	.byte	"n a"
         ror     L2079                           ; 84EB 6E 79 20                 ny 
         .byte   $44                             ; 84EE 44                       D
         .byte   $4F                             ; 84EF 4F                       O
@@ -5105,7 +5076,7 @@ L8AA6:  jsr     L7369                           ; 8AA6 20 69 73                 
         bvs     L8B5B                           ; 8AE7 70 72                    pr
         .byte   $6F                             ; 8AE9 6F                       o
         adc     L7470                           ; 8AEA 6D 70 74                 mpt
-        bit     L6120                           ; 8AED 2C 20 61                 , a
+	.byte	", a"
         ror     $9B64                           ; 8AF0 6E 64 9B                 nd.
         jsr     L2020                           ; 8AF3 20 20 20                    
         plp                                     ; 8AF6 28                       (
