@@ -4107,22 +4107,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
         adc     $73,x                           ; 878A 75 73                    us
 	.byte	" th"
         adc     $9B                             ; 878F 65 9B                    e.
-        jsr     L2020                           ; 8791 20 20 20                    
-        .byte   $64                             ; 8794 64                       d
-        .byte   $72                             ; 8795 72                       r
-        adc     #$76                            ; 8796 69 76                    iv
-        adc     $20                             ; 8798 65 20                    e 
-        eor     #$44                            ; 879A 49 44                    ID
-        rol     $2820                           ; 879C 2E 20 28                 . (
-        .byte   $44                             ; 879F 44                       D
-        and     ($3A),y                         ; 87A0 31 3A                    1:
-        eor     $4659                           ; 87A2 4D 59 46                 MYF
-        eor     #$4C                            ; 87A5 49 4C                    IL
-        eor     $2E                             ; 87A7 45 2E                    E.
-        .byte   $42                             ; 87A9 42                       B
-        eor     ($53,x)                         ; 87AA 41 53                    AS
-        and     #$9B                            ; 87AC 29 9B                    ).
-        .byte   $9B                             ; 87AE 9B                       .
+	.byte	"   drive ID. (D1:MYFILE.BAS)",$9B,$9B
 	.byte	"Wildcards can be used for 1 and 2.",$9B
 	.byte	"   *=Any combination of characters.",$9B
 	.byte	"   ?=Any single character.",$9B,$9B
