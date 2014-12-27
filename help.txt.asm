@@ -191,20 +191,12 @@ L5EAF:  cmp     ($F0,x)                         ; 5EAF C1 F0                    
         beq     L5E98                           ; 5EB1 F0 E5                    ..
         inc     $16E4                           ; 5EB3 EE E4 16                 ...
 	.byte	"Help Screen       1 of 4",$9B,$9B
-        and     ($2E),y                         ; 5ED0 31 2E                    1.
-        jsr     L7250                           ; 5ED2 20 50 72                  Pr
-        adc     $73                             ; 5ED5 65 73                    es
-        .byte   $73                             ; 5ED7 73                       s
-        jsr     L2043                           ; 5ED8 20 43 20                  C 
-L5EDB:  .byte   $74                             ; 5EDB 74                       t
-        .byte   $6F                             ; 5EDC 6F                       o
-        .byte   $02                             ; 5EDD 02                       .
-        .byte   $C3                             ; 5EDE C3                       .
-        .byte   $CF                             ; 5EDF CF                       .
-	.byte	$D0,$D9
+	.byte	"1. Press C to"
+	.byte	$02
+	Inverse	"COPY"
 	.byte	$16
 	.byte	"or"
-        .byte   $02                             ; 5EE5 02                       .
+        .byte   $02
 	Inverse	"APPEND"
 	.byte	$16
 	.byte	"files.",$9B
@@ -212,21 +204,7 @@ L5EDB:  .byte   $74                             ; 5EDB 74                       
 	.byte	"   on the same or another disk.",$9B
 	.byte	"   APPENDing copies a file and joins",$9B
 	.byte	"   it to another file.  PRESS C WITH",$9B
-        jsr     L2020                           ; 5F82 20 20 20                    
-        .byte   $44                             ; 5F85 44                       D
-        .byte   $4F                             ; 5F86 4F                       O
-        .byte   $53                             ; 5F87 53                       S
-        jsr     L4944                           ; 5F88 20 44 49                  DI
-        .byte   $53                             ; 5F8B 53                       S
-        .byte   $4B                             ; 5F8C 4B                       K
-        .byte   $20                             ; 5F8D 20                        
-L5F8E:  eor     #$4E                            ; 5F8E 49 4E                    IN
-        jsr     L5244                           ; 5F90 20 44 52                  DR
-        eor     #$56                            ; 5F93 49 56                    IV
-        eor     $20                             ; 5F95 45 20                    E 
-        and     ($2E),y                         ; 5F97 31 2E                    1.
-        .byte   $9B                             ; 5F99 9B                       .
-        .byte   $9B                             ; 5F9A 9B                       .
+	.byte	"   DOS DISK IN DRIVE 1.",$9B,$9B
 	.byte	"Note: Use COPY to write DOS files",$9B
         .byte   $6F                             ; 5FBD 6F                       o
         ror     L6F74                           ; 5FBE 6E 74 6F                 nto
