@@ -4180,8 +4180,7 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
         .byte   $72                             ; 8831 72                       r
         adc     $65                             ; 8832 65 65                    ee
         ror     $9B3B                           ; 8834 6E 3B 9B                 n;.
-        jsr     L2020                           ; 8837 20 20 20                    
-	.byte	"P:=pr"
+	.byte	"   P:=pr"
         adc     #$6E                            ; 883F 69 6E                    in
         .byte   $74                             ; 8841 74                       t
         adc     $72                             ; 8842 65 72                    er
@@ -4195,21 +4194,11 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
         adc     $2E                             ; 8850 65 2E                    e.
         .byte   $9B                             ; 8852 9B                       .
         .byte   $9B                             ; 8853 9B                       .
-        .byte   $34                             ; 8854 34                       4
-        rol     $D302                           ; 8855 2E 02 D3                 ...
-        .byte   $EF                             ; 8858 EF                       .
-        sbc     $F2,x                           ; 8859 F5 F2                    ..
-        .byte   $E3                             ; 885B E3                       .
-        sbc     $AD                             ; 885C E5 AD                    ..
-        lda     $16BF                           ; 885E AD BF 16                 ...
-        lsr     $72                             ; 8861 46 72                    Fr
-        .byte   $6F                             ; 8863 6F                       o
-        adc     L7720                           ; 8864 6D 20 77                 m w
-        pla                                     ; 8867 68                       h
-        adc     #$63                            ; 8868 69 63                    ic
-        pla                                     ; 886A 68                       h
-        and     $3F2D                           ; 886B 2D 2D 3F                 --?
-        .byte   $9B                             ; 886E 9B                       .
+	.byte	"4."
+	.byte	$02
+	Inverse	"Source--?"
+	.byte	$16
+	.byte	"From which--?",$9B
 	.byte	"  "
 	.byte	$02
 	Inverse	"Destination--?"
