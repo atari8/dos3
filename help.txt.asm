@@ -5315,18 +5315,7 @@ L8BD5:  .byte   $44                             ; 8BD5 44                       
 	.byte	$D0,$C1
         .byte   $C3                             ; 8D84 C3                       .
         cmp     $16                             ; 8D85 C5 16                    ..
-        adc     $72                             ; 8D87 65 72                    er
-        adc     ($73,x)                         ; 8D89 61 73                    as
-        adc     $73                             ; 8D8B 65 73                    es
-	.byte	" th"
-        adc     $20                             ; 8D90 65 20                    e 
-        .byte   $63                             ; 8D92 63                       c
-        pla                                     ; 8D93 68                       h
-        adc     ($72,x)                         ; 8D94 61 72                    ar
-        adc     ($63,x)                         ; 8D96 61 63                    ac
-        .byte   $74                             ; 8D98 74                       t
-        adc     $72                             ; 8D99 65 72                    er
-        .byte   $9B                             ; 8D9B 9B                       .
+	.byte	"erases the character",$9B
 	.byte	"   preceeding the cursor.",$9B,$9B
 	.byte	"4."
 	.byte	$02
