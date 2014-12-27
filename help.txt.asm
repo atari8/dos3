@@ -190,19 +190,7 @@ L5EA7:  ora     ($FF,x)                         ; 5EA7 01 FF                    
 L5EAF:  cmp     ($F0,x)                         ; 5EAF C1 F0                    ..
         beq     L5E98                           ; 5EB1 F0 E5                    ..
         inc     $16E4                           ; 5EB3 EE E4 16                 ...
-        pha                                     ; 5EB6 48                       H
-        adc     $6C                             ; 5EB7 65 6C                    el
-        bvs     L5EDB                           ; 5EB9 70 20                    p 
-L5EBB:  .byte   $53                             ; 5EBB 53                       S
-        .byte   $63                             ; 5EBC 63                       c
-        .byte   $72                             ; 5EBD 72                       r
-        adc     $65                             ; 5EBE 65 65                    ee
-        ror     L2020                           ; 5EC0 6E 20 20                 n  
-        jsr     L2020                           ; 5EC3 20 20 20                    
-        jsr     L3120                           ; 5EC6 20 20 31                   1
-        jsr     L666F                           ; 5EC9 20 6F 66                  of
-        jsr     L9B34                           ; 5ECC 20 34 9B                  4.
-        .byte   $9B                             ; 5ECF 9B                       .
+	.byte	"Help Screen       1 of 4",$9B,$9B
         and     ($2E),y                         ; 5ED0 31 2E                    1.
         jsr     L7250                           ; 5ED2 20 50 72                  Pr
         adc     $73                             ; 5ED5 65 73                    es
@@ -213,18 +201,13 @@ L5EDB:  .byte   $74                             ; 5EDB 74                       
         .byte   $02                             ; 5EDD 02                       .
         .byte   $C3                             ; 5EDE C3                       .
         .byte   $CF                             ; 5EDF CF                       .
-        bne     L5EBB                           ; 5EE0 D0 D9                    ..
-        asl     $6F,x                           ; 5EE2 16 6F                    .o
-        .byte   $72                             ; 5EE4 72                       r
+	.byte	$D0,$D9
+	.byte	$16
+	.byte	"or"
         .byte   $02                             ; 5EE5 02                       .
-        cmp     ($D0,x)                         ; 5EE6 C1 D0                    ..
-        bne     L5EAF                           ; 5EE8 D0 C5                    ..
-        dec     $16C4                           ; 5EEA CE C4 16                 ...
-        ror     $69                             ; 5EED 66 69                    fi
-        jmp     (L7365)                         ; 5EEF 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-	.byte	".",$9B
+	Inverse	"APPEND"
+	.byte	$16
+	.byte	"files.",$9B
 	.byte	"   COPYing creates a duplicate file",$9B
 	.byte	"   on the same or another disk.",$9B
 	.byte	"   APPENDing copies a file and joins",$9B
@@ -5354,47 +5337,17 @@ L8BD5:  .byte   $44                             ; 8BD5 44                       
 	.byte	"causes a DOS function",$9B
 	.byte	"   to restart from the first prompt",$9B
 	.byte	"   for data.",$9B,$9B
-        .byte   $32                             ; 8D33 32                       2
-        rol     $D302                           ; 8D34 2E 02 D3                 ...
-        iny                                     ; 8D37 C8                       .
-        cmp     #$C6                            ; 8D38 C9 C6                    ..
-        .byte   $D4                             ; 8D3A D4                       .
-        lda     $C5C4                           ; 8D3B AD C4 C5                 ...
-        cpy     $D4C5                           ; 8D3E CC C5 D4                 ...
-        cmp     $16                             ; 8D41 C5 16                    ..
-        .byte   $64                             ; 8D43 64                       d
-        .byte   $65                             ; 8D44 65                       e
-L8D45:  jmp     (L7465)                         ; 8D45 6C 65 74                 let
-
-; ----------------------------------------------------------------------------
-        adc     $73                             ; 8D48 65 73                    es
-        jsr     L6F79                           ; 8D4A 20 79 6F                  yo
-        adc     $72,x                           ; 8D4D 75 72                    ur
-        jsr     L6572                           ; 8D4F 20 72 65                  re
-        .byte   $73                             ; 8D52 73                       s
-        bvs     L8DC4                           ; 8D53 70 6F                    po
-        ror     L6573                           ; 8D55 6E 73 65                 nse
-        .byte   $9B                             ; 8D58 9B                       .
-        jsr     L2020                           ; 8D59 20 20 20                    
-        .byte   $74                             ; 8D5C 74                       t
-        .byte   $6F                             ; 8D5D 6F                       o
-	.byte	" th"
-        adc     $20                             ; 8D61 65 20                    e 
-        .byte   $63                             ; 8D63 63                       c
-        adc     $72,x                           ; 8D64 75 72                    ur
-        .byte   $72                             ; 8D66 72                       r
-        adc     $6E                             ; 8D67 65 6E                    en
-        .byte   $74                             ; 8D69 74                       t
-	.byte	" pr"
-        .byte   $6F                             ; 8D6D 6F                       o
-        adc     L7470                           ; 8D6E 6D 70 74                 mpt
-	.byte	" only.",$9B,$9B
+	.byte	"2.",$02
+	Inverse "SHIFT-DELETE"
+	.byte	$16
+	.byte	"deletes your response",$9B
+	.byte	"   to the current prompt only.",$9B,$9B
         .byte   $33                             ; 8D79 33                       3
         rol     $C202                           ; 8D7A 2E 02 C2                 ...
         cmp     ($C3,x)                         ; 8D7D C1 C3                    ..
         .byte   $CB                             ; 8D7F CB                       .
         ldy     #$D3                            ; 8D80 A0 D3                    ..
-        bne     L8D45                           ; 8D82 D0 C1                    ..
+	.byte	$D0,$C1
         .byte   $C3                             ; 8D84 C3                       .
         cmp     $16                             ; 8D85 C5 16                    ..
         adc     $72                             ; 8D87 65 72                    er
