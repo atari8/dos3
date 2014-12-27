@@ -16,7 +16,6 @@
 	.endmacro
 
 ; ----------------------------------------------------------------------------
-L0220           := $0220
 L0228           := $0228
 L2020           := $2020
 L202E           := $202E
@@ -429,7 +428,8 @@ L62FD:  sbc     $A0                             ; 62FD E5 A0                    
         inx                                     ; 6310 E8                       .
         sbc     $16                             ; 6311 E5 16                    ..
         .byte   $9B                             ; 6313 9B                       .
-        jsr     L0220                           ; 6314 20 20 02                   .
+	.byte	"  "
+	.byte	$02
         .byte   $F3                             ; 6317 F3                       .
         sbc     ($ED,x)                         ; 6318 E1 ED                    ..
         sbc     $A0                             ; 631A E5 A0                    ..
@@ -474,7 +474,8 @@ L63BF:  sbc     $EE                             ; 63BF E5 EE                    
 L63D2:  sbc     #$EC                            ; 63D2 E9 EC                    ..
         sbc     $F3                             ; 63D4 E5 F3                    ..
         asl     $9B,x                           ; 63D6 16 9B                    ..
-        jsr     L0220                           ; 63D8 20 20 02                   .
+	.byte	"  "
+	.byte	$02
         tay                                     ; 63DB A8                       .
         cmp     $CEAF,y                         ; 63DC D9 AF CE                 ...
         lda     #$BF                            ; 63DF A9 BF                    ..
@@ -904,7 +905,8 @@ L6769:  .byte   $73                             ; 6769 73                       
         inx                                     ; 67A0 E8                       .
         sbc     $16                             ; 67A1 E5 16                    ..
         .byte   $9B                             ; 67A3 9B                       .
-        jsr     L0220                           ; 67A4 20 20 02                   .
+	.byte	"  "
+	.byte	$02
         .byte   $F3                             ; 67A7 F3                       .
         sbc     ($ED,x)                         ; 67A8 E1 ED                    ..
         sbc     $A0                             ; 67AA E5 A0                    ..
@@ -1349,7 +1351,8 @@ L6B20:  .byte   $F4                             ; 6B20 F4                       
         inx                                     ; 6B2A E8                       .
         sbc     $16                             ; 6B2B E5 16                    ..
         .byte   $9B                             ; 6B2D 9B                       .
-        jsr     L0220                           ; 6B2E 20 20 02                   .
+	.byte	"  "
+	.byte	$02
         .byte   $F3                             ; 6B31 F3                       .
         sbc     ($ED,x)                         ; 6B32 E1 ED                    ..
         sbc     $A0                             ; 6B34 E5 A0                    ..
@@ -2431,7 +2434,8 @@ L7499:  .byte   $02                             ; 7499 02                       
         inc     $E9                             ; 74B2 E6 E9                    ..
         cpx     $F3E5                           ; 74B4 EC E5 F3                 ...
         asl     $9B,x                           ; 74B7 16 9B                    ..
-        jsr     L0220                           ; 74B9 20 20 02                   .
+	.byte	"  "
+	.byte	$02
         tay                                     ; 74BC A8                       .
         cmp     $CEAF,y                         ; 74BD D9 AF CE                 ...
         lda     #$BF                            ; 74C0 A9 BF                    ..
@@ -2574,13 +2578,8 @@ L761C:  adc     $6C                             ; 761C 65 6C                    
 	.byte	"  a"
         .byte   $72                             ; 762F 72                       r
         adc     $61                             ; 7630 65 61                    ea
-        .byte	" on"
-        .byte   $74                             ; 7635 74                       t
-        .byte   $6F                             ; 7636 6F                       o
-        jsr     L6964                           ; 7637 20 64 69                  di
-        .byte   $73                             ; 763A 73                       s
-        .byte   $6B                             ; 763B 6B                       k
-        rol     L0220                           ; 763C 2E 20 02                 . .
+        .byte	" onto disk. "
+	.byte	$02
         .byte   $D3                             ; 763F D3                       .
         sbc     ($F6,x)                         ; 7640 E1 F6                    ..
         sbc     $16                             ; 7642 E5 16                    ..
@@ -2785,7 +2784,8 @@ L7872:  pla                                     ; 7872 68                       
         .byte   $72                             ; 7880 72                       r
         rol     $9B20                           ; 7881 2E 20 9B                 . .
         .byte   $9B                             ; 7884 9B                       .
-        jsr     L0220                           ; 7885 20 20 02                   .
+	.byte	"  "
+	.byte	$02
         .byte   $C3                             ; 7888 C3                       .
         cmp     ($D5,x)                         ; 7889 C1 D5                    ..
         .byte   $D4                             ; 788B D4                       .
@@ -3900,46 +3900,8 @@ L8213:  .byte   $6F                             ; 8213 6F                       
         .byte	"lect function.  TO",$9B
 	.byte	"   CARTRIDGE passes control from DOS",$9B
 	.byte	"   to inserted cartridge.",$9B,$9B
-        jsr     L2020                           ; 826A 20 20 20                    
-        plp                                     ; 826D 28                       (
-        adc     ($29,x)                         ; 826E 61 29                    a)
-        eor     #$66                            ; 8270 49 66                    If
-        jsr     L4142                           ; 8272 20 42 41                  BA
-        .byte   $53                             ; 8275 53                       S
-        eor     #$43                            ; 8276 49 43                    IC
-        jsr     L6163                           ; 8278 20 63 61                  ca
-        .byte   $72                             ; 827B 72                       r
-        .byte   $74                             ; 827C 74                       t
-        rol     L6920                           ; 827D 2E 20 69                 . i
-        .byte   $73                             ; 8280 73                       s
-	.byte	" in"
-        .byte   $73                             ; 8284 73                       s
-        adc     $72                             ; 8285 65 72                    er
-        .byte   $74                             ; 8287 74                       t
-        adc     $64                             ; 8288 65 64                    ed
-	.byte	", t"
-        pla                                     ; 828D 68                       h
-        adc     $9B                             ; 828E 65 9B                    e.
-        jsr     L2020                           ; 8290 20 20 20                    
-        jsr     L2020                           ; 8293 20 20 20                    
-        .byte   $73                             ; 8296 73                       s
-        .byte   $63                             ; 8297 63                       c
-        .byte   $72                             ; 8298 72                       r
-        .byte   $65                             ; 8299 65                       e
-L829A:  adc     $6E                             ; 829A 65 6E                    en
-        jsr     L6964                           ; 829C 20 64 69                  di
-        .byte   $73                             ; 829F 73                       s
-        bvs     L830E                           ; 82A0 70 6C                    pl
-        adc     ($79,x)                         ; 82A2 61 79                    ay
-        .byte   $73                             ; 82A4 73                       s
-        jsr     L2061                           ; 82A5 20 61 20                  a 
-        .byte   $52                             ; 82A8 52                       R
-        eor     $41                             ; 82A9 45 41                    EA
-        .byte   $44                             ; 82AB 44                       D
-        eor     L7020,y                         ; 82AC 59 20 70                 Y p
-        .byte   $72                             ; 82AF 72                       r
-        .byte   $6F                             ; 82B0 6F                       o
-	.byte	"mpt.",$9B,$9B
+	.byte	"   (a)If BASIC cart. is inserted, the",$9B
+	.byte	"      screen displays a READY prompt.",$9B,$9B
         jsr     L2020                           ; 82B7 20 20 20                    
         plp                                     ; 82BA 28                       (
         .byte   $62                             ; 82BB 62                       b
@@ -4524,7 +4486,8 @@ L86BD:  adc     ($76,x)                         ; 86BD 61 76                    
         pla                                     ; 886A 68                       h
         and     $3F2D                           ; 886B 2D 2D 3F                 --?
         .byte   $9B                             ; 886E 9B                       .
-        jsr     L0220                           ; 886F 20 20 02                   .
+	.byte	"  "
+	.byte	$02
         cpy     $E5                             ; 8872 C4 E5                    ..
         .byte   $F3                             ; 8874 F3                       .
         .byte   $F4                             ; 8875 F4                       .
