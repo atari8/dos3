@@ -4294,24 +4294,7 @@ L8876:  sbc     #$EE                            ; 8876 E9 EE                    
 
 ; ----------------------------------------------------------------------------
         and     #$9B                            ; 891D 29 9B                    ).
-        ror     $6F                             ; 891F 66 6F                    fo
-        .byte   $72                             ; 8921 72                       r
-        jsr     L6F79                           ; 8922 20 79 6F                  yo
-        adc     $20,x                           ; 8925 75 20                    u 
-        .byte   $77                             ; 8927 77                       w
-        pla                                     ; 8928 68                       h
-        adc     $6E                             ; 8929 65 6E                    en
-        jsr     L6F79                           ; 892B 20 79 6F                  yo
-        adc     $20,x                           ; 892E 75 20                    u 
-	.byte	"pr"
-        adc     $73                             ; 8932 65 73                    es
-        .byte   $73                             ; 8934 73                       s
-        jsr     L4552                           ; 8935 20 52 45                  RE
-        .byte   $54                             ; 8938 54                       T
-        .byte   $55                             ; 8939 55                       U
-L893A:  .byte   $52                             ; 893A 52                       R
-        lsr     $9B2E                           ; 893B 4E 2E 9B                 N..
-        .byte   $9B                             ; 893E 9B                       .
+	.byte	"for you when you press RETURN.",$9B,$9B
 	.byte	"The default filespec is D1:*.* (all",$9B
 	.byte	"files on the disk in drive 1).",$9B,$9B
 	.byte	"When using wildcards, DOS asks you",$9B
