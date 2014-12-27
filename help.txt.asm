@@ -4036,49 +4036,11 @@ L83A8:  jsr     L2020                           ; 83A8 20 20 20
 	Inverse	"E"
 	.byte	"rase ... press"
 	.byte	$02
-        cmp     $2C                             ; 8463 C5 2C                    .,
-	.byte	" et"
-        .byte   $63                             ; 8468 63                       c
-        rol     $9B29                           ; 8469 2E 29 9B                 .).
-        .byte   $9B                             ; 846C 9B                       .
-        .byte   $44                             ; 846D 44                       D
-        .byte   $4F                             ; 846E 4F                       O
-        .byte   $53                             ; 846F 53                       S
-	.byte	" prompts you to supply the data",$9B
-        ror     L6565                           ; 8490 6E 65 65                 nee
-L8493:  .byte   $64                             ; 8493 64                       d
-        adc     $64                             ; 8494 65 64                    ed
-        jsr     L6F74                           ; 8496 20 74 6F                  to
-        jsr     L7865                           ; 8499 20 65 78                  ex
-        adc     $63                             ; 849C 65 63                    ec
-        adc     $74,x                           ; 849E 75 74                    ut
-        adc     $20                             ; 84A0 65 20                    e 
-        adc     ($20,x)                         ; 84A2 61 20                    a 
-        .byte   $63                             ; 84A4 63                       c
-        .byte   $6F                             ; 84A5 6F                       o
-        adc     L616D                           ; 84A6 6D 6D 61                 mma
-        ror     $2E64                           ; 84A9 6E 64 2E                 nd.
-        jsr     L5720                           ; 84AC 20 20 57                   W
-        pla                                     ; 84AF 68                       h
-        adc     $6E                             ; 84B0 65 6E                    en
-        .byte   $9B                             ; 84B2 9B                       .
-        .byte   $72                             ; 84B3 72                       r
-        adc     $73                             ; 84B4 65 73                    es
-        bvs     L8527                           ; 84B6 70 6F                    po
-        ror     L6573                           ; 84B8 6E 73 65                 nse
-        jsr     L7369                           ; 84BB 20 69 73                  is
-        jsr     L6F63                           ; 84BE 20 63 6F                  co
-	.byte	"mpl"
-        adc     $74                             ; 84C4 65 74                    et
-        adc     $2C                             ; 84C6 65 2C                    e,
-	.byte	" pr"
-        adc     $73                             ; 84CB 65 73                    es
-        .byte   $73                             ; 84CD 73                       s
-        jsr     L4552                           ; 84CE 20 52 45                  RE
-        .byte   $54                             ; 84D1 54                       T
-        eor     $52,x                           ; 84D2 55 52                    UR
-        lsr     $9B2E                           ; 84D4 4E 2E 9B                 N..
-        .byte   $9B                             ; 84D7 9B                       .
+	Inverse	"E"
+	.byte	", etc.)",$9B,$9B
+	.byte	"DOS prompts you to supply the data",$9B
+	.byte	"needed to execute a command.  When",$9B
+	.byte	"response is complete, press RETURN.",$9B,$9B
         .byte   $32                             ; 84D8 32                       2
         rol     L5420                           ; 84D9 2E 20 54                 . T
         .byte   $6F                             ; 84DC 6F                       o
