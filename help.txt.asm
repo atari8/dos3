@@ -2605,27 +2605,9 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
 	.byte	"   density format; press 2 for",$9B
 	.byte	"   double density format.",$9B
 	.byte	$02
-        cmp     #$EE                            ; 7FE8 C9 EE                    ..
-        sbc     #$F4                            ; 7FEA E9 F4                    ..
-        ldy     #$C4                            ; 7FEC A0 C4                    ..
-        sbc     #$F3                            ; 7FEE E9 F3                    ..
-        .byte   $EB                             ; 7FF0 EB                       .
-        asl     $48,x                           ; 7FF1 16 48                    .H
-        adc     $6C                             ; 7FF3 65 6C                    el
-        bvs     L8017                           ; 7FF5 70 20                    p 
-        .byte   $53                             ; 7FF7 53                       S
-        .byte   $63                             ; 7FF8 63                       c
-        .byte   $72                             ; 7FF9 72                       r
-        adc     $65                             ; 7FFA 65 65                    ee
-        ror     L2020                           ; 7FFC 6E 20 20                 n  
-        jsr     L2020                           ; 7FFF 20 20 20                    
-        jsr     L2020                           ; 8002 20 20 20                    
-        jsr     L2032                           ; 8005 20 32 20                  2 
-        .byte   $6F                             ; 8008 6F                       o
-        ror     $20                             ; 8009 66 20                    f 
-        .byte   $32                             ; 800B 32                       2
-        .byte   $9B                             ; 800C 9B                       .
-        .byte   $9B                             ; 800D 9B                       .
+	Inverse	"Init Disk"
+	.byte	$16
+	.byte	"Help Screen         2 of 2",$9B,$9B
         .byte   $34                             ; 800E 34                       4
         rol     $D702                           ; 800F 2E 02 D7                 ...
         .byte   $F2                             ; 8012 F2                       .
