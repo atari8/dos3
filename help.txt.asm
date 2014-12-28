@@ -1905,95 +1905,19 @@ L70B2:  sbc     $F3                             ; 70B2 E5 F3                    
         lda     #$BF                            ; 70B9 A9 BF                    ..
         .byte   $9B                             ; 70BB 9B                       .
 	.byte	"   Press Y to protect all files named",$9B
-        jsr     L2020                           ; 70E2 20 20 20                    
-        .byte   $62                             ; 70E5 62                       b
-	.byte	"y f"
-L70E9:  adc     #$6C                            ; 70E9 69 6C                    il
-        adc     $73                             ; 70EB 65 73                    es
-	.byte	"pe"
-        .byte   $63                             ; 70EF 63                       c
-        rol     L2020                           ; 70F0 2E 20 20                 .  
-	.byte	"Pr"
-        adc     $73                             ; 70F5 65 73                    es
-        .byte   $73                             ; 70F7 73                       s
-        jsr     L204E                           ; 70F8 20 4E 20                  N 
-        .byte   $6F                             ; 70FB 6F                       o
-        .byte   $72                             ; 70FC 72                       r
-        jsr     L4552                           ; 70FD 20 52 45                  RE
-        .byte   $54                             ; 7100 54                       T
-        eor     $52,x                           ; 7101 55 52                    UR
-	.byte	"N t"
-        .byte   $6F                             ; 7106 6F                       o
-        .byte   $9B                             ; 7107 9B                       .
+	.byte	"   by filespec.  Press N or RETURN to",$9B
 	.byte	"   protect files one at a time.",$9B,$9B
 	.byt	"4. If protecting files one at a time,",$9B
 	.byte	"   DOS shows you each filename and",$9B
 	.byte	"   gives you a Y/N option.  Check",$9B
-        jsr     L2020                           ; 7194 20 20 20                    
-        lsr     $69                             ; 7197 46 69                    Fi
-        jmp     (L2065)                         ; 7199 6C 65 20                 le 
-
-; ----------------------------------------------------------------------------
-        eor     #$6E                            ; 719C 49 6E                    In
-        .byte   $64                             ; 719E 64                       d
-        adc     $78                             ; 719F 65 78                    ex
-        .byte   $2E                             ; 71A1 2E                       .
-        .byte   $20                             ; 71A2 20                        
-L71A3:  jsr     L7250                           ; 71A3 20 50 72                  Pr
-        .byte   $6F                             ; 71A6 6F                       o
-        .byte   $74                             ; 71A7 74                       t
-        adc     $63                             ; 71A8 65 63                    ec
-        .byte   $74                             ; 71AA 74                       t
-        adc     $64                             ; 71AB 65 64                    ed
-        jsr     L6966                           ; 71AD 20 66 69                  fi
-        jmp     (L7365)                         ; 71B0 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        jsr     L6168                           ; 71B3 20 68 61                  ha
-        ror     $65,x                           ; 71B6 76 65                    ve
-        .byte   $9B                             ; 71B8 9B                       .
+	.byte	"   File Index.  Protected files have",$9B
 	.byte	"   (*) in front of filename.",$9B
-        .byte   $02                             ; 71D6 02                       .
-        .byte   $D2                             ; 71D7 D2                       .
-        sbc     $EE                             ; 71D8 E5 EE                    ..
-        sbc     ($ED,x)                         ; 71DA E1 ED                    ..
-        sbc     $16                             ; 71DC E5 16                    ..
-        pha                                     ; 71DE 48                       H
-        adc     $6C                             ; 71DF 65 6C                    el
-	.byte	"p "
-        .byte   $53                             ; 71E3 53                       S
-        .byte   $63                             ; 71E4 63                       c
-        .byte   $72                             ; 71E5 72                       r
-        adc     $65                             ; 71E6 65 65                    ee
-        ror     L2020                           ; 71E8 6E 20 20                 n  
-        jsr     L2020                           ; 71EB 20 20 20                    
-        jsr     L2020                           ; 71EE 20 20 20                    
-        jsr     L2020                           ; 71F1 20 20 20                    
-        jsr     L2031                           ; 71F4 20 31 20                  1 
-        .byte   $6F                             ; 71F7 6F                       o
-        ror     $20                             ; 71F8 66 20                    f 
-        and     ($9B),y                         ; 71FA 31 9B                    1.
-        .byte   $9B                             ; 71FC 9B                       .
+	.byte	$02
+	Inverse	"Rename"
+	.byte	$16
+	.byte	"Help Screen            1 of 1",$9B,$9B
 	.byte	"1. Press R to change the filename or",$9B
-        jsr     L2020                           ; 7222 20 20 20                    
-        adc     $78                             ; 7225 65 78                    ex
-        .byte   $74                             ; 7227 74                       t
-        adc     $6E                             ; 7228 65 6E                    en
-        .byte   $64                             ; 722A 64                       d
-        adc     $72                             ; 722B 65 72                    er
-        jsr     L666F                           ; 722D 20 6F 66                  of
-        .byte	" on"
-        adc     $20                             ; 7233 65 20                    e 
-        .byte   $6F                             ; 7235 6F                       o
-        .byte   $72                             ; 7236 72                       r
-        .byte   $20                             ; 7237 20                        
-L7238:  adc     L726F                           ; 7238 6D 6F 72                 mor
-        adc     $20                             ; 723B 65 20                    e 
-        ror     $69                             ; 723D 66 69                    fi
-        jmp     (L7365)                         ; 723F 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        rol     $9B9B                           ; 7242 2E 9B 9B                 ...
+	.byte	"   extender of one or more files.",$9B,$9B
         .byte   $32                             ; 7245 32                       2
         rol     $CF02                           ; 7246 2E 02 CF                 ...
         cpx     $A0E4                           ; 7249 EC E4 A0                 ...
@@ -2001,7 +1925,7 @@ L7238:  adc     L726F                           ; 7238 6D 6F 72                 
         .byte   $EC                             ; 724E EC                       .
         .byte   $E5                             ; 724F E5                       .
 L7250:  .byte   $F3                             ; 7250 F3                       .
-        beq     L7238                           ; 7251 F0 E5                    ..
+	.byte	$F0,$E5
         .byte   $E3                             ; 7253 E3                       .
         .byte   $BF                             ; 7254 BF                       .
         asl     $45,x                           ; 7255 16 45                    .E
