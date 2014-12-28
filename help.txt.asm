@@ -2582,23 +2582,7 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
 	Inverse	"Init Disk"
 	.byte	$16
 	.byte	"Help Screen         1 of 2",$9B,$9B
-        and     ($2E),y                         ; 7E9C 31 2E                    1.
-        jsr     L4957                           ; 7E9E 20 57 49                  WI
-        .byte   $54                             ; 7EA1 54                       T
-        pha                                     ; 7EA2 48                       H
-        .byte   $20                             ; 7EA3 20                        
-        .byte   $44                             ; 7EA4 44                       D
-L7EA5:  .byte   $4F                             ; 7EA5 4F                       O
-        .byte   $53                             ; 7EA6 53                       S
-        jsr     L4944                           ; 7EA7 20 44 49                  DI
-        .byte   $53                             ; 7EAA 53                       S
-        .byte   $4B                             ; 7EAB 4B                       K
-        jsr     L4E49                           ; 7EAC 20 49 4E                  IN
-        jsr     L5244                           ; 7EAF 20 44 52                  DR
-        eor     #$56                            ; 7EB2 49 56                    IV
-        eor     $20                             ; 7EB4 45 20                    E 
-        and     ($2C),y                         ; 7EB6 31 2C                    1,
-        .byte   $9B                             ; 7EB8 9B                       .
+	.byte	"1. WITH DOS DISK IN DRIVE 1,",$9B
 	.byte	"   press I to initialize disk.",$9B,$9B
         .byte   $02                             ; 7ED9 02                       .
         .byte   $C3                             ; 7EDA C3                       .
