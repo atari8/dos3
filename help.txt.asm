@@ -2596,15 +2596,7 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
 	.byte	$9B
 	.byte	"   Enter no. of drive with disk",$9B
 	.byte	"   to be initialized.  NEVER INIT",$9B
-        jsr     L2020                           ; 7F78 20 20 20                    
-        eor     $554F,y                         ; 7F7B 59 4F 55                 YOU
-        .byte   $52                             ; 7F7E 52                       R
-        jsr     L4F44                           ; 7F7F 20 44 4F                  DO
-        .byte   $53                             ; 7F82 53                       S
-        jsr     L4944                           ; 7F83 20 44 49                  DI
-        .byte   $53                             ; 7F86 53                       S
-        .byte   $4B                             ; 7F87 4B                       K
-        rol     $9B9B                           ; 7F88 2E 9B 9B                 ...
+	.byte	"   YOUR DOS DISK.",$9B,$9B
         .byte   $33                             ; 7F8B 33                       3
         rol     $C602                           ; 7F8C 2E 02 C6                 ...
         .byte   $EF                             ; 7F8F EF                       .
