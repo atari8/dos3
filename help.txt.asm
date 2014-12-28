@@ -1904,25 +1904,7 @@ L70B2:  sbc     $F3                             ; 70B2 E5 F3                    
         cmp     $CEAF,y                         ; 70B6 D9 AF CE                 ...
         lda     #$BF                            ; 70B9 A9 BF                    ..
         .byte   $9B                             ; 70BB 9B                       .
-        jsr     L2020                           ; 70BC 20 20 20                    
-        bvc     L7133                           ; 70BF 50 72                    Pr
-        adc     $73                             ; 70C1 65 73                    es
-        .byte   $73                             ; 70C3 73                       s
-        jsr     L2059                           ; 70C4 20 59 20                  Y 
-        .byte   $74                             ; 70C7 74                       t
-        .byte   $6F                             ; 70C8 6F                       o
-	.byte	" pr"
-        .byte   $6F                             ; 70CC 6F                       o
-        .byte   $74                             ; 70CD 74                       t
-        adc     $63                             ; 70CE 65 63                    ec
-        .byte   $74                             ; 70D0 74                       t
-        jsr     L6C61                           ; 70D1 20 61 6C                  al
-	.byte	"l f"
-        adc     #$6C                            ; 70D7 69 6C                    il
-        adc     $73                             ; 70D9 65 73                    es
-        jsr     L616E                           ; 70DB 20 6E 61                  na
-        adc     L6465                           ; 70DE 6D 65 64                 med
-        .byte   $9B                             ; 70E1 9B                       .
+	.byte	"   Press Y to protect all files named",$9B
         jsr     L2020                           ; 70E2 20 20 20                    
         .byte   $62                             ; 70E5 62                       b
 	.byte	"y f"
@@ -1944,28 +1926,7 @@ L70E9:  adc     #$6C                            ; 70E9 69 6C                    
         .byte   $6F                             ; 7106 6F                       o
         .byte   $9B                             ; 7107 9B                       .
 	.byte	"   protect files one at a time.",$9B,$9B
-        .byte   $34                             ; 7129 34                       4
-        rol     L4920                           ; 712A 2E 20 49                 . I
-        ror     $20                             ; 712D 66 20                    f 
-        bvs     L71A3                           ; 712F 70 72                    pr
-        .byte   $6F                             ; 7131 6F                       o
-        .byte   $74                             ; 7132 74                       t
-L7133:  adc     $63                             ; 7133 65 63                    ec
-        .byte   $74                             ; 7135 74                       t
-        adc     #$6E                            ; 7136 69 6E                    in
-        .byte   $67                             ; 7138 67                       g
-        jsr     L6966                           ; 7139 20 66 69                  fi
-        jmp     (L7365)                         ; 713C 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        .byte	" on"
-        adc     $20                             ; 7142 65 20                    e 
-        adc     ($74,x)                         ; 7144 61 74                    at
-        jsr     L2061                           ; 7146 20 61 20                  a 
-        .byte   $74                             ; 7149 74                       t
-        adc     #$6D                            ; 714A 69 6D                    im
-        adc     $2C                             ; 714C 65 2C                    e,
-        .byte   $9B                             ; 714E 9B                       .
+	.byt	"4. If protecting files one at a time,",$9B
 	.byte	"   DOS shows you each filename and",$9B
 	.byte	"   gives you a Y/N option.  Check",$9B
         jsr     L2020                           ; 7194 20 20 20                    
