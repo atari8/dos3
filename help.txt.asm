@@ -2578,28 +2578,10 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
 	.byte	"   the name has a dot: Mem"
 	Inverse	"."
 	.byte	"save",$9B
-        .byte   $02                             ; 7E75 02                       .
-        cmp     #$EE                            ; 7E76 C9 EE                    ..
-        sbc     #$F4                            ; 7E78 E9 F4                    ..
-        ldy     #$C4                            ; 7E7A A0 C4                    ..
-        sbc     #$F3                            ; 7E7C E9 F3                    ..
-        .byte   $EB                             ; 7E7E EB                       .
-        asl     $48,x                           ; 7E7F 16 48                    .H
-        adc     $6C                             ; 7E81 65 6C                    el
-        bvs     L7EA5                           ; 7E83 70 20                    p 
-        .byte   $53                             ; 7E85 53                       S
-        .byte   $63                             ; 7E86 63                       c
-        .byte   $72                             ; 7E87 72                       r
-        adc     $65                             ; 7E88 65 65                    ee
-        ror     L2020                           ; 7E8A 6E 20 20                 n  
-        jsr     L2020                           ; 7E8D 20 20 20                    
-        jsr     L2020                           ; 7E90 20 20 20                    
-        jsr     L2031                           ; 7E93 20 31 20                  1 
-        .byte   $6F                             ; 7E96 6F                       o
-        ror     $20                             ; 7E97 66 20                    f 
-        .byte   $32                             ; 7E99 32                       2
-        .byte   $9B                             ; 7E9A 9B                       .
-        .byte   $9B                             ; 7E9B 9B                       .
+	.byte	$02
+	Inverse	"Init Disk"
+	.byte	$16
+	.byte	"Help Screen         1 of 2",$9B,$9B
         and     ($2E),y                         ; 7E9C 31 2E                    1.
         jsr     L4957                           ; 7E9E 20 57 49                  WI
         .byte   $54                             ; 7EA1 54                       T
