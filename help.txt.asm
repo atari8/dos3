@@ -2584,32 +2584,16 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
 	.byte	"Help Screen         1 of 2",$9B,$9B
 	.byte	"1. WITH DOS DISK IN DRIVE 1,",$9B
 	.byte	"   press I to initialize disk.",$9B,$9B
-        .byte   $02                             ; 7ED9 02                       .
-        .byte   $C3                             ; 7EDA C3                       .
-        cmp     ($D5,x)                         ; 7EDB C1 D5                    ..
-        .byte   $D4                             ; 7EDD D4                       .
-        cmp     #$CF                            ; 7EDE C9 CF                    ..
-        dec     $16BA                           ; 7EE0 CE BA 16                 ...
+	.byte	$02
+	Inverse	"CAUTION:"
+	.byte	$16
 	.byte	"Initializing a disk erases",$9B
 	.byte	" all data on the disk.",$9B,$9B
-        .byte   $32                             ; 7F16 32                       2
-        rol     $C602                           ; 7F17 2E 02 C6                 ...
-        .byte   $EF                             ; 7F1A EF                       .
-        .byte   $F2                             ; 7F1B F2                       .
-        sbc     $F4E1                           ; 7F1C ED E1 F4                 ...
-        ldy     #$E4                            ; 7F1F A0 E4                    ..
-        sbc     #$F3                            ; 7F21 E9 F3                    ..
-        .byte   $EB                             ; 7F23 EB                       .
-        ldy     #$E9                            ; 7F24 A0 E9                    ..
-        inc     $E4A0                           ; 7F26 EE A0 E4                 ...
-        .byte   $F2                             ; 7F29 F2                       .
-        sbc     #$F6                            ; 7F2A E9 F6                    ..
-        sbc     $A0                             ; 7F2C E5 A0                    ..
-        tay                                     ; 7F2E A8                       .
-        .byte   $B1                             ; 7F2F B1                       .
-L7F30:  lda     $A9B8                           ; 7F30 AD B8 A9                 ...
-        .byte   $BF                             ; 7F33 BF                       .
-        asl     $9B,x                           ; 7F34 16 9B                    ..
+	.byte	"2."
+	.byte	$02
+	Inverse	"Format disk in drive (1-8)?"
+	.byte	$16
+	.byte	$9B
 	.byte	"   Enter no. of drive with disk",$9B
 	.byte	"   to be initialized.  NEVER INIT",$9B
         jsr     L2020                           ; 7F78 20 20 20                    
