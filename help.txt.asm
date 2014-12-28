@@ -2618,23 +2618,9 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
 	.byte	"   press N or RETURN to format only.",$9B,$9B
 	.byte	"5."
 	.byte	$02
-        cmp     $E4EF                           ; 80A5 CD EF E4                 ...
-        sbc     #$E6                            ; 80A8 E9 E6                    ..
-        sbc     $C6A0,y                         ; 80AA F9 A0 C6                 ...
-        cmp     $A0D3                           ; 80AD CD D3 A0                 ...
-	.byte	$F0,$E1
-        .byte   $F2                             ; 80B2 F2                       .
-        sbc     ($ED,x)                         ; 80B3 E1 ED                    ..
-        sbc     $F4                             ; 80B5 E5 F4                    ..
-        sbc     $F2                             ; 80B7 E5 F2                    ..
-        .byte   $F3                             ; 80B9 F3                       .
-        ldy     #$A8                            ; 80BA A0 A8                    ..
-        cmp     $CEAF,y                         ; 80BC D9 AF CE                 ...
-        lda     #$BF                            ; 80BF A9 BF                    ..
-        asl     $54,x                           ; 80C1 16 54                    .T
-        pla                                     ; 80C3 68                       h
-        adc     #$73                            ; 80C4 69 73                    is
-        .byte   $9B                             ; 80C6 9B                       .
+	Inverse	"Modify FMS parameters (Y/N)?"
+	.byte	$16
+	.byte	"This",$9B
 	.byte	"   lets you increase usable memory.",$9B
 	.byte	"   Press Y to modify; press N or",$9B
 	.byte	"   RETURN to bypass modification.",$9B,$9B
