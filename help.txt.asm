@@ -2597,57 +2597,14 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
 	.byte	"   Enter no. of drive with disk",$9B
 	.byte	"   to be initialized.  NEVER INIT",$9B
 	.byte	"   YOUR DOS DISK.",$9B,$9B
-        .byte   $33                             ; 7F8B 33                       3
-        rol     $C602                           ; 7F8C 2E 02 C6                 ...
-        .byte   $EF                             ; 7F8F EF                       .
-        .byte   $F2                             ; 7F90 F2                       .
-        sbc     $F4E1                           ; 7F91 ED E1 F4                 ...
-        ldy     #$F4                            ; 7F94 A0 F4                    ..
-        sbc     $E5F0,y                         ; 7F96 F9 F0 E5                 ...
-        .byte   $BF                             ; 7F99 BF                       .
-        asl     $50,x                           ; 7F9A 16 50                    .P
-        .byte   $72                             ; 7F9C 72                       r
-        adc     $73                             ; 7F9D 65 73                    es
-        .byte   $73                             ; 7F9F 73                       s
-        jsr     L2031                           ; 7FA0 20 31 20                  1 
-        ror     $6F                             ; 7FA3 66 6F                    fo
-        .byte   $72                             ; 7FA5 72                       r
-        jsr     L6973                           ; 7FA6 20 73 69                  si
-        ror     L6C67                           ; 7FA9 6E 67 6C                 ngl
-        adc     $9B                             ; 7FAC 65 9B                    e.
-        jsr     L2020                           ; 7FAE 20 20 20                    
-        .byte   $64                             ; 7FB1 64                       d
-        adc     $6E                             ; 7FB2 65 6E                    en
-        .byte   $73                             ; 7FB4 73                       s
-        adc     #$74                            ; 7FB5 69 74                    it
-	.byte	"y f"
-        .byte   $6F                             ; 7FBA 6F                       o
-        .byte   $72                             ; 7FBB 72                       r
-	.byte	"mat"
-        .byte   $3B                             ; 7FBF 3B                       ;
-	.byte	" pr"
-        adc     $73                             ; 7FC3 65 73                    es
-        .byte   $73                             ; 7FC5 73                       s
-        jsr     L2032                           ; 7FC6 20 32 20                  2 
-        ror     $6F                             ; 7FC9 66 6F                    fo
-        .byte   $72                             ; 7FCB 72                       r
-        .byte   $9B                             ; 7FCC 9B                       .
-        jsr     L2020                           ; 7FCD 20 20 20                    
-        .byte   $64                             ; 7FD0 64                       d
-        .byte   $6F                             ; 7FD1 6F                       o
-        adc     $62,x                           ; 7FD2 75 62                    ub
-        jmp     (L2065)                         ; 7FD4 6C 65 20                 le 
-
-; ----------------------------------------------------------------------------
-        .byte   $64                             ; 7FD7 64                       d
-        adc     $6E                             ; 7FD8 65 6E                    en
-        .byte   $73                             ; 7FDA 73                       s
-        adc     #$74                            ; 7FDB 69 74                    it
-	.byte	"y f"
-        .byte   $6F                             ; 7FE0 6F                       o
-        .byte   $72                             ; 7FE1 72                       r
-	.byte	"mat"
-        rol     $029B                           ; 7FE5 2E 9B 02                 ...
+	.byte	"3."
+	.byte	$02
+	Inverse	"Format type?"
+	.byte	$16
+	.byte	"Press 1 for single",$9B
+	.byte	"   density format; press 2 for",$9B
+	.byte	"   double density format.",$9B
+	.byte	$02
         cmp     #$EE                            ; 7FE8 C9 EE                    ..
         sbc     #$F4                            ; 7FEA E9 F4                    ..
         ldy     #$C4                            ; 7FEC A0 C4                    ..
