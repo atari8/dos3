@@ -2608,30 +2608,16 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
 	Inverse	"Init Disk"
 	.byte	$16
 	.byte	"Help Screen         2 of 2",$9B,$9B
-        .byte   $34                             ; 800E 34                       4
-        rol     $D702                           ; 800F 2E 02 D7                 ...
-        .byte   $F2                             ; 8012 F2                       .
-        sbc     #$F4                            ; 8013 E9 F4                    ..
-        sbc     $A0                             ; 8015 E5 A0                    ..
-L8017:  dec     $CD                             ; 8017 C6 CD                    ..
-        .byte   $D3                             ; 8019 D3                       .
-        ldx     $D9D3                           ; 801A AE D3 D9                 ...
-        .byte   $D3                             ; 801D D3                       .
-        ldy     #$E6                            ; 801E A0 E6                    ..
-        sbc     #$EC                            ; 8020 E9 EC                    ..
-        sbc     $A0                             ; 8022 E5 A0                    ..
-        tay                                     ; 8024 A8                       .
-        cmp     $CEAF,y                         ; 8025 D9 AF CE                 ...
-        lda     #$BF                            ; 8028 A9 BF                    ..
-        asl     $54,x                           ; 802A 16 54                    .T
-        pla                                     ; 802C 68                       h
-        adc     #$73                            ; 802D 69 73                    is
-        .byte   $9B                             ; 802F 9B                       .
+	.byte	"4."
+	.byte	$02
+	Inverse	"Write FMS.SYS file (Y/N)?"
+	.byte	$16
+	.byte	"This",$9B
 	.byte	"   file lets you boot the system from",$9B
 	.byte	"   this disk.  Press Y to write file;",$9B
 	.byte	"   press N or RETURN to format only.",$9B,$9B
-        and     $2E,x                           ; 80A2 35 2E                    5.
-        .byte   $02                             ; 80A4 02                       .
+	.byte	"5."
+	.byte	$02
         cmp     $E4EF                           ; 80A5 CD EF E4                 ...
         sbc     #$E6                            ; 80A8 E9 E6                    ..
         sbc     $C6A0,y                         ; 80AA F9 A0 C6                 ...
