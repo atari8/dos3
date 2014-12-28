@@ -504,12 +504,7 @@ L6469:  .byte   $20                             ; 6469 20
         .byte   $66                             ; 646A 66                       f
 L646B:  adc     #$6C                            ; 646B 69 6C                    il
         adc     $73                             ; 646D 65 73                    es
-        .byte	" on"
-        adc     $20                             ; 6472 65 20                    e 
-        .byte   $62                             ; 6474 62                       b
-        adc     L6F20,y                         ; 6475 79 20 6F                 y o
-        ror     $2C65                           ; 6478 6E 65 2C                 ne,
-        .byte   $9B                             ; 647B 9B                       .
+        .byte	" one by one,",$9B
 	.byte	"   DOS gives you a Y/N option for",$9B
         jsr     L2020                           ; 649E 20 20 20                    
         .byte   $65                             ; 64A1 65                       e
@@ -609,12 +604,8 @@ L6573:  .byte   $E2                             ; 6573 E2                       
 L6574:  .byte   $E5                             ; 6574 E5                       .
 L6575:  .byte   $F2                             ; 6575 F2                       .
 L6576:  .byte   $BF                             ; 6576 BF                       .
-        asl     $45,x                           ; 6577 16 45                    .E
-        ror     L6574                           ; 6579 6E 74 65                 nte
-        .byte   $72                             ; 657C 72                       r
-        jsr     L6F6E                           ; 657D 20 6E 6F                  no
-        rol     L6F20                           ; 6580 2E 20 6F                 . o
-        ror     $9B                             ; 6583 66 9B                    f.
+	.byte	$16
+	.byte	"Enter no. of",$9B
         jsr     L2020                           ; 6585 20 20 20                    
         .byte   $64                             ; 6588 64                       d
         .byte   $72                             ; 6589 72                       r
@@ -919,27 +910,7 @@ L6861:  .byte   $9B                             ; 6861 9B                       
         .byte   $53                             ; 68CA 53                       S
         .byte   $9B                             ; 68CB 9B                       .
 	.byte	"   gives you a Y/N option on each.",$9B,$9B
-        .byte   $52                             ; 68F0 52                       R
-        adc     $6D                             ; 68F1 65 6D                    em
-        adc     $6D                             ; 68F3 65 6D                    em
-        .byte   $62                             ; 68F5 62                       b
-        adc     $72                             ; 68F6 65 72                    er
-        .byte   $3A                             ; 68F8 3A                       :
-        jsr     L7355                           ; 68F9 20 55 73                  Us
-        adc     #$6E                            ; 68FC 69 6E                    in
-        .byte   $67                             ; 68FE 67                       g
-        jsr     L4552                           ; 68FF 20 52 45                  RE
-        .byte   $54                             ; 6902 54                       T
-        eor     $52,x                           ; 6903 55 52                    UR
-        lsr     L6F20                           ; 6905 4E 20 6F                 N o
-        ror     $5320                           ; 6908 6E 20 53                 n S
-        .byte   $74                             ; 690B 74                       t
-        adc     $70                             ; 690C 65 70                    ep
-        jsr     L2037                           ; 690E 20 37 20                  7 
-        .byte   $77                             ; 6911 77                       w
-        adc     #$74                            ; 6912 69 74                    it
-        pla                                     ; 6914 68                       h
-        .byte   $9B                             ; 6915 9B                       .
+	.byte	"Remember: Using RETURN on Step 7 with",$9B
         adc     ($20,x)                         ; 6916 61 20                    a 
         .byte   $53                             ; 6918 53                       S
         .byte   $6F                             ; 6919 6F                       o
@@ -1020,22 +991,7 @@ L698B:  jsr     L2020                           ; 698B 20 20 20
         and     ($9B),y                         ; 6997 31 9B                    1.
         .byte   $9B                             ; 6999 9B                       .
 	.byte	"1. Press D to copy all files in same",$9B
-        jsr     L2020                           ; 69BF 20 20 20                    
-	.byte	"loc"
-        adc     ($74,x)                         ; 69C5 61 74                    at
-        adc     #$6F                            ; 69C7 69 6F                    io
-        ror     L6F20                           ; 69C9 6E 20 6F                 n o
-        ror     L6F74                           ; 69CC 6E 74 6F                 nto
-        jsr     L2061                           ; 69CF 20 61 20                  a 
-	.byte	"new"
-        jsr     L6964                           ; 69D5 20 64 69                  di
-        .byte   $73                             ; 69D8 73                       s
-        .byte   $6B                             ; 69D9 6B                       k
-	.byte	"--t"
-        .byte   $6F                             ; 69DD 6F                       o
-        jsr     L616D                           ; 69DE 20 6D 61                  ma
-        .byte   $6B                             ; 69E1 6B                       k
-        adc     $9B                             ; 69E2 65 9B                    e.
+	.byte	"   location onto a new disk--to make",$9B
 	.byte	"   an exact ",$22,"logical",$22," duplicate disk.",$9B
 	.byte	" "
         jsr     L5020                           ; 6A0B 20 20 50                   P
@@ -1071,12 +1027,8 @@ L6A25:  jsr     L5244                           ; 6A25 20 44 52                 
         .byte   $E2                             ; 6A43 E2                       .
         sbc     $F2                             ; 6A44 E5 F2                    ..
         .byte   $BF                             ; 6A46 BF                       .
-        asl     $45,x                           ; 6A47 16 45                    .E
-        ror     L6574                           ; 6A49 6E 74 65                 nte
-        .byte   $72                             ; 6A4C 72                       r
-        jsr     L6F6E                           ; 6A4D 20 6E 6F                  no
-        rol     L6F20                           ; 6A50 2E 20 6F                 . o
-        ror     $9B                             ; 6A53 66 9B                    f.
+	.byte	$16
+	.byte	"Enter no. of",$9B
 	.byte	"   drive with original. "
         .byte   $02                             ; 6A6D 02                       .
         .byte   $C3                             ; 6A6E C3                       .
@@ -1489,43 +1441,8 @@ L6E55:  .byte   $74                             ; 6E55 74                       
         jsr     L616E                           ; 6EEE 20 6E 61                  na
         adc     L6465                           ; 6EF1 6D 65 64                 med
         .byte   $9B                             ; 6EF4 9B                       .
-        jsr     L2020                           ; 6EF5 20 20 20                    
-        .byte   $62                             ; 6EF8 62                       b
-	.byte	"y f"
-        adc     #$6C                            ; 6EFC 69 6C                    il
-        adc     $73                             ; 6EFE 65 73                    es
-        bvs     L6F67                           ; 6F00 70 65                    pe
-        .byte   $63                             ; 6F02 63                       c
-        rol     L2020                           ; 6F03 2E 20 20                 .  
-        bvc     L6F7A                           ; 6F06 50 72                    Pr
-        adc     $73                             ; 6F08 65 73                    es
-        .byte   $73                             ; 6F0A 73                       s
-        jsr     L204E                           ; 6F0B 20 4E 20                  N 
-        .byte   $6F                             ; 6F0E 6F                       o
-        .byte   $72                             ; 6F0F 72                       r
-        jsr     L4552                           ; 6F10 20 52 45                  RE
-        .byte   $54                             ; 6F13 54                       T
-        eor     $52,x                           ; 6F14 55 52                    UR
-	.byte	"N t"
-        .byte   $6F                             ; 6F19 6F                       o
-        .byte   $9B                             ; 6F1A 9B                       .
-        jsr     L2020                           ; 6F1B 20 20 20                    
-        adc     $72                             ; 6F1E 65 72                    er
-L6F20:  adc     ($73,x)                         ; 6F20 61 73                    as
-        adc     $20                             ; 6F22 65 20                    e 
-        ror     $69                             ; 6F24 66 69                    fi
-        jmp     (L7365)                         ; 6F26 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        .byte	" on"
-        adc     $20                             ; 6F2C 65 20                    e 
-        adc     ($74,x)                         ; 6F2E 61 74                    at
-        jsr     L2061                           ; 6F30 20 61 20                  a 
-        .byte   $74                             ; 6F33 74                       t
-        adc     #$6D                            ; 6F34 69 6D                    im
-        adc     $2E                             ; 6F36 65 2E                    e.
-        .byte   $9B                             ; 6F38 9B                       .
-        .byte   $9B                             ; 6F39 9B                       .
+	.byte	"   by filespec.  Press N or RETURN to",$9B
+	.byte	"   erase files one at a time.",$9B,$9B
         .byte   $34                             ; 6F3A 34                       4
         rol     L4920                           ; 6F3B 2E 20 49                 . I
         ror     $20                             ; 6F3E 66 20                    f 
@@ -1533,19 +1450,7 @@ L6F20:  adc     ($73,x)                         ; 6F20 61 73                    
         adc     ($73,x)                         ; 6F42 61 73                    as
         adc     #$6E                            ; 6F44 69 6E                    in
         .byte   $67                             ; 6F46 67                       g
-	.byte	" on"
-        adc     $20                             ; 6F4A 65 20                    e 
-        .byte   $62                             ; 6F4C 62                       b
-        adc     L6F20,y                         ; 6F4D 79 20 6F                 y o
-        ror     $2C65                           ; 6F50 6E 65 2C                 ne,
-        .byte   $20                             ; 6F53 20                        
-L6F54:  .byte   $44                             ; 6F54 44                       D
-        .byte   $4F                             ; 6F55 4F                       O
-        .byte   $53                             ; 6F56 53                       S
-        jsr     L6967                           ; 6F57 20 67 69                  gi
-        ror     $65,x                           ; 6F5A 76 65                    ve
-        .byte   $73                             ; 6F5C 73                       s
-        .byte   $9B                             ; 6F5D 9B                       .
+	.byte	" one by one, DOS gives",$9B
         jsr     L2020                           ; 6F5E 20 20 20                    
         .byte   $79                             ; 6F61 79                       y
         .byte   $6F                             ; 6F62 6F                       o
@@ -1671,7 +1576,7 @@ L70B2:  sbc     $F3                             ; 70B2 E5 F3                    
 	.byte	"   Press Y to protect all files named",$9B
 	.byte	"   by filespec.  Press N or RETURN to",$9B
 	.byte	"   protect files one at a time.",$9B,$9B
-	.byt	"4. If protecting files one at a time,",$9B
+	.byte	"4. If protecting files one at a time,",$9B
 	.byte	"   DOS shows you each filename and",$9B
 	.byte	"   gives you a Y/N option.  Check",$9B
 	.byte	"   File Index.  Protected files have",$9B
@@ -1768,7 +1673,7 @@ L7320:  .byte   $73                             ; 7320 73                       
         jmp     (L7365)                         ; 7345 6C 65 73                 les
 
 ; ----------------------------------------------------------------------------
-        bvs     L73AF                           ; 7348 70 65                    pe
+	.byte	"pe"
         .byte   $63                             ; 734A 63                       c
         rol     L2020                           ; 734B 2E 20 20                 .  
         bvc     L73C2                           ; 734E 50 72                    Pr
@@ -1799,26 +1704,10 @@ L7375:  jsr     L6974                           ; 7375 20 74 69                 
         .byte   $9B                             ; 737B 9B                       .
         .byte   $9B                             ; 737C 9B                       .
 	.byte	"5. If renaming one at a time, DOS",$9B
-        jsr     L2020                           ; 739F 20 20 20                    
-        .byte   $67                             ; 73A2 67                       g
-        adc     #$76                            ; 73A3 69 76                    iv
-        adc     $73                             ; 73A5 65 73                    es
-        jsr     L6F79                           ; 73A7 20 79 6F                  yo
-        adc     $20,x                           ; 73AA 75 20                    u 
-        adc     ($20,x)                         ; 73AC 61 20                    a 
-L73AE:  .byte   $59                             ; 73AE 59                       Y
-L73AF:  .byte   $2F                             ; 73AF 2F                       /
-        lsr     L6F20                           ; 73B0 4E 20 6F                 N o
-	.byte	"ption "
-L73B9:  .byte   $6F                             ; 73B9 6F                       o
-        ror     L6520                           ; 73BA 6E 20 65                 n e
-        adc     ($63,x)                         ; 73BD 61 63                    ac
-        pla                                     ; 73BF 68                       h
-        .byte   $2E                             ; 73C0 2E                       .
-        .byte   $9B                             ; 73C1 9B                       .
+	.byte	"   gives you a Y/N option on each.",$9B
 L73C2:  .byte   $02                             ; 73C2 02                       .
         cmp     $EE,x                           ; 73C3 D5 EE                    ..
-        beq     L73B9                           ; 73C5 F0 F2                    ..
+	.byte	$F0,$F2
         .byte   $EF                             ; 73C7 EF                       .
         .byte   $F4                             ; 73C8 F4                       .
         sbc     $E3                             ; 73C9 E5 E3                    ..
@@ -2640,25 +2529,8 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
         .byte   $74                             ; 7DCB 74                       t
         .byte   $6F                             ; 7DCC 6F                       o
         .byte   $9B                             ; 7DCD 9B                       .
-        jsr     L2020                           ; 7DCE 20 20 20                    
-        .byte   $74                             ; 7DD1 74                       t
-        adc     $72,x                           ; 7DD2 75 72                    ur
-        ror     L6F20                           ; 7DD4 6E 20 6F                 n o
-        ror     $4D20                           ; 7DD7 6E 20 4D                 n M
-        eor     $4D                             ; 7DDA 45 4D                    EM
-        jsr     L4153                           ; 7DDC 20 53 41                  SA
-        lsr     $45,x                           ; 7DDF 56 45                    VE
-        rol     L2020                           ; 7DE1 2E 20 20                 .  
-        bvc     L7E58                           ; 7DE4 50 72                    Pr
-        adc     $73                             ; 7DE6 65 73                    es
-        .byte   $73                             ; 7DE8 73                       s
-        jsr     L204E                           ; 7DE9 20 4E 20                  N 
-        .byte   $74                             ; 7DEC 74                       t
-        .byte   $6F                             ; 7DED 6F                       o
-        jsr     L7574                           ; 7DEE 20 74 75                  tu
-        .byte   $72                             ; 7DF1 72                       r
-        ror     L209B                           ; 7DF2 6E 9B 20                 n. 
-        jsr     L6F20                           ; 7DF5 20 20 6F                   o
+	.byte	"   turn on MEM SAVE.  Press N to turn",$9B
+	.byte	"   o"
         ror     $66                             ; 7DF8 66 66                    ff
         jsr     L454D                           ; 7DFA 20 4D 45                  ME
         eor     $5320                           ; 7DFD 4D 20 53                 M S
@@ -2703,23 +2575,9 @@ L7D3D:  .byte   $72                             ; 7D3D 72                       
         eor     $20                             ; 7E4F 45 20                    E 
         .byte   $6F                             ; 7E51 6F                       o
         ror     $9B2C                           ; 7E52 6E 2C 9B                 n,.
-        jsr     L2020                           ; 7E55 20 20 20                    
-L7E58:  .byte   $74                             ; 7E58 74                       t
-        pla                                     ; 7E59 68                       h
-        adc     $20                             ; 7E5A 65 20                    e 
-	.byte	"nam"
-        adc     $20                             ; 7E5F 65 20                    e 
-        pla                                     ; 7E61 68                       h
-        adc     ($73,x)                         ; 7E62 61 73                    as
-        jsr     L2061                           ; 7E64 20 61 20                  a 
-        .byte   $64                             ; 7E67 64                       d
-        .byte   $6F                             ; 7E68 6F                       o
-        .byte   $74                             ; 7E69 74                       t
-        .byte   $3A                             ; 7E6A 3A                       :
-        jsr     L654D                           ; 7E6B 20 4D 65                  Me
-        adc     L73AE                           ; 7E6E 6D AE 73                 m.s
-        adc     ($76,x)                         ; 7E71 61 76                    av
-        adc     $9B                             ; 7E73 65 9B                    e.
+	.byte	"   the name has a dot: Mem"
+	Inverse	"."
+	.byte	"save",$9B
         .byte   $02                             ; 7E75 02                       .
         cmp     #$EE                            ; 7E76 C9 EE                    ..
         sbc     #$F4                            ; 7E78 E9 F4                    ..
@@ -2786,24 +2644,7 @@ L7EA5:  .byte   $4F                             ; 7EA5 4F                       
 L7F30:  lda     $A9B8                           ; 7F30 AD B8 A9                 ...
         .byte   $BF                             ; 7F33 BF                       .
         asl     $9B,x                           ; 7F34 16 9B                    ..
-        jsr     L2020                           ; 7F36 20 20 20                    
-        eor     $6E                             ; 7F39 45 6E                    En
-        .byte   $74                             ; 7F3B 74                       t
-        adc     $72                             ; 7F3C 65 72                    er
-        jsr     L6F6E                           ; 7F3E 20 6E 6F                  no
-        rol     L6F20                           ; 7F41 2E 20 6F                 . o
-        ror     $20                             ; 7F44 66 20                    f 
-        .byte   $64                             ; 7F46 64                       d
-        .byte   $72                             ; 7F47 72                       r
-        adc     #$76                            ; 7F48 69 76                    iv
-        adc     $20                             ; 7F4A 65 20                    e 
-        .byte   $77                             ; 7F4C 77                       w
-        adc     #$74                            ; 7F4D 69 74                    it
-        pla                                     ; 7F4F 68                       h
-        jsr     L6964                           ; 7F50 20 64 69                  di
-        .byte   $73                             ; 7F53 73                       s
-        .byte   $6B                             ; 7F54 6B                       k
-        .byte   $9B                             ; 7F55 9B                       .
+	.byte	"   Enter no. of drive with disk",$9B
 	.byte	"   to be initialized.  NEVER INIT",$9B
         jsr     L2020                           ; 7F78 20 20 20                    
         eor     $554F,y                         ; 7F7B 59 4F 55                 YOU
