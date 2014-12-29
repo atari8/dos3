@@ -2060,16 +2060,7 @@ L79F5:  adc     $20                             ; 79F5 65 20                    
 	.byte	$16
 	.byte	"Help Screen      1 of 1",$9B,$9B
 	.byte	"1. Press X to select a program you",$9B
-        jsr     L2020                           ; 7AF8 20 20 20                    
-        pla                                     ; 7AFB 68                       h
-        adc     ($76,x)                         ; 7AFC 61 76                    av
-        adc     $20                             ; 7AFE 65 20                    e 
-        .byte   $77                             ; 7B00 77                       w
-        .byte   $72                             ; 7B01 72                       r
-        adc     #$74                            ; 7B02 69 74                    it
-        .byte   $74                             ; 7B04 74                       t
-        adc     $6E                             ; 7B05 65 6E                    en
-        .byte	" in assembly language",$9B
+        .byte	"   have written in assembly language",$9B
 	.byte	"   and stored with SAVE.",$9B,$9B
         .byte   $32                             ; 7B37 32                       2
         rol     L4120                           ; 7B38 2E 20 41                 . A
