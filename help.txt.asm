@@ -1211,23 +1211,7 @@ L6C6F:  .byte   $20                             ; 6C6F 20
 	.byte	"Press E: or RETURN",$9B
 	.byte	"   to list Index on screen.  Press P:",$9B
 	.byte	"   to print Index.  Index lists file-",$9B
-        jsr     L2020                           ; 6D1D 20 20 20                    
-	.byte	"nam"
-        adc     $73                             ; 6D23 65 73                    es
-        bit     L6520                           ; 6D25 2C 20 65                 , e
-        sei                                     ; 6D28 78                       x
-        .byte   $74                             ; 6D29 74                       t
-        adc     $6E                             ; 6D2A 65 6E                    en
-        .byte   $64                             ; 6D2C 64                       d
-        adc     $72                             ; 6D2D 65 72                    er
-        .byte   $73                             ; 6D2F 73                       s
-	.byte	", f"
-        adc     #$6C                            ; 6D33 69 6C                    il
-        adc     $20                             ; 6D35 65 20                    e 
-        .byte   $73                             ; 6D37 73                       s
-        adc     #$7A                            ; 6D38 69 7A                    iz
-        adc     $73                             ; 6D3A 65 73                    es
-	.byte	" in",$9B
+	.byte	"   names, extenders, file sizes in",$9B
 	.byte	"   blocks and number of free blocks",$9B
 	.byte	"   left.",$9B,$9B
         .byte   $34                             ; 6D6E 34                       4
