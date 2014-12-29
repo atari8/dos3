@@ -1159,17 +1159,8 @@ L6C22:  .byte   $73                             ; 6C22 73                       
         beq     L6C16                           ; 6C2F F0 E5                    ..
         .byte   $E3                             ; 6C31 E3                       .
         .byte   $BF                             ; 6C32 BF                       .
-        asl     $53,x                           ; 6C33 16 53                    .S
-        bvs     L6C9C                           ; 6C35 70 65                    pe
-        .byte   $63                             ; 6C37 63                       c
-        adc     #$66                            ; 6C38 69 66                    if
-	.byte	"y f"
-        adc     #$6C                            ; 6C3D 69 6C                    il
-        adc     $73                             ; 6C3F 65 73                    es
-        jsr     L6F79                           ; 6C41 20 79 6F                  yo
-        adc     $20,x                           ; 6C44 75 20                    u 
-        adc     ($72,x)                         ; 6C46 61 72                    ar
-        adc     $9B                             ; 6C48 65 9B                    e.
+	.byte	$16
+	.byte	"Specify files you are",$9B
         jsr     L2020                           ; 6C4A 20 20 20                    
         jmp     (L6F6F)                         ; 6C4D 6C 6F 6F                 loo
 
@@ -1212,51 +1203,14 @@ L6C6F:  .byte   $20                             ; 6C6F 20
         adc     #$73                            ; 6C8E 69 73                    is
 	.byte	" th"
         adc     $9B                             ; 6C93 65 9B                    e.
-        jsr     L2020                           ; 6C95 20 20 20                    
-        .byte   $64                             ; 6C98 64                       d
-        adc     $66                             ; 6C99 65 66                    ef
-        .byte   $61                             ; 6C9B 61                       a
-L6C9C:  adc     $6C,x                           ; 6C9C 75 6C                    ul
-        .byte   $74                             ; 6C9E 74                       t
-L6C9F:  jsr     L6572                           ; 6C9F 20 72 65                  re
-        .byte   $73                             ; 6CA2 73                       s
-        bvs     L6D14                           ; 6CA3 70 6F                    po
-        ror     L6573                           ; 6CA5 6E 73 65                 nse
-        rol     $9B9B                           ; 6CA8 2E 9B 9B                 ...
-        .byte   $33                             ; 6CAB 33                       3
-        rol     $C402                           ; 6CAC 2E 02 C4                 ...
-        sbc     #$F3                            ; 6CAF E9 F3                    ..
-        beq     L6C9F                           ; 6CB1 F0 EC                    ..
-        sbc     ($F9,x)                         ; 6CB3 E1 F9                    ..
-        ldy     #$E4                            ; 6CB5 A0 E4                    ..
-        sbc     $F6                             ; 6CB7 E5 F6                    ..
-        sbc     #$E3                            ; 6CB9 E9 E3                    ..
-        sbc     $BF                             ; 6CBB E5 BF                    ..
+	.byte	"   default response.",$9B,$9B
+	.byte	"3."
+	.byte	$02
+	Inverse	"Display device?"
 	.byte	$16
 	.byte	"Press E: or RETURN",$9B
 	.byte	"   to list Index on screen.  Press P:",$9B
-        jsr     L2020                           ; 6CF7 20 20 20                    
-        .byte   $74                             ; 6CFA 74                       t
-        .byte   $6F                             ; 6CFB 6F                       o
-	.byte	" pr"
-        adc     #$6E                            ; 6CFF 69 6E                    in
-        .byte   $74                             ; 6D01 74                       t
-        jsr     L6E49                           ; 6D02 20 49 6E                  In
-        .byte   $64                             ; 6D05 64                       d
-        adc     $78                             ; 6D06 65 78                    ex
-        rol     L2020                           ; 6D08 2E 20 20                 .  
-        eor     #$6E                            ; 6D0B 49 6E                    In
-        .byte   $64                             ; 6D0D 64                       d
-        adc     $78                             ; 6D0E 65 78                    ex
-        jsr     L696C                           ; 6D10 20 6C 69                  li
-        .byte   $73                             ; 6D13 73                       s
-L6D14:  .byte   $74                             ; 6D14 74                       t
-        .byte   $73                             ; 6D15 73                       s
-L6D16:  jsr     L6966                           ; 6D16 20 66 69                  fi
-        jmp     (L2D65)                         ; 6D19 6C 65 2D                 le-
-
-; ----------------------------------------------------------------------------
-        .byte   $9B                             ; 6D1C 9B                       .
+	.byte	"   to print Index.  Index lists file-",$9B
         jsr     L2020                           ; 6D1D 20 20 20                    
 	.byte	"nam"
         adc     $73                             ; 6D23 65 73                    es
@@ -1383,20 +1337,8 @@ L6E41:  .byte   $F3                             ; 6E41 F3                       
         beq     L6E29                           ; 6E42 F0 E5                    ..
 L6E44:  .byte   $E3                             ; 6E44 E3                       .
         .byte   $BF                             ; 6E45 BF                       .
-        asl     $53,x                           ; 6E46 16 53                    .S
-        .byte   $70                             ; 6E48 70                       p
-L6E49:  adc     $63                             ; 6E49 65 63                    ec
-        adc     #$66                            ; 6E4B 69 66                    if
-	.byte	"y f"
-        adc     #$6C                            ; 6E50 69 6C                    il
-        adc     $73                             ; 6E52 65 73                    es
-        .byte   $20                             ; 6E54 20                        
-L6E55:  .byte   $74                             ; 6E55 74                       t
-        .byte   $6F                             ; 6E56 6F                       o
-        jsr     L6564                           ; 6E57 20 64 65                  de
-	.byte	"let"
-        adc     $2E                             ; 6E5D 65 2E                    e.
-        .byte   $9B                             ; 6E5F 9B                       .
+	.byte	$16
+	.byte	"Specify files to delete.",$9B
 	.byte	"   Wildcards can be used. "
 	.byte	$02
         .byte   $C3                             ; 6E7B C3                       .
@@ -1780,22 +1722,7 @@ L74C5:  .byte   $72                             ; 74C5 72                       
         .byte	" unprotect all",$9B
 	.byte	"   files named by filespec.  Press N",$9B
 	.byte	"   or RETURN to unprotect one by one.",$9B,$9B
-        .byte   $34                             ; 7529 34                       4
-        rol     L4920                           ; 752A 2E 20 49                 . I
-        ror     $20                             ; 752D 66 20                    f 
-        adc     $6E,x                           ; 752F 75 6E                    un
-        bvs     L75A5                           ; 7531 70 72                    pr
-        .byte   $6F                             ; 7533 6F                       o
-        .byte   $74                             ; 7534 74                       t
-        adc     $63                             ; 7535 65 63                    ec
-        .byte   $74                             ; 7537 74                       t
-        adc     #$6E                            ; 7538 69 6E                    in
-        .byte   $67                             ; 753A 67                       g
-        jsr     L6966                           ; 753B 20 66 69                  fi
-        jmp     (L7365)                         ; 753E 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        .byte	" one at a",$9B
+	.byte	"4. If unprotecting files one at a",$9B
 	.byte	"   time, DOS shows you each filename",$9B
 L7570:  .byte   $20                             ; 7570 20                        
         .byte   $20                             ; 7571 20                        
@@ -1818,28 +1745,7 @@ L7588:  bvs     L75FE                           ; 7588 70 74                    
         adc     $63                             ; 7592 65 63                    ec
         .byte   $6B                             ; 7594 6B                       k
         .byte   $9B                             ; 7595 9B                       .
-        jsr     L2020                           ; 7596 20 20 20                    
-        lsr     $69                             ; 7599 46 69                    Fi
-        jmp     (L2065)                         ; 759B 6C 65 20                 le 
-
-; ----------------------------------------------------------------------------
-        eor     #$6E                            ; 759E 49 6E                    In
-        .byte   $64                             ; 75A0 64                       d
-        adc     $78                             ; 75A1 65 78                    ex
-        .byte   $2E                             ; 75A3 2E                       .
-        .byte   $20                             ; 75A4 20                        
-L75A5:  jsr     L6E55                           ; 75A5 20 55 6E                  Un
-        bvs     L761C                           ; 75A8 70 72                    pr
-        .byte   $6F                             ; 75AA 6F                       o
-        .byte   $74                             ; 75AB 74                       t
-        adc     $63                             ; 75AC 65 63                    ec
-        .byte   $74                             ; 75AE 74                       t
-        adc     $64                             ; 75AF 65 64                    ed
-        jsr     L6966                           ; 75B1 20 66 69                  fi
-        jmp     (L7365)                         ; 75B4 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        .byte   $9B                             ; 75B7 9B                       .
+	.byte	"   File Index.  Unprotected files",$9B
         jsr     L2020                           ; 75B8 20 20 20                    
         jmp     (L736F)                         ; 75BB 6C 6F 73                 los
 
