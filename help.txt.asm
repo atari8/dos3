@@ -1215,21 +1215,7 @@ L6C6F:  .byte   $20                             ; 6C6F 20
 	.byte	"   blocks and number of free blocks",$9B
 	.byte	"   left.",$9B,$9B
 	.byte	"4. If list exceeds one screen, press",$9B
-        jsr     L2020                           ; 6D93 20 20 20                    
-        .byte   $52                             ; 6D96 52                       R
-        eor     $54                             ; 6D97 45 54                    ET
-        eor     $52,x                           ; 6D99 55 52                    UR
-	.byte	"N f"
-        .byte   $6F                             ; 6D9E 6F                       o
-        .byte   $72                             ; 6D9F 72                       r
-        jsr     L6F6D                           ; 6DA0 20 6D 6F                  mo
-        .byte   $72                             ; 6DA3 72                       r
-        adc     $20                             ; 6DA4 65 20                    e 
-        ror     $69                             ; 6DA6 66 69                    fi
-        jmp     (L7365)                         ; 6DA8 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        rol     $9B9B                           ; 6DAB 2E 9B 9B                 ...
+	.byte	"   RETURN for more files.",$9B,$9B
         .byte   $02                             ; 6DAE 02                       .
         cmp     $F2                             ; 6DAF C5 F2                    ..
         sbc     ($F3,x)                         ; 6DB1 E1 F3                    ..
