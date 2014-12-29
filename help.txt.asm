@@ -1216,25 +1216,10 @@ L6C6F:  .byte   $20                             ; 6C6F 20
 	.byte	"   left.",$9B,$9B
 	.byte	"4. If list exceeds one screen, press",$9B
 	.byte	"   RETURN for more files.",$9B,$9B
-        .byte   $02                             ; 6DAE 02                       .
-        cmp     $F2                             ; 6DAF C5 F2                    ..
-        sbc     ($F3,x)                         ; 6DB1 E1 F3                    ..
-        sbc     $16                             ; 6DB3 E5 16                    ..
-        pha                                     ; 6DB5 48                       H
-        adc     $6C                             ; 6DB6 65 6C                    el
-        .byte	"p "
-        .byte   $53                             ; 6DBA 53                       S
-        .byte   $63                             ; 6DBB 63                       c
-        .byte   $72                             ; 6DBC 72                       r
-        adc     $65                             ; 6DBD 65 65                    ee
-        ror     L2020                           ; 6DBF 6E 20 20                 n  
-        jsr     L2020                           ; 6DC2 20 20 20                    
-        jsr     L2020                           ; 6DC5 20 20 20                    
-        jsr     L2020                           ; 6DC8 20 20 20                    
-        jsr     L3120                           ; 6DCB 20 20 31                   1
-        jsr     L666F                           ; 6DCE 20 6F 66                  of
-        jsr     L9B31                           ; 6DD1 20 31 9B                  1.
-        .byte   $9B                             ; 6DD4 9B                       .
+	.byte	$02
+	Inverse	"Erase"
+	.byte	$16
+	.byte	"Help Screen             1 of 1",$9B,$9B
 	.byte	"1. Press E to delete one or more",$9B
         jsr     L2020                           ; 6DF6 20 20 20                    
         ror     $69                             ; 6DF9 66 69                    fi
