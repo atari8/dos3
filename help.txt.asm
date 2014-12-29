@@ -911,27 +911,7 @@ L6861:  .byte   $9B                             ; 6861 9B                       
         .byte   $9B                             ; 68CB 9B                       .
 	.byte	"   gives you a Y/N option on each.",$9B,$9B
 	.byte	"Remember: Using RETURN on Step 7 with",$9B
-        adc     ($20,x)                         ; 6916 61 20                    a 
-        .byte   $53                             ; 6918 53                       S
-        .byte   $6F                             ; 6919 6F                       o
-        adc     $72,x                           ; 691A 75 72                    ur
-        .byte   $63                             ; 691C 63                       c
-        adc     $20                             ; 691D 65 20                    e 
-        .byte   $46                             ; 691F 46                       F
-L6920:  adc     #$6C                            ; 6920 69 6C                    il
-        adc     $73                             ; 6922 65 73                    es
-        bvs     L698B                           ; 6924 70 65                    pe
-        .byte   $63                             ; 6926 63                       c
-        jsr     L666F                           ; 6927 20 6F 66                  of
-        jsr     L6E44                           ; 692A 20 44 6E                  Dn
-        .byte   $3A                             ; 692D 3A                       :
-        rol     a                               ; 692E 2A                       *
-        rol     $202A                           ; 692F 2E 2A 20                 .* 
-        .byte   $63                             ; 6932 63                       c
-        adc     ($75,x)                         ; 6933 61 75                    au
-        .byte   $73                             ; 6935 73                       s
-        adc     $73                             ; 6936 65 73                    es
-        .byte   $9B                             ; 6938 9B                       .
+	.byte	"a Source Filespec of Dn:*.* causes",$9B
         .byte   $44                             ; 6939 44                       D
         .byte   $4F                             ; 693A 4F                       O
         .byte   $53                             ; 693B 53                       S
@@ -1223,14 +1203,9 @@ L6C6F:  .byte   $20                             ; 6C6F 20
 	.byte	"1. Press E to delete one or more",$9B
 	.byte	"   files from your disk.  (DOS",$9B
 	.byte	"   will not erase Protected files.)",$9B,$9B
-        .byte   $32                             ; 6E3A 32                       2
-        rol     $C602                           ; 6E3B 2E 02 C6                 ...
-        sbc     #$EC                            ; 6E3E E9 EC                    ..
-        .byte   $E5                             ; 6E40 E5                       .
-L6E41:  .byte   $F3                             ; 6E41 F3                       .
-	.byte	$F0,$E5
-L6E44:  .byte   $E3                             ; 6E44 E3                       .
-        .byte   $BF                             ; 6E45 BF                       .
+	.byte	"2."
+	.byte	$02
+	Inverse	"Filespec?"
 	.byte	$16
 	.byte	"Specify files to delete.",$9B
 	.byte	"   Wildcards can be used. "
@@ -2075,25 +2050,7 @@ L79F5:  adc     $20                             ; 79F5 65 20                    
         lda     #$BF                            ; 7A60 A9 BF                    ..
         asl     $9B,x                           ; 7A62 16 9B                    ..
 	.byte	"   Press Y to run the file.  Press N",$9B
-        jsr     L2020                           ; 7A89 20 20 20                    
-        .byte   $6F                             ; 7A8C 6F                       o
-        .byte   $72                             ; 7A8D 72                       r
-        jsr     L4552                           ; 7A8E 20 52 45                  RE
-        .byte   $54                             ; 7A91 54                       T
-        eor     $52,x                           ; 7A92 55 52                    UR
-        lsr     L6920                           ; 7A94 4E 20 69                 N i
-        ror     $20                             ; 7A97 66 20                    f 
-	.byte	"not"
-        jsr     L6F74                           ; 7A9C 20 74 6F                  to
-        jsr     L7572                           ; 7A9F 20 72 75                  ru
-	.byte	"n t"
-        pla                                     ; 7AA5 68                       h
-        adc     $20                             ; 7AA6 65 20                    e 
-        ror     $69                             ; 7AA8 66 69                    fi
-        jmp     (L2E65)                         ; 7AAA 6C 65 2E                 le.
-
-; ----------------------------------------------------------------------------
-        .byte   $9B                             ; 7AAD 9B                       .
+	.byte	"   or RETURN if not to run the file.",$9B
         .byte   $02                             ; 7AAE 02                       .
         cmp     $F3,x                           ; 7AAF D5 F3                    ..
         sbc     $F2                             ; 7AB1 E5 F2                    ..
