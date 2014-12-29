@@ -1221,54 +1221,14 @@ L6C6F:  .byte   $20                             ; 6C6F 20
 	.byte	$16
 	.byte	"Help Screen             1 of 1",$9B,$9B
 	.byte	"1. Press E to delete one or more",$9B
-        jsr     L2020                           ; 6DF6 20 20 20                    
-        ror     $69                             ; 6DF9 66 69                    fi
-        jmp     (L7365)                         ; 6DFB 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        .byte	" fr"
-L6E01:  .byte   $6F                             ; 6E01 6F                       o
-        adc     L7920                           ; 6E02 6D 20 79                 m y
-        .byte   $6F                             ; 6E05 6F                       o
-        adc     $72,x                           ; 6E06 75 72                    ur
-        jsr     L6964                           ; 6E08 20 64 69                  di
-        .byte   $73                             ; 6E0B 73                       s
-        .byte   $6B                             ; 6E0C 6B                       k
-        rol     L2020                           ; 6E0D 2E 20 20                 .  
-        plp                                     ; 6E10 28                       (
-        .byte   $44                             ; 6E11 44                       D
-        .byte   $4F                             ; 6E12 4F                       O
-        .byte   $53                             ; 6E13 53                       S
-        .byte   $9B                             ; 6E14 9B                       .
-        jsr     L2020                           ; 6E15 20 20 20                    
-        .byte   $77                             ; 6E18 77                       w
-        adc     #$6C                            ; 6E19 69 6C                    il
-        jmp     (L6E20)                         ; 6E1B 6C 20 6E                 l n
-
-; ----------------------------------------------------------------------------
-        .byte   $6F                             ; 6E1E 6F                       o
-        .byte   $74                             ; 6E1F 74                       t
-L6E20:  .byte	" er"
-        adc     ($73,x)                         ; 6E23 61 73                    as
-        adc     $20                             ; 6E25 65 20                    e 
-	.byte	"Pr"
-L6E29:  .byte   $6F                             ; 6E29 6F                       o
-        .byte   $74                             ; 6E2A 74                       t
-        adc     $63                             ; 6E2B 65 63                    ec
-        .byte   $74                             ; 6E2D 74                       t
-        adc     $64                             ; 6E2E 65 64                    ed
-        jsr     L6966                           ; 6E30 20 66 69                  fi
-        jmp     (L7365)                         ; 6E33 6C 65 73                 les
-
-; ----------------------------------------------------------------------------
-        rol     $9B29                           ; 6E36 2E 29 9B                 .).
-        .byte   $9B                             ; 6E39 9B                       .
+	.byte	"   files from your disk.  (DOS",$9B
+	.byte	"   will not erase Protected files.)",$9B,$9B
         .byte   $32                             ; 6E3A 32                       2
         rol     $C602                           ; 6E3B 2E 02 C6                 ...
         sbc     #$EC                            ; 6E3E E9 EC                    ..
         .byte   $E5                             ; 6E40 E5                       .
 L6E41:  .byte   $F3                             ; 6E41 F3                       .
-        beq     L6E29                           ; 6E42 F0 E5                    ..
+	.byte	$F0,$E5
 L6E44:  .byte   $E3                             ; 6E44 E3                       .
         .byte   $BF                             ; 6E45 BF                       .
 	.byte	$16
