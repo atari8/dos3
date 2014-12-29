@@ -1214,28 +1214,7 @@ L6C6F:  .byte   $20                             ; 6C6F 20
 	.byte	"   names, extenders, file sizes in",$9B
 	.byte	"   blocks and number of free blocks",$9B
 	.byte	"   left.",$9B,$9B
-        .byte   $34                             ; 6D6E 34                       4
-        rol     L4920                           ; 6D6F 2E 20 49                 . I
-        ror     $20                             ; 6D72 66 20                    f 
-        .byte   $6C                             ; 6D74 6C                       l
-L6D75:  adc     #$73                            ; 6D75 69 73                    is
-        .byte   $74                             ; 6D77 74                       t
-        jsr     L7865                           ; 6D78 20 65 78                  ex
-        .byte   $63                             ; 6D7B 63                       c
-        adc     $65                             ; 6D7C 65 65                    ee
-        .byte   $64                             ; 6D7E 64                       d
-        .byte   $73                             ; 6D7F 73                       s
-        .byte	" on"
-        adc     $20                             ; 6D83 65 20                    e 
-        .byte   $73                             ; 6D85 73                       s
-        .byte   $63                             ; 6D86 63                       c
-        .byte   $72                             ; 6D87 72                       r
-        adc     $65                             ; 6D88 65 65                    ee
-        ror     $202C                           ; 6D8A 6E 2C 20                 n, 
-        bvs     L6E01                           ; 6D8D 70 72                    pr
-        adc     $73                             ; 6D8F 65 73                    es
-        .byte   $73                             ; 6D91 73                       s
-        .byte   $9B                             ; 6D92 9B                       .
+	.byte	"4. If list exceeds one screen, press",$9B
         jsr     L2020                           ; 6D93 20 20 20                    
         .byte   $52                             ; 6D96 52                       R
         eor     $54                             ; 6D97 45 54                    ET
